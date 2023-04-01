@@ -64,7 +64,7 @@ body {
 	background-color: #3e8e41;
 }
 .buttonForgot:hover, .buttonNew:hover{
-	color: #0743a2;
+	color: #0743a2;;
 }
 
 /* Style the heading for the login page */
@@ -105,7 +105,6 @@ input[type="submit"] {
 	/* Remove the absolute positioning and center 
     the container horizontally and vertically on smaller screens */
 	.container {
-		width: auto;
 		position: relative;
 		top: auto;
 		left: auto;
