@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>DB M</title>
   <meta content="" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
 
@@ -24,53 +24,82 @@
 
 <body>
 
-<!-- Add your site or application content here -->
 <header>
   <img alt="database icon" class="db_ico" src="img/database-icon.svg">
 </header>
 
-  <nav>
-    <button class="table_button"><img src="img/1608863_table_icon.svg"></button>
-    <button class="account_button"><img src="img/user-svgrepo-com.svg"></button>
-  </nav>
+<nav>
+  <button class="nav_button">
+    <img src="img/1608863_table_icon.svg">
+    <span class="button_text">Tables and views</span>
+  </button>
+  <button class="nav_button" onclick="window.location.href='account.html';">
+    <img src="img/user-svgrepo-com.svg">
+    <span class="button_text">Account
+        settings</span>
+  </button>
+  <button class="nav_button">
+    <img src="img/logout-33.svg">
+    <span class="button_text">Logout</span>
+  </button>
+</nav>
 <div class="content">
+  <h1>Tables and views</h1>
   <div class="tables">
-    <table class="db_table">
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-      </tr>
-    </table>
-    <table class="db_table">
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-      </tr>
-    </table>
+    <div class="table_minimizer">
+      <input id="plus1" type="checkbox"/>
+      <label class="button" for="plus1">
+        <div class="button_plus"></div>
+      </label>
+      <h2>Table 1
+      </h2>
+      <div class="flex_break"></div>
+      <table class="db_table">
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table_minimizer">
+      <input id="plus2" type="checkbox"/>
+      <label class="button" for="plus2">
+        <div class="button_plus"></div>
+      </label>
+      <h2>Table 2</h2>
+      <div class="flex_break"></div>
+      <table class="db_table">
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
+
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
