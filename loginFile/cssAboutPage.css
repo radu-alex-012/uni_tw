@@ -21,7 +21,7 @@ body {
 }
 
 .button{
-   /* background-color: #b23005; */
+   background-color: #ffffff;
 	color: #4c8ef8;
 	padding: 40px 40px auto;
 	border: none;
@@ -30,26 +30,20 @@ body {
 }
 
 /* Style the buttons when hovering over it */
-.buttonContact:hover {
+.button:hover {
 	color: #0743a2;
 }
-
-.buttonContact{
-	background-color: #ffffff;
-	 color: #4c8ef8;
-	 padding: 40px 40px auto;
-	 border: none;
-	 border-radius: 5px;
-	 cursor: pointer;
- }
- 
- /* Style the buttons when hovering over it */
- .button:hover {
-	 color: #0743a2;
- }
 /* Style the heading for the login page */
 h1 {
 	text-align: center;
+    margin-bottom: 15%;
+    color: #826b7a;
+}
+
+footer{
+    color: rgb(75, 75, 75);
+    margin-top: 15%;
+    text-align: center;
 }
 
 /* Style the labels for the input fields */
@@ -57,32 +51,6 @@ label {
 	display: block;
 	margin-bottom: 10px;
 	font-weight: bold;
-}
-
-/* Style the input fields for the username and password */
-input[type="email"] {
-	width: 90%;
-	padding: 10px;
-	margin-bottom: 20px;
-	border-radius: 5px;
-	border: none;
-	box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-/* Style the submit button for the login form */
-input[type="submit"] {
-	background-color: #4CAF50;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-/* footer style*/
-footer{
-    color: rgb(75, 75, 75);
-    margin-top: 15%;
-    text-align: center;
 }
 
 
@@ -102,7 +70,6 @@ footer{
 		justify-content:center;
 	}
 }
-/* Media Query for Responsive Styles */
 @media screen and (max-height: 600px)
 and (orientation: landscape){
 	/* Remove the absolute positioning and center 

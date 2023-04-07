@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Set the viewport to control the page's dimensions and scaling on different devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact</title>
+	<!-- Link the external CSS file -->
+	<link rel="stylesheet" type="text/css" href="cssAboutPage.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Project - Online Relation Database Optimised for Mobile Platform</h1>
+        </header>
+        <main>
+            <section>
+                 <!--The core infromation based on title and paragraphs  -->
+                <h2>About the Project</h2>
+                <p>This project was created for the 'WEB' course in 2023 by a team of 3 students. The project is a web application for an online relational database optimized for mobile platforms. It is an open source project.</p>
+                <p>For any questions, please do not hesitate on reaching out to us.</p>
+                <p>If you want to invest in this project, the online database from today and the next unicorn from tommorow, contact us!</p>
+            </section>
+        
+            <section>
+                 <!-- Contact information based on title and a list of contacts-->
+                  <!-- The emails are targeted as buttons to be click-able -->
+                <h2>Contact Us</h2>
+                <ul>
+                    <li><strong>Simionescu Teodor</strong><br>
+                        <div>
+                                <button type="button" class="button" onclick="emailClick()">Email: teodor.simionescu@gmail.com</button>
+                         </div>
+                    </li>
+                    <li><strong>Ciobanu Razvan</strong><br>
+                        <div>
+                            <button type="button" class="button" onclick="emailClick()">Email: razvan.ciobanu@gmail.com</button>
+                        </div>
+                    </li>
+                    <li><strong>Radu Alexandru</strong><br>
+                        <div>
+                            <button type="button" class="button" onclick="emailClick()">Email: radu.alexandru@gmail.com</button>
+                        </div>
+                    </li>
+                    <li><strong>Github Repository</strong>
+                        <div>
+                            <button type="button" class="button" onclick="emailClick()">https://github.com/radu-alex-012/uni_tw</button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+         <!-- Fotter with rights reserved -->
+        <footer>
+            <div class="button">
+                <button type="button" class="button" onclick="contactUs()">Contact us!</button>
+            </div>
+            <p>&copy; 2023 Web Project. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script>
+         // Funciton to open a link when the buttons are pressed
+		function emailClick() {
+			window.open("http://www.example.com");
+		}
+        function contactUs() {
+			window.open("aboutPage.html");
+		}
+	</script>
+</body>
+</html>

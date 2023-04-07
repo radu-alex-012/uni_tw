@@ -116,3 +116,29 @@ input[type="submit"] {
 		justify-content: center;
 	}
 }
+/* Media Query for Responsive Styles */
+@media screen and (max-height: 600px)
+and (orientation: landscape){
+	/* Remove the absolute positioning and center 
+    the container horizontally and vertically on smaller screens */
+	.container {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: auto;
+		display:block;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.grid-container {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: auto;
+		display:block;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+}

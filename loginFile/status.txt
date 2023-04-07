@@ -1,0 +1,34 @@
+6-aprilie
+
+TEO:
+to continue with:
+-Pagina de about 
+--> site ul materiei : film
+-->ghid utilizare pagina +
+-->id discord/ email realizatori + 
+ 
+
+ bobu:
+ continuare cu interfata pentru home page 
+ ->interactiunea graduala:
+-->baza de date
+-->tabele 
+-->view uri 
+-->consola?
+
+radu:
+TBD
+
+7 aprilie:
+
+Razvan:
+-terminare pagina
+
+Radu:
+-butoane:
+-->
+-->
+
+Teo:
+-redirectionare din forgot & newAcc la login
+-setari cont

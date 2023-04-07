@@ -42,14 +42,26 @@ body {
 	cursor: pointer;
 	flex-direction: row;
 	justify-content:center;
-	justify-self: center;
+	justify-self: c;
 }
 /* Style the buttons when hovering over it */
 /* Style the buttons when hovering over it */
 .button:hover {
 	background-color: #3e8e41;
 }
+/* Style the buttons when hovering over it */
+.buttonContact:hover {
+	color: #0743a2;
+}
 
+.buttonContact{
+	background-color: #ffffff;
+	 color: #4c8ef8;
+	 padding: 40px 40px auto;
+	 border: none;
+	 border-radius: 5px;
+	 cursor: pointer;
+ }
 /* Style the heading for the login page */
 h1 {
 	text-align: center;
@@ -66,6 +78,11 @@ label {
 	margin-bottom: 10px;
 	font-weight: bold;
 }
+footer{
+    color: rgb(75, 75, 75);
+    margin-top: 15%;
+    text-align: center;
+}
 
 /* Style the input fields for the username and password */
 input[type="text"], 
@@ -81,6 +98,32 @@ input[type="email"]{
 
 /* Media Query for Responsive Styles */
 @media screen and (max-width: 600px) {
+	/* Remove the absolute positioning and center 
+    the container horizontally and vertically on smaller screens */
+	.container {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: auto;
+		display:block;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.grid-container {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: auto;
+		display:block;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+}
+/* Media Query for Responsive Styles */
+@media screen and (max-height: 600px)
+and (orientation: landscape){
 	/* Remove the absolute positioning and center 
     the container horizontally and vertically on smaller screens */
 	.container {
