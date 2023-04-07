@@ -1,0 +1,99 @@
+:root {
+    --background-clr: #EAE7DC;
+    --beige-clr: #D8C3A5;
+    --gray-clr: #8E8D8A;
+    --light-red-clr: #E98074;
+    --red-clr: #E85A4F;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-clr);
+}
+
+.homepage{
+    margin: 0;
+    padding-top: 44px;
+    height: calc(100vh - 44px);
+    display: flex;
+}
+
+.navbar{
+    background-color: var(--red-clr);
+
+    margin: 0;
+    width: 100vw;
+    height: 44px;
+    box-shadow: 0px 0px 8px black;
+    position: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+.card{
+    background-color: var(--beige-clr);
+}
+
+#database-panel{
+    box-shadow: 2px 0px 8px var(--gray-clr);
+    width: 300px;
+}
+
+.database-message{
+    color: gray;
+    padding: 40px;
+    font-size: 28px;
+    box-shadow: 0px 15px 10px -15px var(--gray-clr);
+}
+
+.database-list{
+    display: flex;
+    justify-content: center;
+}
+
+#database-ul{
+    padding: 0;
+    margin: 0;
+}
+
+#database-ul li{
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    color: gray;
+    cursor: pointer;
+}
+
+#database-ul li:hover{
+    color: var(--light-red-clr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#table-panel{
+    display: none;
+}
