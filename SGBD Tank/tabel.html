@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PICAM</title>
+    <link rel="shortcut icon" type="image/png" href="img/icons/favicon.svg">
+    <link rel="stylesheet" href="styleSheets/tabel.css">
+</head>
+<body>
+
+    <div class="tabel">
+        <!-- <div class="row">
+            <button class="expand-button">+</button>
+
+            <div class="col"><p>ID</p></div>
+            <div class="col"><p>NR_MATRICOL</p></div>
+            <div class="col"><p>NUME</p></div>
+            <div class="col"><p>PRENUME</p></div>
+            <div class="col"><p>AN</p></div>
+            <div class="col"><p>GRUPA</p></div>
+            <div class="col"><p>BURSA</p></div>
+            <div class="col"><p>DATA_NASTERE</p></div>
+            <div class="col"><p>EMAIL</p></div>
+            <div class="col"><p>CREATED_AT</p></div>
+            <div class="col"><p>UPDATED_AT</p></div>
+        </div> -->
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 81</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div> 
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 82</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 83</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 84</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 85</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 86</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+
+            <div class="row-data">
+                <div class="col"><p>ID: 81</p></div>
+                <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                <div class="col"><p>NUME: Dragan</p></div>
+                <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                <div class="col"><p>AN: 2</p></div>
+                <div class="col"><p>GRUPA: B5</p></div>
+                <div class="col"><p>BURSA: 900</p></div>
+                <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        
+
+        function toggleRowData(e){
+            var button = e.currentTarget;
+            var rowData = e.currentTarget.closest(".row").querySelector(".row-data");
+            
+            if (rowData.classList.contains("visible")) {
+                rowData.classList.remove("visible");
+                rowData.style.display = "none";
+            } else {
+                rowData.classList.add("visible");
+                rowData.style.display = "flex";
+            }
+
+            // button.style.backgroundImage = "img/icons/expand.svg";
+            // button.style = "background-image: url(\"img/icons/expand.svg\"); width: 20px; background-position: center; "
+        }
+
+    </script>
+
+</body>
+</html>

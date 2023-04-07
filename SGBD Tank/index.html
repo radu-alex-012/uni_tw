@@ -12,35 +12,176 @@
 <body>
     <!-- Si noua tot Tank ne-a iesit, da' l-am luat la pila... -->
     <div class="navbar"></div>
-    <div class="homepage">
-
-        <div class="card" id="database-panel">
+    
+    <div style="display: wrap; flex-direction: row;">
+    <div id="database-panel">
+        <button class="dropdown" id="btn-top" onclick="databasePanelToggle()"><img src="img/icons/favicon.svg" style="width: 25px;" /> Databases description</button>
+        
+        <div id="toggle">
             <div id="database-panel-message"></div>
-
+            
             <div class="database-list">
+                <form class="database-finder">
+                    <input type="text" name="database-name" placeholder="Database name">
+                    <input type="submit" value="Find">
+                </form>
                 <ul id="database-ul"></ul>
             </div>
         </div>
+    </div>
 
-        <div class="card" id="table-panel">
-            <h1>tet</h1>
+    <div class="homepage">
+        <div class="main-container">
+            <div id="welcome">
+            </div>
+
+            <div class="card show-tables" id="table-panel">
+                <div id="table-list-message"></div>
+
+                <div class="table-list">
+                    <ul id="table-list-ul"></ul>
+                </div>
+            </div>
+
+            <div class="commands">
+                <!-- <div>
+                    <button id="btn">Create Table</button>
+                    <button id="btn">Alter Table</button>
+                    <button id="btn">Delete Table</button>
+                    <button id="btn">Insert Values</button>
+                    <button id="btn">Delete Values</button>
+                     <button id="btn">Create Table</button> 
+                </div>
+            -->
+
+
+                 <div class="card create-database">
+                    <h3>Create a new Database</h3>
+                    <br>
+                    <form>
+                        <input type="text" name="database-name" placeholder="Database name">
+                        <input type="submit" value="Create database">
+                    </form>
+                </div>
+
+                <!-- <div class="card create-table">
+                    <h3>Create a new Table</h3>
+                    <br>
+                    <form>
+                        <input type="text" name="table-name" placeholder="Table name">
+                        <input type="number" name="nr-cols" placeholder="Nr. coloane">
+                        <input type="submit" value="Create table">
+                    </form>
+                </div>  -->
+
+            </div>
+
+            <div class="card show-tables" id="table-panel">
+                <div id="table-list-message"></div>
+
+                <div class="table-list">
+                    <ul id="table-list-ul"></ul>
+                </div>
+            
+                
+                <table class="data-tables">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nume</th>
+                        <th>Primary Key</th>
+                        <th>Foreign Key</th>
+                        <th>Type</th>
+                        <th>Autoincrement</th>
+                        <th>Not Null</th>
+                        <th>Comment</th>
+                        <th>Default</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>ID</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>Number(3)</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>NR_MATRICOL</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Number(7)</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Numarul matricol as studentului</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>NUME</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Varchar(10)</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Numele studentului</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>PRENUME</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Varchar(10)</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Prenumele studentului</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>BURSA</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Number(4)</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Bursa studentului</td>
+                        <td>Null</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- <p style="width: 300px;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+
+            <p style="width: 300px;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+
+            <p style="width: 300px;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+
+            <p style="width: 300px;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p> -->
+
+
+            
         </div>
 
     </div>
+    </div>
 
+    <div class="sql-console">
+        <button id="btn">Run SQL</button>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-    
     <script src="javascript/index.js"></script>
 </body>
 </html>
