@@ -12,9 +12,9 @@ body{}
 }
 
 .row{
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* flex-flow: wrap; */
+    display: flex; 
+    flex-direction: row;
+    flex-flow: wrap;
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
@@ -85,7 +85,6 @@ body{}
     flex-direction: row;
     flex-flow: wrap;
 }
-
 
 
 

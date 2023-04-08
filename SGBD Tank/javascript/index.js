@@ -53,30 +53,32 @@ function showDatabase(databaseName){
         }
     }
 
-    document.getElementById('table-panel').style.display = "block";
+    document.getElementsByClassName("select-database")[0].style.display = "none";
+    document.getElementsByClassName("homepage")[0].style.display = "flex";
 }
 
 // user
 // ...
 
 // tables name panel
-var tableListMessage = document.getElementById('table-list-message');
-var tableMessage;
-var tableList = document.getElementById('table-list-ul');
 
-if  (tables.length == 0) {
-    tableMessage = '<p class="database-message">Nu aveti nici un tabel creat.</p>';
-    tableListMessage.insertAdjacentHTML('afterbegin', tableMessage);
-} else {
-    tableMessage = '<p class="table-message">Tables:</p>';
-    tableListMessage.insertAdjacentHTML('afterbegin', tableMessage);
+// var tableListMessage = document.getElementById('table-list-message');
+// var tableMessage;
+// var tableList = document.getElementById('');
 
-    var result = "";
-    for (var i = 0; i < tables.length; i++) {
-        result = result + "<li class=\"" + databases[i] + "\" onclick=\"showTablesData(\'" + databases[i] + "\')\"> " + tables[i] + "</li>";
-    }
-    tableList.innerHTML = result;
-}
+// if  (tables.length == 0) {
+//     tableMessage = '<p class="database-message">Nu aveti nici un tabel creat.</p>';
+//     tableListMessage.insertAdjacentHTML('afterbegin', tableMessage);
+// } else {
+//     tableMessage = '<p class="table-message">Tables:</p>';
+//     tableListMessage.insertAdjacentHTML('afterbegin', tableMessage);
+
+//     var result = "";
+//     for (var i = 0; i < tables.length; i++) {
+//         result = result + "<li class=\"" + databases[i] + "\" onclick=\"showTablesData(\'" + databases[i] + "\')\"> " + tables[i] + "</li>";
+//     }
+//     tableList.innerHTML = result;
+// }
 
 
 function databasePanelToggle(){
@@ -87,6 +89,20 @@ function databasePanelToggle(){
         document.getElementById('toggle').style.display = "none";
     } else {
         toggle.classList.add('visible');
-        document.getElementById('toggle').style.display = "block";
+        document.getElementById('toggle').style.display = "flex";
+    }
+}
+
+
+function toggleRowData(e){
+    var button = e.currentTarget;
+    var rowData = e.currentTarget.closest(".row").querySelector(".row-data");
+    
+    if (rowData.classList.contains("visible")) {
+        rowData.classList.remove("visible");
+        rowData.style.display = "none";
+    } else {
+        rowData.classList.add("visible");
+        rowData.style.display = "flex";
     }
 }
