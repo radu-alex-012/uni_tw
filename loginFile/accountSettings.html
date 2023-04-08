@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Account Settings</title>
+	<link rel="stylesheet" href="cssAccountSettings.css">
+</head>
+<body> 
+     <!-- 
+    <button id="toggle-theme">Toggle Theme</button>
+        -->
+        <button id="toggle-theme">Toggle Theme</button>
+    
+	<div class="container">
+		<div class="sidebar">
+			<ul class="views">
+				<li class="active"><a href="#account">Account</a></li>
+				<li><a href="#notification">Notification</a></li>
+				<li><a href="#accessibility">Accessibility</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<div id="account" class="view active">
+				<h2>Account Settings</h2>
+				<form>
+					<label for="username">Username:</label>
+					<input type="text" id="username" name="username" value="johndoe"><br>
+
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password"><br>
+
+					<label for="confirm_password">Confirm Password:</label>
+					<input type="password" id="confirm_password" name="confirm_password"><br>
+
+					<input type="submit" value="Save Changes">
+				</form>
+			</div>
+			<div id="notification" class="view">
+				<h2>Notification Settings</h2>
+				<form>
+					<label for="newsletter_frequency">Newsletter Frequency:</label>
+					<select id="newsletter_frequency" name="newsletter_frequency">
+						<option value="daily">Daily</option>
+						<option value="weekly">Weekly</option>
+						<option value="monthly">Monthly</option>
+						<option value="never">Never</option>
+					</select><br>
+
+					<label for="promotions_frequency">Promotions Frequency:</label>
+					<select id="promotions_frequency" name="promotions_frequency">
+						<option value="daily">Daily</option>
+						<option value="weekly">Weekly</option>
+						<option value="monthly">Monthly</option>
+						<option value="never">Never</option>
+					</select><br>
+
+					<input type="submit" value="Save Changes">
+				</form>
+			</div>
+			<div id="accessibility" class="view">
+				<h2>Accessibility Settings</h2>
+				<p>Are you sure you want to delete your account?</p>
+				<button onclick="clickDelete()">Delete Account</button>
+			</div>
+		</div>
+	</div>
+	<script>
+        // Get all the views and store them in a variable
+        const views = document.querySelectorAll('.view');
+      
+        // Get all the view links and store them in a variable
+        const viewLinks = document.querySelectorAll('.views a');
+      
+        // Show the first view by default
+        views[0].classList.add('active');
+      
+        // Add click event listener to each view link
+        viewLinks.forEach(link => {
+          link.addEventListener('click', e => {
+            e.preventDefault();
+      
+            // Remove active class from all views
+            views.forEach(view => view.classList.remove('active'));
+      
+            // Get the ID of the clicked link
+            const viewId = e.target.getAttribute('href');
+      
+            // Show the corresponding view
+            document.querySelector(viewId).classList.add('active');
+      
+            // Remove active class from all view links
+            viewLinks.forEach(link => link.classList.remove('active'));
+      
+            // Add active class to the clicked link
+            e.target.classList.add('active');
+          });
+        });
+      </script>
+      <script>
+            function clickDelete(){
+                window.open("loginPage.html");
+            }
+      </script>
+      <script>
+        const toggleThemeButton = document.getElementById('toggle-theme');
+
+        toggleThemeButton.addEventListener('click', function() {
+        const body = document.body;
+        body.classList.toggle('dark');
+        });
+      </script>
+</body>
+</html>

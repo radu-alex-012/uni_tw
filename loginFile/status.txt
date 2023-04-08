@@ -26,9 +26,24 @@ Razvan:
 
 Radu:
 -butoane:
--->
--->
+-->tematica
+
 
 Teo:
 -redirectionare din forgot & newAcc la login
 -setari cont
+
+-------------------------------------------
+8 aprilie:
+
+Meeting 9 aprilie, 12:00
+-structura proiectului, 1 branch 
+-verificarea codului pe diferite site uri
+-idei pt fisierul 'readme'
+-coloristica + logo
+
+!!NB
+-comentarii cod 
+
+Pagini de completare:
+-pagina import/export 
