@@ -7,225 +7,390 @@
 
     <title>Ne-a iesit Tank (da' l-am luat la pila)</title>
     <link rel="shortcut icon" type="image/png" href="img/icons/favicon.svg">
-    <link rel="stylesheet" href="styleSheets/style.css">
-    <!-- <link rel="stylesheet" href="styleSheets/tabel.css"> -->
+    <link rel="stylesheet" href="styleSheets/viewTable.css">
 </head>
 <body>
         <!-- Si noua tot Tank ne-a iesit, da' l-am luat la pila... -->
         <div class="navbar">
-            <div class="button-alignement">
-                <button class="dropdown" onclick="databasePanelToggle()"><img src="img/icons/favicon.svg" style="width: 25px;" /> Show Databases</button>
-            </div>
         </div>
 
-        <div class="">
-            <div class="tabel">
-                <div class="table-description">
-                    <h2>Lista de tabele</h2>
-                </div>
-            
-                <!-- <div class="row">
-                    <button class="expand-button">+</button>
-            
-                    <div class="col"><p>ID</p></div>
-                    <div class="col"><p>NR_MATRICOL</p></div>
-                    <div class="col"><p>NUME</p></div>
-                    <div class="col"><p>PRENUME</p></div>
-                    <div class="col"><p>AN</p></div>
-                    <div class="col"><p>GRUPA</p></div>
-                    <div class="col"><p>BURSA</p></div>
-                    <div class="col"><p>DATA_NASTERE</p></div>
-                    <div class="col"><p>EMAIL</p></div>
-                    <div class="col"><p>CREATED_AT</p></div>
-                    <div class="col"><p>UPDATED_AT</p></div>
-                </div> -->
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 81</div> <!-- maybe first field?? -->
+        <div class="homepage">
+            <div class="main-container">
+                <div class="tabel">
+                    <div class="table-description">
+                        <h2>Studenti Informatica</h2>
                     </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID</p></div>
-                        <div class="col"><p>NR_MATRICOL</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div> 
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 82</div> <!-- maybe first field?? -->
-                    </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 83</div> <!-- maybe first field?? -->
-                    </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 84</div> <!-- maybe first field?? -->
-                    </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 85</div> <!-- maybe first field?? -->
-                    </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 86</div> <!-- maybe first field?? -->
-                    </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" type="checkbox" id="" name="" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-                    </div>
-            
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-            
-                <div class="table-commands">
-                    <form>
-                        <label>
-                            <input class="row-check" type="checkbox" id="" name="" value="Check all">
-                            Check all
-                        </label>
-                        <div>
-                            <input class="submit" type="submit" value="Delete Row">
-                            <input class="submit" type="submit" value="View Table">
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 81</div> <!-- maybe first field?? -->
                         </div>
-                    </form>
-                    <!-- <button class="submit">Delete Table</button>
-                    <button class="submit">View Table</button> -->
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID</p></div>
+                            <div class="col"><p>NR_MATRICOL</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div> 
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 82</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 83</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 84</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 85</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 86</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="table-commands">
+                        <form>
+                            <label>
+                                <input class="row-check" type="checkbox" id="" name="" value="Check all">
+                                Check all
+                            </label>
+                            <div>
+                                <input class="submit" type="submit" value="Delete Row">
+                            </div>
+                        </form>
+                    </div>
+                
                 </div>
-            
+
+                <div class="tabel">
+                    <div class="table-description">
+                        <h2>Studenti Matematica</h2>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 81</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID</p></div>
+                            <div class="col"><p>NR_MATRICOL</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div> 
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 82</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 83</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 84</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 85</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 86</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="asa">
+                            <form class="form-control">
+                                <input class="row-check" type="checkbox" id="" name="" value="">
+                            </form>
+                            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+                        </div>
+                
+                        <div class="row-data">
+                            <div class="col"><p>ID: 81</p></div>
+                            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
+                            <div class="col"><p>NUME: Dragan</p></div>
+                            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
+                            <div class="col"><p>AN: 2</p></div>
+                            <div class="col"><p>GRUPA: B5</p></div>
+                            <div class="col"><p>BURSA: 900</p></div>
+                            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
+                            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
+                            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
+                            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+                        </div>
+                    </div>
+                
+                    <div class="table-commands">
+                        <form>
+                            <label>
+                                <input class="row-check" type="checkbox" id="" name="" value="Check all">
+                                Check all
+                            </label>
+                            <div>
+                                <input class="submit" type="submit" value="Delete Row">
+                            </div>
+                        </form>
+                    </div>
+                
+                </div>
             </div>
         </div>
-
 
     <script src="javascript/index.js"></script>
 </body>

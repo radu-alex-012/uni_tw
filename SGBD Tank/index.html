@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ne-a iesit Tank (da' l-am luat la pila)</title>
     <link rel="shortcut icon" type="image/png" href="img/icons/favicon.svg">
@@ -15,218 +15,24 @@
             <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img src="img/icons/favicon.svg" style="width: 25px;" /> Show Databases</span></button>
         </div>
     </div>
-
-    <div class="select-database">
-        <h1>Va rugam sa selectati o baza de date.</h1>
-    </div>
-
-    <div class="homepage">
-        <div class="main-container">
-            <div class="card commands">
-                <div>
-                    <button class="button-48" role="button"><span class="text">SQL</span></button>
-                    <button class="button-48" role="button"><span class="text">Interogare</span></button>
-                    <button class="button-48" role="button"><span class="text">Cauta</span></button>
-                    <button class="button-48" role="button"><span class="text">Importa</span></button>
-                    <button class="button-48" role="button"><span class="text">Exporta</span></button>
-                    <button class="button-48" role="button"><span class="text">Views</span></button>
-                    <button class="button-48" role="button"><span class="text">Triggers</span></button>
-
-                    <!-- <button class="button-48">SQL</button>
-                    <button class="button-48">Interogare</button>
-                    <button class="button-48">Cauta</button>
-                    <button class="button-48">Importa</button>
-                    <button class="button-48">Exporta</button>
-                    <button class="button-48">Views</button>
-                    <button class="button-48">Triggers</button> -->
-                </div>
-            </div>
-            <!--  -->
-            <div class="tabel">
-                <div class="table-description">
-                    <h2>Lista de tabele</h2>
-                </div>
-
-                <!-- <div class="row">
-                    <button class="expand-button">+</button>
-
-                    <div class="col"><p>ID</p></div>
-                    <div class="col"><p>NR_MATRICOL</p></div>
-                    <div class="col"><p>NUME</p></div>
-                    <div class="col"><p>PRENUME</p></div>
-                    <div class="col"><p>AN</p></div>
-                    <div class="col"><p>GRUPA</p></div>
-                    <div class="col"><p>BURSA</p></div>
-                    <div class="col"><p>DATA_NASTERE</p></div>
-                    <div class="col"><p>EMAIL</p></div>
-                    <div class="col"><p>CREATED_AT</p></div>
-                    <div class="col"><p>UPDATED_AT</p></div>
-                </div> -->
-
-                <div class="row">
-                    <div class="asa">
-                        <form class="form-control">
-                            <input class="row-check" name="" type="checkbox" value="">
-                        </form>
-                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                        <div class="row-title">ID: 81</div> <!-- maybe first field?? -->
-                    </div>
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                    <div class="row-title">ID: 82</div> <!-- maybe first field?? -->
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                    <div class="row-title">ID: 83</div> <!-- maybe first field?? -->
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                    <div class="row-title">ID: 84</div> <!-- maybe first field?? -->
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                    <div class="row-title">ID: 85</div> <!-- maybe first field?? -->
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                    <div class="row-title">ID: 86</div> <!-- maybe first field?? -->
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <button class="expand-button" onclick="toggleRowData(event)">+</button>
-                    <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-
-                    <div class="row-data">
-                        <div class="col"><p>ID: 81</p></div>
-                        <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-                        <div class="col"><p>NUME: Dragan</p></div>
-                        <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-                        <div class="col"><p>AN: 2</p></div>
-                        <div class="col"><p>GRUPA: B5</p></div>
-                        <div class="col"><p>BURSA: 900</p></div>
-                        <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-                        <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-                        <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-                        <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
-                    </div>
-                </div>
-
-                <div class="table-commands">
-                    <form>
-                        <input class="row-check" name="" type="checkbox" value="Check all">
-                        <input class="submit" type="submit" value="Delete Table">
-                        <input class="submit" type="submit" value="View Table">
+    
+    <div style="display: wrap; flex-direction: row;">
+        <div id="toggle">
+            <div id="database-panel">
+                <div id="database-panel-message"></div>
+                <div class="database-list">
+                    <form class="database-finder">
+                        <input type="text" name="database-name" placeholder="Database name">
+                        <input type="submit" value="Find">
                     </form>
-                </div>
-
-            </div>
-
-            <div class="card create-table">
-                <div>
-                    <h3>Create a new Table</h3>
-                    <br>
-                    <form>
-                        <input name="table-name" placeholder="Table name" type="text">
-                        <input name="nr-cols" placeholder="Nr. coloane" type="number">
-                        <input class="submit" type="submit" value="Create table">
-                    </form>
+                    <ul id="database-ul"></ul>
                 </div>
             </div>
         </div>
 
-        <div class="select-database">
+        <!-- <div class="select-database">
             <h1>Va rugam sa selectati o baza de date.</h1>
-        </div>
+        </div> -->
 
         <div class="homepage">
             <div class="main-container">
@@ -247,22 +53,6 @@
         <h2>Lista de tabele</h2>
     </div>
 
-    <!-- <div class="row">
-        <button class="expand-button">+</button>
-
-        <div class="col"><p>ID</p></div>
-        <div class="col"><p>NR_MATRICOL</p></div>
-        <div class="col"><p>NUME</p></div>
-        <div class="col"><p>PRENUME</p></div>
-        <div class="col"><p>AN</p></div>
-        <div class="col"><p>GRUPA</p></div>
-        <div class="col"><p>BURSA</p></div>
-        <div class="col"><p>DATA_NASTERE</p></div>
-        <div class="col"><p>EMAIL</p></div>
-        <div class="col"><p>CREATED_AT</p></div>
-        <div class="col"><p>UPDATED_AT</p></div>
-    </div> -->
-
     <div class="row">
         <div class="asa">
             <form class="form-control">
@@ -273,17 +63,14 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>ID</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div> 
 
@@ -297,17 +84,14 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>NR_MATRICOL</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div>
 
@@ -321,17 +105,14 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>NUME</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div>
 
@@ -345,17 +126,14 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>PRENUME</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div>
 
@@ -369,17 +147,14 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>AN</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div>
 
@@ -393,17 +168,14 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>GRUPA</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div>
 
@@ -417,17 +189,98 @@
         </div>
 
         <div class="row-data">
-            <div class="col"><p>ID: 81</p></div>
-            <div class="col"><p>NR_MATRICOL: 829WP7</p></div>
-            <div class="col"><p>NUME: Dragan</p></div>
-            <div class="col"><p>PRENUME: Maria Georgiana</p></div>
-            <div class="col"><p>AN: 2</p></div>
-            <div class="col"><p>GRUPA: B5</p></div>
-            <div class="col"><p>BURSA: 900</p></div>
-            <div class="col"><p>DATA_NASTERE: 11-JAN-1998</p></div>
-            <div class="col"><p>EMAIL: maria.dragan@gmail.com</p></div>
-            <div class="col"><p>CREATED_AT: 22-MAR-2023</p></div>
-            <div class="col"><p>UPDATED_AT: 23-MAR-2023</p></div>
+            <div class="col"><p>BURSA</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="asa">
+            <form class="form-control">
+                <input class="row-check" type="checkbox" id="" name="" value="">
+            </form>
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+        </div>
+
+        <div class="row-data">
+            <div class="col"><p>DATA_NASTERE</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="asa">
+            <form class="form-control">
+                <input class="row-check" type="checkbox" id="" name="" value="">
+            </form>
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+        </div>
+
+        <div class="row-data">
+            <div class="col"><p>EMAIL</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="asa">
+            <form class="form-control">
+                <input class="row-check" type="checkbox" id="" name="" value="">
+            </form>
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+        </div>
+
+        <div class="row-data">
+            <div class="col"><p>CREATED_AT</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="asa">
+            <form class="form-control">
+                <input class="row-check" type="checkbox" id="" name="" value="">
+            </form>
+            <button class="expand-button" onclick="toggleRowData(event)">+</button>
+            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
+        </div>
+
+        <div class="row-data">
+            <div class="col"><p>UPDATED_AT</p></div>
+            <div class="col"><p>NUMBER</p></div>
+            <div class="col"><p>10</p></div>
+            <div class="col"><p>Defaul: -</p></div>
+            <div class="col"><p>NOT NULL</p></div>
+            <div class="col"><p>PRYMARY KEY: YES</p></div>
+            <div class="col"><p>FOREIGN KEY: NO</p></div>
+            <div class="col"><p>AUTO INDEX: YES</p></div>
         </div>
     </div>
 
@@ -442,6 +295,8 @@
                 <input class="submit" type="submit" value="View Table">
             </div>
         </form>
+        <!-- <button class="submit">Delete Table</button>
+        <button class="submit">View Table</button> -->
     </div>
 
 </div>

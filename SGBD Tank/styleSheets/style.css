@@ -24,36 +24,31 @@ body{
     background-color: var(--background-clr);
 }
 
-.CodeMirror {
-    border: 1px solid black;
-    height: auto;
-}
-
-.homepage {
+.homepage{
     margin: 0;
     margin-left: 300px;
     padding-top: 44px;
-    display: none;
+    /* display: none; */
 }
 
-.main-container {
+.main-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     flex-flow: wrap;
     width: 100%;
 }
 
-input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+input{
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 /* navbar */
-.navbar {
+.navbar{
     background-color: var(--red-clr);
     margin: 0;
     width: 100vw;
@@ -232,7 +227,7 @@ input {
     text-align: center;
 }
 
-.tabel {
+.tabel{
     background-color: var(--background-clr);
     padding: 10px;
     border-radius: 10px;
@@ -244,8 +239,8 @@ input {
     margin-right: auto;
 }
 
-.row {
-    display: flex;
+.row{
+    display: flex; 
     flex-direction: row;
     flex-flow: wrap;
     margin: 10px;
@@ -256,25 +251,25 @@ input {
     justify-content: flex-start;
 }
 
-.col {
+.col{
     width: 100%;
     padding: 10px;
     color: var(--gray-text-clr);
     margin: 0;
 }
 
-.col p {
+.col p{
     margin: 0;
     padding: 0;
 }
 
 .expand-button{
     --i: var(--light, 0);
-    --not-i: calc(1 - var(--i));
-    --j: var(--press, 0);
-    --not-j: calc(1 - var(--j));
-    z-index: var(--i);
-    border: none;
+	--not-i: calc(1 - var(--i));
+	--j: var(--press, 0);
+	--not-j: calc(1 - var(--j));
+	z-index: var(--i);
+	border: none;
 
 	width: 40px; height: 40px;
 	border-radius: 15%;
@@ -296,16 +291,16 @@ input {
 		content: attr(data-ico)
 }
 
-.expand-button:focus {
-    outline: none
+.expand-button:focus { 
+    outline: none 
 }
 
 .expand-button:hover, .expand-button:focus {
-    --light: 1
+ --light: 1 
 }
 
-.expand-button:active {
-    --press: 1
+.expand-button:active { 
+    --press: 1 
 }
 
 .row-title{
@@ -313,7 +308,7 @@ input {
     padding: 10px;
 }
 
-.row-data {
+.row-data{
     display: none;
     flex-direction: row;
     flex-flow: wrap;
@@ -479,16 +474,16 @@ input {
     }
 }
 
-@media screen and (max-width: 425px) {
-    #toggle {
+@media screen and (max-width: 425px){
+    #toggle{
         margin: 0;
     }
 
-    .button-alignement {
+    .button-alignement{
         width: 100%;
     }
 
-    #database-panel {
+    #database-panel{
         width: 100%;
         position: relative;
     }
@@ -502,15 +497,15 @@ input {
         flex-flow: wrap;
     }
 
-    .col {
+    .col{
         width: auto;
     }
 
-    .expand-button {
+    .expand-button{
         display: none;
     }
 
-    .row-title {
+    .row-title{
         display: none;
     }
 }

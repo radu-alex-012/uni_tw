@@ -1,0 +1,319 @@
+:root { /* cred ca se poate face un fisier nou css care contina partea de culori */
+    --background-clr: #f1f1f1;
+    --beige-clr: #dee2e6;
+    --gray-clr: #ced4da;
+    --aa-clr: #adb5bd;
+    --light-red-clr: #E98074;
+    --red-clr: #E85A4F;
+    --dark-red-clr: #ea3123;
+    --text--clr: black;
+    --form-control-disabled: #959495;
+    --gray-text-clr: gray;
+    --row-clr: white;
+    --form-control-color: #E85A4F;
+
+    --btn-clr: #e8e8e8; /* cred ca ii luat de prin alta parte - ii doar in create/view/delete*/
+
+    /* --font: ; !!*/
+  }
+
+  /* main paige */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-clr);
+}
+
+.homepage{
+    margin: 0;
+    padding-top: 44px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-flow: wrap;
+    width: 100%;
+}
+
+input{
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* navbar */
+.navbar{
+    background-color: var(--red-clr);
+    margin: 0;
+    width: 100vw;
+    height: 44px;
+    box-shadow: 0px 0px 8px black;
+    position: fixed;
+    z-index: 10;
+}
+
+/* car -> element */
+.card{
+    background-color: var(--beige-clr);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 5px gray;
+}
+
+/* table */
+.table-description{
+    color: var(--gray-text-clr);
+    padding: 5px;
+    text-align: center;
+}
+
+.tabel{
+    background-color: var(--background-clr);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px gray;
+    width: 85%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row{
+    display: flex; 
+    flex-direction: row;
+    flex-flow: wrap;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px gray;
+    background-color: var(--row-clr);
+    justify-content: flex-start;
+}
+
+.col{
+    width: 100%;
+    padding: 10px;
+    color: var(--gray-text-clr);
+    margin: 0;
+}
+
+.col p{
+    margin: 0;
+    padding: 0;
+}
+
+.expand-button{
+    --i: var(--light, 0);
+	--not-i: calc(1 - var(--i));
+	--j: var(--press, 0);
+	--not-j: calc(1 - var(--j));
+	z-index: var(--i);
+	border: none;
+
+	width: 40px; height: 40px;
+	border-radius: 15%;
+	transform: scale(calc(1 - var(--j)*.02));
+	background: var(--btn-clr);
+	font-size: 2.5em;
+	transition: box-shadow .3s, transform .3s cubic-bezier(.2,4,1,3);
+	cursor: pointer;
+}
+
+.expand-button::after {
+		filter: 
+			Contrast(0) 
+			Sepia(var(--i)) 
+			Hue-Rotate(calc(var(--hue) - 50deg))
+			Saturate(5)
+			Opacity(calc(var(--i) + .21*var(--not-i)))
+			Drop-Shadow(1px 1px hsla(0, 0%, 100%, var(--not-i)));
+		content: attr(data-ico)
+}
+
+.expand-button:focus { 
+    outline: none 
+}
+
+.expand-button:hover, .expand-button:focus {
+ --light: 1 
+}
+
+.expand-button:active { 
+    --press: 1 
+}
+
+.row-title{
+    color: var(--gray-text-clr);
+    padding: 10px;
+}
+
+.row-data{
+    display: none;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 90%;
+}
+
+/* table - controls / buttons -> view/delete */
+.table-commands{
+    display: grid;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.table-commands form{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.table-commands form label{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    gap: 15px;
+    color: var(--gray-text-clr);
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-self: flex-start;
+}
+
+.table-commands form div{
+    justify-self: flex-end;
+}
+
+.table-commands form .submit{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* create table / create database panel */
+.create-table{
+    display: flex;
+    color: gray;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.create-table div{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create-table div .submit{
+    float: right;
+}
+
+/* commands - top menu */
+.commands{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.commands div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* test - tabel */
+@media screen and (min-width: 1000px){
+    .row-data{
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+    }
+
+    .col{
+        width: auto;
+    }
+
+    .expand-button{
+        display: none;
+    }
+
+    .row-title{
+        display: none;
+    }
+}
+
+/* form/checkbox */
+.form-control {
+    font-weight: bold;
+    display: grid;
+    gap: 0.5em;
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    background-color: CanvasText;
+  }
+
+  .asa{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 15px;
+    color: var(--gray-text-clr);
+}
+
+.asa form{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.form-control{
+    margin: 5px;
+}
+
+.submit{
+    background-color: white;
+}

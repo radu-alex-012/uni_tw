@@ -8,19 +8,56 @@
     <title>Ne-a iesit Tank (da' l-am luat la pila)</title>
     <link rel="shortcut icon" type="image/png" href="img/icons/favicon.svg">
     <link rel="stylesheet" href="styleSheets/style.css">
-    <!-- <link rel="stylesheet" href="styleSheets/tabel.css"> -->
+    <link rel="stylesheet" href="styleSheets/createTable.css">
 </head>
 <body>
         <!-- Si noua tot Tank ne-a iesit, da' l-am luat la pila... -->
         <div class="navbar">
-            <div class="button-alignement">
-                <button class="dropdown" onclick="databasePanelToggle()"><img src="img/icons/favicon.svg" style="width: 25px;" /> Show Databases</button>
-            </div>
         </div>
 
-        <div class="">
-            <div class="card ">
+        <div class="homepage">
+            <div class="main-container">
+            <div class="card create-table-card">
+                <!-- <h3>Table name: Studenti Fizica</h3> -->
 
+                <!-- <form> -->
+                    <input type="text" name="table-name" placeholder="Nume coloana">
+
+                    <select name="type">
+                        <option>VARCHAR</option>
+                        <option>DATE</option>
+                        <option>INT</option>
+                        <option>TEXT</option>
+                        <option>NUMBER</option>
+                      </select>
+
+                      <input type="number" placeholder="Lungine type">
+
+                      <input type="text" placeholder="Valoare Defaul">
+
+                      <label>
+                        <input class="row-check" type="checkbox" id="" name="" value="">
+                        NOT NULL
+                        </label>
+
+                        <label>
+                            <input class="row-check" type="checkbox" id="" name="" value="">
+                            PRYMARY KEY
+                        </label>
+
+                        <label>
+                            <input class="row-check" type="checkbox" id="" name="" value="">
+                            FOREIGN KEY
+                        </label>
+
+                        <label>
+                            <input class="row-check" type="checkbox" id="" name="" value="">
+                            AUTO INDEX
+                        </label>
+
+                    <input class="submit" type="submit" value="Create">
+                <!-- </form> -->
+            </div>
             </div>
         </div>
 
