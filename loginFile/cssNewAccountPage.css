@@ -1,23 +1,7 @@
-/* Set the background color and font for the page */
-body {
-	background-color: #f1f1f1;
-	font-family: Arial, sans-serif;
-}
 
-/* Style the container for the login form */
-.container {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
-	width: 80%;
-	max-width: 600px;
-	margin: 0 auto;
-	/* Center the container horizontally and vertically on larger screens */
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+h1{
+	text-align: center;
+	margin-bottom: 10%;
 }
 
 /* Style the container for the last 3 buttons */
@@ -27,7 +11,7 @@ body {
 	flex-direction: row;
 	justify-content:left;
 	grid-gap: 10%;
-	margin-bottom: 10px;
+	margin-bottom: -3%;
 }
 /* Style of the buttons*/
 .button{
@@ -42,9 +26,7 @@ body {
 	cursor: pointer;
 	flex-direction: row;
 	justify-content:center;
-	justify-self: c;
 }
-/* Style the buttons when hovering over it */
 /* Style the buttons when hovering over it */
 .button:hover {
 	background-color: #3e8e41;
@@ -52,20 +34,18 @@ body {
 /* Style the buttons when hovering over it */
 .buttonContact:hover {
 	color: #0743a2;
+	
 }
 
 .buttonContact{
 	background-color: #ffffff;
 	 color: #4c8ef8;
-	 padding: 40px 40px auto;
+	 padding: 10px 20px; /* fixed the padding value */
 	 border: none;
 	 border-radius: 5px;
 	 cursor: pointer;
  }
-/* Style the heading for the login page */
-h1 {
-	text-align: center;
-}
+
 /* Set the styles for the form inputs */
 form {
 	display: grid;
@@ -73,22 +53,12 @@ form {
 	margin-top: 20px;
 }
 
-/* Style the labels for the input fields */
-label {
-	margin-bottom: 10px;
-	font-weight: bold;
-}
-footer{
-    color: rgb(75, 75, 75);
-    margin-top: 15%;
-    text-align: center;
-}
 
 /* Style the input fields for the username and password */
 input[type="text"], 
 input[type="password"],
 input[type="email"]{
-	width: 100%;
+	width: 90%;
 	padding: 5px;
 	margin-bottom: 20px;
 	border-radius: 5px;
@@ -96,15 +66,21 @@ input[type="email"]{
 	box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-/* Media Query for Responsive Styles */
-@media screen and (max-width: 600px) {
-	/* Remove the absolute positioning and center 
-    the container horizontally and vertically on smaller screens */
-	.container {
-		position: relative;
-		top: auto;
+/*
+		top:auto;
 		left: auto;
 		transform: none;
+		margin: auto;
+		display:block;
+*/
+/* Media Query for Responsive Styles 
+@media screen and (max-width: 600px) and (min-height:){
+	/* Remove the absolute positioning and center 
+    the container horizontally and vertically on smaller screens 
+	.container {
+		transform: none;
+		width: 100%;
+		max-width: none;
 		margin: auto;
 		display:block;
 		flex-direction: column;
@@ -112,7 +88,7 @@ input[type="email"]{
 	}
 	.grid-container {
 		position: relative;
-		top: auto;
+		top:0%;
 		left: auto;
 		transform: none;
 		margin: auto;
@@ -122,28 +98,3 @@ input[type="email"]{
 	}
 }
 /* Media Query for Responsive Styles */
-@media screen and (max-height: 600px)
-and (orientation: landscape){
-	/* Remove the absolute positioning and center 
-    the container horizontally and vertically on smaller screens */
-	.container {
-		position: relative;
-		top: auto;
-		left: auto;
-		transform: none;
-		margin: auto;
-		display:block;
-		flex-direction: column;
-		justify-content: flex-start;
-	}
-	.grid-container {
-		position: relative;
-		top: auto;
-		left: auto;
-		transform: none;
-		margin: auto;
-		display:block;
-		flex-direction: row;
-		justify-content: flex-start;
-	}
-}

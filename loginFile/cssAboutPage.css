@@ -23,7 +23,7 @@ body {
 .button{
    background-color: #ffffff;
 	color: #4c8ef8;
-	padding: 40px 40px auto;
+	padding: auto;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;

@@ -47,3 +47,22 @@ Meeting 9 aprilie, 12:00
 
 Pagini de completare:
 -pagina import/export 
+
+
+9 aprilie:
+tematica::
+*light mode:
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #454545;
+  }
+
+pt obiecte, folosim shadow:
+  .sidebar {
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-right: 20px;
+  }

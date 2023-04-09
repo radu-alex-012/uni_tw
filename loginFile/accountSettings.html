@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Account Settings</title>
 	<link rel="stylesheet" href="cssAccountSettings.css">
+	<link rel="stylesheet" href="cssTheme.css">
 </head>
 <body> 
      <!-- 
@@ -15,7 +16,7 @@
 	<div class="container">
 		<div class="sidebar">
 			<ul class="views">
-				<li class="active"><a href="#account">Account</a></li>
+				<li><a href="#account">Account</a></li>
 				<li><a href="#notification">Notification</a></li>
 				<li><a href="#accessibility">Accessibility</a></li>
 			</ul>
@@ -60,55 +61,57 @@
 			</div>
 			<div id="accessibility" class="view">
 				<h2>Accessibility Settings</h2>
-				<p>Are you sure you want to delete your account?</p>
+
+				<div>
+					<label for="language">Select language</label>
+					<select id="language" name="language">
+						<option value="Romana">Română</option>
+						<option value="English">English</option>
+					</select><br>
+				</div>
+				
+				<label for="Delete">Are you sure you want to delete your account?</label>
 				<button onclick="clickDelete()">Delete Account</button>
 			</div>
 		</div>
 	</div>
-	<script>
-        // Get all the views and store them in a variable
-        const views = document.querySelectorAll('.view');
-      
-        // Get all the view links and store them in a variable
-        const viewLinks = document.querySelectorAll('.views a');
-      
-        // Show the first view by default
-        views[0].classList.add('active');
-      
-        // Add click event listener to each view link
-        viewLinks.forEach(link => {
-          link.addEventListener('click', e => {
-            e.preventDefault();
-      
-            // Remove active class from all views
-            views.forEach(view => view.classList.remove('active'));
-      
-            // Get the ID of the clicked link
-            const viewId = e.target.getAttribute('href');
-      
-            // Show the corresponding view
-            document.querySelector(viewId).classList.add('active');
-      
-            // Remove active class from all view links
-            viewLinks.forEach(link => link.classList.remove('active'));
-      
-            // Add active class to the clicked link
-            e.target.classList.add('active');
-          });
-        });
-      </script>
       <script>
             function clickDelete(){
                 window.open("loginPage.html");
             }
       </script>
-      <script>
-        const toggleThemeButton = document.getElementById('toggle-theme');
+	  <script>
+		// Get all the views and store them in a variable
+		const views = document.querySelectorAll('.view');
 
-        toggleThemeButton.addEventListener('click', function() {
-        const body = document.body;
-        body.classList.toggle('dark');
-        });
-      </script>
+		// Get all the view links and store them in a variable
+		const viewLinks = document.querySelectorAll('.views a');
+
+		// Show the first view by default
+		views[0].classList.add('active');
+
+		// Add click event listener to each view link
+		viewLinks.forEach(link => {
+		link.addEventListener('click', e => {
+		e.preventDefault();
+
+		// Remove active class from all views
+		views.forEach(view => view.classList.remove('active'));
+
+		// Get the ID of the clicked link
+		const viewId = e.target.getAttribute('href');
+
+		// Show the corresponding view
+		document.querySelector(viewId).classList.add('active');
+
+		// Remove active class from all view links
+		viewLinks.forEach(link => link.classList.remove('active'));
+
+		// Add active class to the clicked link
+		e.target.classList.add('active');
+		});
+		});
+	</script>
+	<script src="jsDarkModeScript.js"></script>
 </body>
 </html>

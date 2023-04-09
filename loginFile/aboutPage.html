@@ -6,8 +6,11 @@
 	<title>Contact</title>
 	<!-- Link the external CSS file -->
 	<link rel="stylesheet" type="text/css" href="cssAboutPage.css">
+	<link rel="stylesheet" type="text/css" href="cssTheme.css">
 </head>
 <body>
+	<!-- button for changing the theme -->
+	<button id="toggle-theme">Toggle Theme</button>
     <div class="container">
         <header>
             <h1>Web Project - Online Relation Database Optimised for Mobile Platform</h1>
@@ -51,10 +54,7 @@
         </main>
 
          <!-- Fotter with rights reserved -->
-        <footer>
-            <div class="button">
-                <button type="button" class="button" onclick="contactUs()">Contact us!</button>
-            </div>
+         <footer>
             <p>&copy; 2023 Web Project. All Rights Reserved.</p>
         </footer>
     </div>
@@ -67,5 +67,7 @@
 			window.open("aboutPage.html");
 		}
 	</script>
+   <!-- dark theme script -->
+	<script src="jsDarkModeScript.js"></script>
 </body>
 </html>

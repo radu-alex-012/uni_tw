@@ -6,8 +6,11 @@
 	<title>New account</title>
 	<!-- Link the external CSS file -->
     <link rel="stylesheet" type="text/css" href="cssNewAccountPage.css">
+	<link rel="stylesheet" type="text/css" href="cssTheme.css">
 </head>
 <body>
+	<!-- button for changing the theme -->
+	<button id="toggle-theme">Toggle Theme</button>
 	<!-- Create a container to hold the login form -->
 	<div class="container">
 		<!-- Add a heading for the login page -->
@@ -24,23 +27,25 @@
 					<input type="text" id="last-name" name="last-name" required>
 				</div>
 			</div>
-			<!-- Email introduction  -->
-			<label for="text">Email:</label>
-			<input type="email" id="email" name="email" required>
-			
-			<!-- Password introduction  -->
-			<label for="text">Password:</label>
-			<input type="password" id="password" name="password" required>
+			<div>
+				<!-- Email introduction  -->
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				
+				<!-- Password introduction  -->
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
 
-			<!-- Confirm passowrd introduction -->
-			<label for="text">Confirm Password:</label>
-			<input type="password" id="confirm-password" name="confirm-password" required>
+				<!-- Confirm passowrd introduction -->
+				<label for="confirm-password">Confirm Password:</label>
+				<input type="password" id="confirm-password" name="confirm-password" required>
 
-			<!-- Change the submit input to a button element -->
-			<button type="submit" class="button" onclick="submitClick()" >Register</button>
+				<!-- Change the submit input to a button element -->
+				<button type="submit" class="button" onclick="submitClick()" >Register</button>
+			</div>
 		</form>
 		<footer>
-            <div class="buttonContact">
+            <div>
                 <button type="button" class="buttonContact" onclick="contactUs()">Contact us!</button>
             </div>
             <p>&copy; 2023 Web Project. All Rights Reserved.</p>
@@ -55,5 +60,7 @@
 		   window.open("aboutPage.html");
 	   }
    </script>
+   <!-- dark theme script -->
+	<script src="jsDarkModeScript.js"></script>
 </body>
 </html>

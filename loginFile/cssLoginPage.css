@@ -1,24 +1,4 @@
-/* Set the background color and font for the page */
-body {
-	background-color: #f1f1f1;
-	font-family: Arial, sans-serif;
-}
 
-/* Style the container for the login form */
-.container {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
-	width: 80%;
-	max-width: 600px;
-	margin: 0 auto;
-	/* Center the container horizontally and vertically on larger screens */
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
 
 /* Style the container for the last 3 buttons */
 .grid-container{
@@ -39,7 +19,7 @@ body {
 .button{
    /* background-color: #b23005; */
 	color: #4c8ef8;
-	padding: 40px 40px auto;
+	padding: auto;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -67,22 +47,11 @@ body {
 	color: #0743a2;
 }
 
-/* Style the heading for the login page */
-h1 {
-	text-align: center;
-}
-
-/* Style the labels for the input fields */
-label {
-	display: block;
-	margin-bottom: 10px;
-	font-weight: bold;
-}
 
 /* Style the input fields for the username and password */
 input[type="text"],
 input[type="password"] {
-	width: 100%;
+	width: 90%;
 	padding: 10px;
 	margin-bottom: 20px;
 	border-radius: 5px;
