@@ -1,5 +1,3 @@
-const user = "Cosmin Varlan"
-
 const databases = new Array(
     "DummyDatabase1",
     "DummyDatabase2",
@@ -57,50 +55,25 @@ function showDatabase(databaseName){
     document.getElementsByClassName("homepage")[0].style.display = "flex";
 }
 
-// user
-// ...
-
-// tables name panel
-
-// var tableListMessage = document.getElementById('table-list-message');
-// var tableMessage;
-// var tableList = document.getElementById('');
-
-// if  (tables.length == 0) {
-//     tableMessage = '<p class="database-message">Nu aveti nici un tabel creat.</p>';
-//     tableListMessage.insertAdjacentHTML('afterbegin', tableMessage);
-// } else {
-//     tableMessage = '<p class="table-message">Tables:</p>';
-//     tableListMessage.insertAdjacentHTML('afterbegin', tableMessage);
-
-//     var result = "";
-//     for (var i = 0; i < tables.length; i++) {
-//         result = result + "<li class=\"" + databases[i] + "\" onclick=\"showTablesData(\'" + databases[i] + "\')\"> " + tables[i] + "</li>";
-//     }
-//     tableList.innerHTML = result;
-// }
-
-
+var toggle = document.getElementById('toggle');
 function databasePanelToggle(){
-    var toggle = document.getElementById('toggle');
+    var style = "@media screen and (max-width: 1000px){display: none}";
 
-    if (toggle.classList.contains('visible')) {
-        toggle.classList.remove('visible');
-        document.getElementById('toggle').style.display = "none";
+    if (window.getComputedStyle(toggle).display == "flex") {
+        toggle.style = style;
     } else {
-        toggle.classList.add('visible');
-        document.getElementById('toggle').style.display = "flex";
+        toggle.style.display = "flex";
     }
 }
-
 
 function toggleRowData(e){
     var button = e.currentTarget;
     var rowData = e.currentTarget.closest(".row").querySelector(".row-data");
+    var style = "@media screen and (max-width: 1000px){display: none}";
     
     if (rowData.classList.contains("visible")) {
         rowData.classList.remove("visible");
-        rowData.style.display = "none";
+        rowData.style = style;
     } else {
         rowData.classList.add("visible");
         rowData.style.display = "flex";
