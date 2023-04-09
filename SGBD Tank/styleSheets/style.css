@@ -51,11 +51,27 @@ input{
 .navbar{
     background-color: var(--red-clr);
     margin: 0;
-    width: 100vw;
+    width: 100%;
     height: 44px;
     box-shadow: 0px 0px 8px black;
     position: fixed;
     z-index: 10;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.navbar-buttons{
+    fill: var(--row-clr);
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.navbar-buttons img{
+    width: 25px;
+    height: 25px;
+    fill: var(--row-clr);
 }
 
 .menu-button {
@@ -117,7 +133,7 @@ input{
 /* dropdown -> showDatabaseList */
   .dropdown{
     display: none;
-    width: 250px;
+    width: 220px;
     background-color: var(--red-clr);
     color: var(--background-clr);
     padding: 5px;
@@ -477,7 +493,8 @@ input{
     }
 
     .button-alignement{
-        width: 100%;
+        /* width: 100%; */
+        /* width: 200px; */
     }
 
     #database-panel{
@@ -506,7 +523,3 @@ input{
         display: none;
     }
 }
-
-/* mai trebe oleak pentru mobile S */
-/* @media screen and (max-width: ) {     
-} */

@@ -12,7 +12,12 @@
 <body>
     <div class="navbar">
         <div class="button-alignement">
-            <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img src="img/icons/favicon.svg" style="width: 25px; height: 25px;" alt="database img"/> Show Databases</span></button>
+            <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img src="img/icons/favicon.svg" style="width: 25px; height: 25px;" alt="database img"/> Databases</span></button>
+        </div>
+
+        <div class="navbar-buttons">
+            <a><img src="img/icons/account.svg" alt="account"/></a>
+            <a><img src="img/icons/logout.svg" alt="logout"/></a>
         </div>
     </div>
     
@@ -309,6 +314,7 @@
             </label>
             <div>
                 <input class="submit" type="submit" value="Delete Table">
+                <input class="submit" type="submit" value="Alter Table">
                 <input class="submit" type="submit" value="View Table">
             </div>
         </form>

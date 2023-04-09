@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="page-content">
+  <div class="sql-prompt-area">
+    <p><label for="sql-prompt">SQL command prompt:</label></p>
+    <textarea autofocus cols="80" id="sql-prompt" name="sql-prompt" placeholder="Enter SQL commands here."
+              rows="24"></textarea>
+    <button class="sql-run-button" type="button" onclick="executeSQL()"><img class="sql-run-svg" src="img/play-button-svgrepo-com.svg">
+    </button>
+  </div>
+  <p><label for="sql-output">Output:</label></p>
+  <div class="sql-output-area">
+<textarea cols="80" id="sql-output" name="sql-output" placeholder="Command output will be shown here." readonly
+          rows="24">
+</textarea>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+
+</html>

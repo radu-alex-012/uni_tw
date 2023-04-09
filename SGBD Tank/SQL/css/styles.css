@@ -1,0 +1,29 @@
+#page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+  gap: .25em;
+}
+
+.sql-prompt-area, .sql-output-area {
+  display: flex;
+  flex-direction: column;
+  gap: .25em;
+  justify-content: center;
+}
+
+#sql-prompt, #sql-output {
+  resize: none;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.sql-run-button {
+  align-self: center;
+  cursor: pointer;
+}
+
+.sql-run-svg {
+  width: 2em;
+}
