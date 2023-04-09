@@ -267,7 +267,6 @@ input{
   }
 
   input[type="checkbox"] {
-    -webkit-appearance: none;
     appearance: none;
     background-color: #fff;
     margin: 0;

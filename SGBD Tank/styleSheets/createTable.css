@@ -1,6 +1,106 @@
+.table-name{
+    color: var(--gray-text-clr);
+    padding: 5px;
+    text-align: center;
+}
+
 .create-table-card{
-    /* width: 100%; */
+    display: grid;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.create-table-card form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.create-table-card form label{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    gap: 15px;
+    color: var(--gray-text-clr);
+    margin-top: auto;
+    margin-bottom: auto; 
+
+    /* margin-left: 10px;
+    margin-right: 10px; */
+}
+
+.create-table-card form select{
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.create-table-card form input{
+    margin-left: 20px;
+}
+
+.preDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn{
+    width: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .create-table-card{
+    display: grid;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.create-table-card form{
+    display: flex;
+    flex-direction: row;
+    width: 150px; 
+    gap: 15px;
+    color: var(--gray-text-clr);
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-self: flex-start;
+}
+
+.create-table-card form label{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    gap: 15px;
+    color: var(--gray-text-clr);
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-self: flex-start;
+}
+
+.create-table-card form input{
+    margin: 10px;
+} */

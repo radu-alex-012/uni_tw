@@ -81,7 +81,6 @@ input{
     text-transform: uppercase;
     transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
     user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: baseline;
     white-space: nowrap;
@@ -98,7 +97,7 @@ input{
     position: absolute;
     top: 0;
     transform: translateZ(0);
-    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
     width: 100%;
   }
   
@@ -210,7 +209,6 @@ input{
     margin: 0;
     position: absolute;
     top: calc(50% - 44px);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 100%;
     text-align: center;
@@ -401,7 +399,6 @@ input{
   }
 
   input[type="checkbox"] {
-    -webkit-appearance: none;
     appearance: none;
     background-color: #fff;
     margin: 0;
