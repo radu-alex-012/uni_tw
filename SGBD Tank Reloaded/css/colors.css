@@ -1,0 +1,17 @@
+:root {
+    --background-clr: #f1f1f1;
+    --beige-clr: #dee2e6;
+    --gray-clr: #ced4da;
+    --aa-clr: #adb5bd;
+    --light-red-clr: #E98074;
+    --red-clr: #E85A4F;
+    --dark-red-clr: #ea3123;
+    --text-clr: black;
+    --form-control-disabled: #959495;
+    --gray-text-clr: gray;
+    --row-clr: white;
+    --form-control-color: #E85A4F;
+    --btn-clr: #e8e8e8;
+     --font: black;
+    --hue: green;
+}
