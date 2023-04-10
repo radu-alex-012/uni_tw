@@ -4,7 +4,7 @@
 
 This project was created for the 'WEB' course in 2023 by a team of 3 students. The project is a web application for an online relational database optimized for mobile platforms. It is an open source project.
 
-The site is hosted [https://radu-alex-012.github.io/uni_tw/](on GitHub).
+The site is hosted [on GitHub](https://radu-alex-012.github.io/uni_tw/).
 
 For any questions, please do not hesitate on reaching out to us.
 
