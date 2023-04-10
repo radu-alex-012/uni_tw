@@ -67,3 +67,7 @@ function toggleRowData(e) {
         rowData.style.display = "flex";
     }
 }
+
+document.getElementById('db-import-button').addEventListener('click', () => {
+    document.getElementById('db-import').click()
+});

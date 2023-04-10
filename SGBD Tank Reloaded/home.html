@@ -50,10 +50,13 @@
                     </button>
                     <button class="menu-button" onclick="location.href = 'search.html';"><span
                             class="text">Search</span></button>
-                    <button class="menu-button" onclick="location.href = 'import.html';"><span
+                    <input id="db-import" style="display: none" type="file"/>
+                    <button class="menu-button" id="db-import-button"><span
                             class="text">Import</span></button>
-                    <button class="menu-button" onclick="location.href = 'export.html';"><span
-                            class="text">Export</span></button>
+                    <a download="exported_db" href="img/export.svg">
+                        <button class="menu-button"><span
+                                class="text">Export</span></button>
+                    </a>
                     <button class="menu-button" onclick="location.href = 'views.html';"><span class="text">Views</span>
                     </button>
                     <!--                    <button class="menu-button" id="toggle-theme"><span class="text">Toggle theme</span>-->
