@@ -1,0 +1,45 @@
+:root { /* cred ca se poate face un fisier nou css care contina partea de culori */
+    --background-clr: #f1f1f1;
+    --beige-clr: #dee2e6;
+    --gray-clr: #ced4da;
+    --aa-clr: #adb5bd;
+    --light-red-clr: #E98074;
+    --red-clr: #E85A4F;
+    --dark-red-clr: #ea3123;
+    --text--clr: black;
+    --form-control-disabled: #959495;
+    --gray-text-clr: gray;
+    --row-clr: white;
+    --form-control-color: #E85A4F;
+
+    --btn-clr: #e8e8e8; /* cred ca ii luat de prin alta parte - ii doar in create/view/delete*/
+
+    /* --font: ; !!*/
+  }
+	
+	/* Dark theme styles */
+	.dark {
+	/* Background colors */
+	--background-clr: #212121;
+	--beige-clr: #292929;
+	--gray-clr: #383838;
+	--aa-clr: #555555;
+	--row-clr: #1f1f1f;
+	
+	/* Text colors */
+	--text--clr: #f1f1f1;
+	--form-control-disabled: #5f5f5f;
+	--gray-text-clr: #b2b2b2;
+	--form-control-color: #ea3123;
+	
+	/* Button colors */
+	--btn-clr: #383838;
+	
+	/* Accent colors */
+	--light-red-clr: #ea3123;
+	--red-clr: #E85A4F;
+	--dark-red-clr: #E98074;
+	}
+	
+	/* Light theme styles /
+	/ You can keep the original light theme styles for reference */

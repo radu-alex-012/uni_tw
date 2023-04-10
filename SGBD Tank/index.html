@@ -8,9 +8,16 @@
     <title>Ne-a iesit Tank (da' l-am luat la pila)</title>
     <link rel="shortcut icon" type="image/png" href="img/icons/favicon.svg">
     <link rel="stylesheet" href="styleSheets/style.css">
+
+    <!-- added by teodor-->
+	<link rel="stylesheet" type="text/css" href="styleSheets/cssTheme.css">
 </head>
 <body>
     <div class="navbar">
+
+         <!-- added by teodor-->
+    	<button id="toggle-theme">Toggle Theme</button>
+
         <div class="button-alignement">
             <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img src="img/icons/favicon.svg" style="width: 25px; height: 25px;" alt="database img"/> Databases</span></button>
         </div>
@@ -351,6 +358,17 @@
         </div>
     </div>
 
+    <!-- added by teodor-->
+    <footer>
+        <div>
+            <button type="button" class="buttonContact" onclick="contactUs()">Contact us!</button>
+        </div>
+        <p>&copy; 2023 Web Project. All Rights Reserved.</p>
+    </footer>
+
     <script src="javascript/index.js"></script>
+
+    <!-- added by teodor-->
+	<script src="javascript/jsDarkModeScript.js"></script>
 </body>
 </html>
