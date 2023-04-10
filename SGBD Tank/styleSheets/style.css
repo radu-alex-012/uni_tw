@@ -34,7 +34,8 @@ body{
 .main-container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: center;
     flex-flow: wrap;
     width: 100%;
 }
@@ -66,6 +67,7 @@ input{
     fill: var(--row-clr);
     margin: 10px;
     margin-right: 20px;
+    float: right;
 }
 
 .navbar-buttons img{
@@ -352,7 +354,7 @@ input{
 .table-commands form label{
     display: flex;
     flex-direction: row;
-    width: 150px;
+    width: 130px;
     gap: 15px;
     color: var(--gray-text-clr);
     margin-top: auto;
@@ -523,3 +525,44 @@ input{
         display: none;
     }
 }
+
+
+@media screen and (max-width: 400px){
+    .dropdown{
+        width: 150px;
+    }
+}
+
+#toggle-theme{
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-buttons{
+    cursor: pointer;
+}
+
+.table-commands form div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.btn-input{
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px;
+    width: 120px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: center;
+}
+
+.btn-input a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
