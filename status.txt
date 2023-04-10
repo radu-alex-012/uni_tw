@@ -1,0 +1,68 @@
+6-aprilie
+
+TEO:
+to continue with:
+-Pagina de about 
+--> site ul materiei : film
+-->ghid utilizare pagina +
+-->id discord/ email realizatori + 
+ 
+
+ bobu:
+ continuare cu interfata pentru home page 
+ ->interactiunea graduala:
+-->baza de date
+-->tabele 
+-->view uri 
+-->consola?
+
+radu:
+TBD
+
+7 aprilie:
+
+Razvan:
+-terminare pagina
+
+Radu:
+-butoane:
+-->tematica
+
+
+Teo:
+-redirectionare din forgot & newAcc la login
+-setari cont
+
+-------------------------------------------
+8 aprilie:
+
+Meeting 9 aprilie, 12:00
+-structura proiectului, 1 branch 
+-verificarea codului pe diferite site uri
+-idei pt fisierul 'readme'
+-coloristica + logo
+
+!!NB
+-comentarii cod 
+
+Pagini de completare:
+-pagina import/export 
+
+
+9 aprilie:
+tematica::
+*light mode:
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #454545;
+  }
+
+pt obiecte, folosim shadow:
+  .sidebar {
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-right: 20px;
+  }
