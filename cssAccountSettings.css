@@ -42,7 +42,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* Set max width of container */
@@ -103,8 +103,9 @@ select {
   width: 100%;
 }
 
+/* Make sidebar and content sections stack vertically on small screens */
+/* 
 @media only screen and (max-width: 600px) {
-  /* Make sidebar and content sections stack vertically on small screens */
   .container {
     flex-direction: column;
     height: auto;
@@ -136,3 +137,5 @@ select {
   padding: 10px;
   }
   }
+
+   */
