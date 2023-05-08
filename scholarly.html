@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>DoW: SRS</title>
+</head>
+<body>
+<article>
+    <h1>Database on Web: Software Requirements Specification</h1>
+    <div role="contentinfo">
+        <p>Authors:</p>
+        <ul>
+            <li>Ciobanu Răzvan (<a href="https://github.com/razvan999">GitHub repo</a>)</li>
+            <li>Radu Alexandru-Mihai (<a href="https://github.com/radu-alex-012">GitHub repo</a>)</li>
+            <li>Simionescu Teodor (<a href="https://github.com/TeodorSim">GitHub repo</a>)</li>
+        </ul>
+    </div>
+
+    <section role="doc-introduction">
+        <h2>1. Introduction</h2>
+        <h3>1.1 Purpose &amp; Product Scope</h3>
+        <p>The product whose requirements are specified in this document is <i>Database on Web</i>. We propose a
+            mobile-optimised version of well-known web-based relational database administration systems such as <i>Adminer</i>,
+            <i>phpMyAdmin</i> or collaborative ones, such as <i>DB Fiddle</i>. The present document addresses only the end-user
+            front-end workflow requirements.</p>
+        <h3>1.2 Product Scope</h3>
+        <p>The specified software product is intended as a robust, practical and mobile tool for managing relational
+            databases, regardless of the used terminal (smartphone, tablet or desktop PC).</p>
+        <h3>1.3 References</h3>
+        <ul>
+            <li>author collaboration: <a href="https://github.com/radu-alex-012/uni_tw">GitHub</a></li>
+            <li>icons: <a href="https://www.svgrepo.com/">https://www.svgrepo.com/</a></li>
+            <li>design concept: <a href="https://ro.pinterest.com/pin/837388124485242624/">here</a> and <a href="https://ro.pinterest.com/pin/837388124485251093/
+">here</a></li>
+        </ul>
+    </section>
+    <section role="doc-part">
+        <h2>2. Overall description</h2>
+        <h3>2.1 Product perspective</h3>
+        <p>The context in which the specified product is intended for operation is the world-wide web, which doesn't
+            possess yet a comfortable enough database management system to be used on every terminal (especially
+            smartphones).</p>
+
+        <h3>2.2 Product functions</h3>
+        <p>The application has the following features:</p>
+        <ul>
+            <li>account-based access</li>
+            <li>account administration functions: reset password, change e-mail, delete account, etc.</li>
+            <li>mail notifications regarding future products and surveys</li>
+            <li>collaborative editing</li>
+            <li>basic CRUD operations on data</li>
+            <li>SQL command/script execution</li>
+        </ul>
+
+        <h3>2.3 User Classes and Characteristics</h3>
+        <p>We expect the product's users to have a certain degree of expertise regarding the relational database model
+            and the SQL language.</p>
+
+        <h3>2.4 Operating Environment</h3>
+        <p>The software will operate within any modern web browser, provided they are updated to their latest
+            versions.</p>
+
+        <h3>2.5 Design and Implementation Constraints</h3>
+        <p>The software application's interface had to be written entirely from scratch using HTML5, CSS3 and vanilla
+            JavaScript out of educational purposes.</p>
+
+        <h3>2.6 User Documentation</h3>
+        <p>The user's manual will be provided as the application continues to grow and will be shipped with the finished
+            product.</p>
+
+        <h3>2.7 Assumptions and Dependencies</h3>
+        <p>The application is constrained by newer HTML and CSS standards and therefore expects the user to run it on a
+            compatible browser. The user's manual will include minimum versions of popular browsers required to run the
+            product properly.</p>
+    </section>
+    <section role="doc-part">
+        <h2>3. External Interface Requirements</h2>
+        <h3>3.1 User Interfaces</h3>
+        <h4>3.1.1 Login page</h4>
+        <div>
+            <p>The first page an unauthenticated user should see is the login page, where he can enter his credentials
+                and proceed to the home page of the application. If he doesn't have any account, he should be able to
+                register from the same page. Successful registration is followed by another login attempt.</p>
+        </div>
+
+        <h4>3.1.2 Home page</h4>
+        <div>
+            <ul>
+                <li>The pages following the home page should contain a persistent navigation bar with buttons for
+                    returning
+                    to the home page, changing account settings, toggling between a light and a dark theme,
+                    collaborating
+                    with someone (generating an unique link for another registered users' access) and logging out.
+                </li>
+                <li>On the
+                    left side of the home page a database list (on mobile devices, it should be hidden, except when
+                    floating
+                    over the page only after toggling its visibility with a button placed immediately above, on the
+                    navigation bar). From it, the user can select a database or find one by its name.
+                </li>
+                <li>The rest of the page
+                    is filled with a floating command panel (bar) including (but not limited to) the following commands:
+                    open an SQL prompt, querying and searching through a table using the GUI, database import and export
+                    functionality, viewing all table views; the page should also contain tables from the selected
+                    database,
+                    having their fields described, each within its card. Each such card contains at the bottom buttons
+                    for
+                    dropping the table, altering the corresponding table and viewing its data.
+                </li>
+                <li>An user should be able to
+                    create new tables on this page by entering their name and number of columns, and, at a later point
+                    in
+                    time, specify the definitions of its columns. He should also have the possibility of creating a new
+                    database on the same page.
+                </li>
+                <li>In the page footer, a contact button should display on pressing it the
+                    authors' contact info.
+                </li>
+            </ul>
+        </div>
+
+        <h4>3.1.3 SQL command prompt</h4>
+        <div>
+            <p>The SQL prompt should be separated in two parts: one for introducing commands and another one for their
+                computed output. They should be separated by a run button. The user should also have the option to
+                display the results as a table (to be implemented at a later date).</p>
+        </div>
+    </section>
+    <section role="doc-part">
+        <h2>4. System Features</h2>
+        <h3>4.1 Account-based access</h3>
+        <p>Application's services should be available only after registration and each user must have his databases and
+            associated information in a private sandbox.</p>
+
+        <h3>4.2 Account administration functions</h3>
+        <p>Each user must be able to change his (her) mail, password, name and e-mail subscription settings and delete
+            their own accounts.</p>
+
+        <h3>4.3 Collaborative editing</h3>
+        <p>2 users must be able to manage a database in parallel via a randomly-generated, expiring link.</p>
+
+        <h3>4.4 Basic CRUD operations on data</h3>
+        <p>Each user must be able to Create, Read, Update or Delete (CRUD) any database, table, column or data within a
+            row.</p>
+
+        <h3>4.5 SQL command/script execution</h3>
+        <p>Each user must be able to enter valid SQL commands and have them executed and the output displayed in the
+            same page after selecting a database.</p>
+
+    </section>
+    <section role="doc-part">
+        <h2>5. Other Nonfunctional Requirements</h2>
+        <h3>5.1 Performance Requirements</h3>
+        <ul>
+            <li>
+                <p>the web application must have a responsive design (should render properly on any platform:
+                    smartphone, tablet, laptop or desktop PC)</p>
+            </li>
+            <li>
+                <p>the software product should score at least 90 points on <a href="https://pagespeed.web.dev/">PageSpeed
+                    Insights</a></p>
+            </li>
+        </ul>
+        <h3>5.2 Security requirements</h3>
+        <ul>
+            <li>
+                <p>each user should exercise precaution when committing changes to his (her) database as these are not
+                    undoable (they should be asked twice when pressing such a button)</p>
+            </li>
+            <li>
+                <p>each user must be aware that any potential data breach poses a real threat to any sensitive data
+                    stored in their database(s) and the authors assume no additional responsability when the user
+                    uploads such data</p>
+            </li>
+        </ul>
+    </section>
+</article>
+
+</body>
+</html>

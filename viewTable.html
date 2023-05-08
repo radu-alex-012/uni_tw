@@ -7,11 +7,33 @@
 
     <title>DoW: viewing data from table 'Studenti fizica'</title>
     <link href="img/icons/favicon.svg" rel="shortcut icon" type="image/png">
-    <link href="css/viewTable.css" rel="stylesheet">
+    <link rel="stylesheet" href="styleSheets/style.css">
+
+    
+    <!-- added by teodor-->
+	<link rel="stylesheet" type="text/css" href="styleSheets/cssTheme.css">
+
+    <style>
+        .homepage{
+            margin-left: auto;
+        }
+    </style>
 </head>
 <body>
-<div class="navbar">
-</div>
+    <div class="navbar">
+        <div class="button-alignement">
+            <!-- <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img src="img/icons/favicon.svg" style="width: 25px; height: 25px;" alt="database img"/> Databases</span></button> -->
+        </div>
+
+        <div class="navbar-buttons">
+            <a href="homepage.html"><img src="img/icons/home.svg" alt="home"/></a>
+            <a href="accountSettings.html"><img src="img/icons/account.svg" alt="account"/></a>
+            <!-- added by teodor-->
+            <!-- <button id="toggle-theme">Toggle Theme</button> -->
+            <button id="toggle-theme"><img src="img/icons/theme-toggle.svg" alt="toggle-theme"/></button>
+            <a href="index.html"><img src="img/icons/logout.svg" alt="logout"/></a>
+        </div>
+    </div>
 
 <div class="homepage">
     <div class="main-container">
@@ -303,8 +325,8 @@
                         Check all
                     </label>
                     <div>
-                        <input class="submit" type="submit" value="Delete row(s)">
-                        <input class="submit" type="submit" value="Insert values">
+                        <input class="submit" type="button" onclick="" value="Delete row(s)">
+                        <input class="submit" type="button" onclick="location.href='insertValues.html'" value="Insert values">
                     </div>
                 </form>
             </div>
@@ -313,5 +335,7 @@
 </div>
 
 <script src="js/home.js"></script>
+    <!-- added by teodor-->
+	<script src="javascript/jsDarkModeScript.js"></script>
 </body>
 </html>
