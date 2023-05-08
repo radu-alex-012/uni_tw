@@ -66,3 +66,8 @@ pt obiecte, folosim shadow:
     border-radius: 4px;
     margin-right: 20px;
   }
+  
+ 8 mai:
+ - research tehnologii baze de date
+ - tehnologii: php, js
+ - pentru data viitoare: diagrame C4 (10 mai ora 21)

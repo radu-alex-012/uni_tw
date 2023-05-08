@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>DoW: SGBD Homepage</title>
-    <link rel="shortcut icon" type="image/png" href="img/icons/favicon.svg">
+    <title>DoW: database 'DummyDatabase1'</title>
+    <link href="img/icons/favicon.svg" rel="shortcut icon" type="image/png">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/darkTheme.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styleSheets/style.css">
 
     <!-- added by teodor-->
@@ -27,356 +30,350 @@
             <a href="index.html"><img src="img/icons/logout.svg" alt="logout"/></a>
         </div>
     </div>
-    
-    <div style="display: flex; flex-direction: row;">
-        <div id="toggle">
-            <div id="database-panel">
-                <div id="database-panel-message"></div>
-                <div class="database-list">
-                    <form class="database-finder">
-                        <input type="text" name="database-name" placeholder="Database name">
-                        <input type="submit" value="Find">
-                    </form>
-                    <ul id="database-ul"></ul>
-                </div>
+
+<div style="display: flex; flex-direction: row;">
+    <div id="toggle">
+        <div id="database-panel">
+            <div id="database-panel-message"></div>
+            <div class="database-list">
+                <form class="database-finder">
+                    <label>
+                        <input name="database-name" placeholder="Database name" type="text">
+                    </label>
+                    <input type="submit" value="Find">
+                </form>
+                <ul id="database-ul"></ul>
             </div>
         </div>
+    </div>
 
-        <div class="homepage">
-            <div class="main-container">
-                <div class="card commands">
-                    <div>
-                        <button class="menu-button"><span class="text">SQL</span></button>
-                        <button class="menu-button"><span class="text">Interogare</span></button>
-                        <button class="menu-button"><span class="text">Cauta</span></button>
-                        <button class="menu-button"><span class="text">Importa</span></button>
-                        <button class="menu-button"><span class="text">Exporta</span></button>
-                        <button class="menu-button"><span class="text">Views</span></button>
+    <div class="homepage">
+        <div class="main-container">
+            <div class="card commands">
+                <div>
+                    <button class="menu-button" onclick="location.href = 'sql.html';"><span class="text">SQL</span>
+                    </button>
+                    <button class="menu-button" onclick="location.href = 'query.html';"><span class="text">Query</span>
+                    </button>
+                    <button class="menu-button" onclick="location.href = 'search.html';"><span
+                            class="text">Search</span></button>
+                    <input id="db-import" style="display: none" type="file"/>
+                    <button class="menu-button" id="db-import-button"><span
+                            class="text">Import</span></button>
+                    <a download="exported_db" href="img/export.svg">
+                        <button class="menu-button"><span
+                                class="text">Export</span></button>
+                    </a>
+                    <button class="menu-button" onclick="location.href = 'views.html';"><span class="text">Views</span>
+                    </button>
+                    <!--                    <button class="menu-button" id="toggle-theme"><span class="text">Toggle theme</span>-->
+                </div>
+            </div>
+            <div class="tabel">
+                <div class="table-description">
+                    <h2>Studenti fizica</h2>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">ID</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>ID</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>NUMBER(10)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>YES</i></p></div>
                     </div>
                 </div>
-<!--  -->
-<div class="tabel">
-    <div class="table-description">
-        <h2>Studenti</h2>
-    </div>
 
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 81</div> <!-- maybe first field?? -->
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">NR_MATRICOL</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>NR_MATRICOL</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>VARCHAR(100)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>YES</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">NUME</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>NUME</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>VARCHAR(50)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">PRENUME</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>PRENUME</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>VARCHAR(50)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">AN</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>AN</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>NUMBER(1)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">GRUPA</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>GRUPA</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>VARCHAR(3)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">BURSA</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>BURSA</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>NUMBER(4)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">DATA_NASTERE</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>DATA_NASTERE</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>DATE</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">EMAIL</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>EMAIL</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>VARCHAR(320)</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">CREATED_AT</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>CREATED_AT</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>DATE</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field-name-min">
+                        <form class="form-control">
+                            <label>
+                                <input class="row-check" type="checkbox" value="">
+                            </label>
+                        </form>
+                        <button class="expand-button" onclick="toggleRowData(event)">+</button>
+                        <div class="row-title">UPDATED_AT</div>
+                    </div>
+
+                    <div class="row-data">
+                        <div class="col"><p><b>NAME:</b> <i>UPDATED_AT</i></p></div>
+                        <div class="col"><p><b>TYPE:</b> <i>DATE</i></p></div>
+                        <div class="col"><p><b>DEFAULT:</b></p></div>
+                        <div class="col"><p><b>NOT NULL</b></p></div>
+                        <div class="col"><p><b>PRIMARY KEY:</b> <i>YES</i></p></div>
+                        <div class="col"><p><b>FOREIGN KEY:</b> <i>NO</i></p></div>
+                        <div class="col"><p><b>AUTO INDEX:</b> <i>NO</i></p></div>
+                    </div>
+                </div>
+
+                <div class="table-commands">
+                    <form>
+                        <label>
+                            <input class="row-check" type="checkbox" value="Check all">
+                            Check all
+                        </label>
+                        <div>
+                            <input class="submit" type="submit" value="Drop table">
+                            <input class="submit" onclick="location.href='alterTable.html';" type="button"
+                                   value="Alter table">
+                            <input class="submit" onclick="location.href='viewTable.html';" type="button"
+                                   value="View table">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="card create-table">
+                <div>
+                    <h3>Create a new Table</h3>
+                    <br>
+                    <form>
+                        <input name="table-name" placeholder="Table name" type="text">
+                        <input min="1" name="no-of-cols" placeholder="Number of columns" type="number">
+                        <input class="submit" onclick="location.href='createTable.html';" type="button"
+                               value="Create table">
+                    </form>
+                </div>
+            </div>
+
+            <div class="card create-table">
+                <div>
+                    <h3>Create a new database</h3>
+                    <br>
+                    <form>
+                        <input name="table-name" placeholder="Database name" type="text">
+                        <input class="submit" type="submit" value="Create database">
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="row-data">
-            <div class="col"><p>ID</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div> 
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 82</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>NR_MATRICOL</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 83</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>NUME</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 84</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>PRENUME</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 85</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>AN</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 86</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>GRUPA</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>BURSA</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>DATA_NASTERE</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>EMAIL</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>CREATED_AT</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="asa">
-            <form class="form-control">
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                </label>
-            </form>
-            <button class="expand-button" onclick="toggleRowData(event)">+</button>
-            <div class="row-title">ID: 87</div> <!-- maybe first field?? -->
-        </div>
-
-        <div class="row-data">
-            <div class="col"><p>UPDATED_AT</p></div>
-            <div class="col"><p>NUMBER</p></div>
-            <div class="col"><p>10</p></div>
-            <div class="col"><p>Defaul: -</p></div>
-            <div class="col"><p>NOT NULL</p></div>
-            <div class="col"><p>PRYMARY KEY: YES</p></div>
-            <div class="col"><p>FOREIGN KEY: NO</p></div>
-            <div class="col"><p>AUTO INDEX: YES</p></div>
-        </div>
-    </div>
-
-    <div class="table-commands">
-        <form>
-            <label>
-                <input class="row-check" type="checkbox" value="Check all">
-                Check all
-            </label>
+        <footer>
             <div>
-                <div class="btn-input">
-                    <a href="">Delete Table</a>
-                </div>
-                <div class="btn-input">
-                    <a href="alterTable.html">Alter Table</a>
-                </div>
-                <div class="btn-input">
-                    <a href="viewTable.html">View Table</a>
-                </div>
-                <!-- <input class="submit" type="submit" value="Delete Table"> -->
-                <!-- <a href="alterTable.html"><input class="submit" type="submit" value="Alter Table"></a> -->
-                <!-- <input class="submit" type="submit" value="View Table"> -->
+                <button type="button" class="button buttonContact" onclick="contactUs()">Contact us!</button>
             </div>
-        </form>
-        <!-- <button class="submit">Delete Table</button>
-        <button class="submit">View Table</button> -->
+            <p>&copy; 2023 Web Project. All Rights Reserved.</p>
+        </footer>
     </div>
-
+    
 </div>
-
-<!-- <div class="box">box</div> -->
-<div class="card create-table">
-    <div>
-        <h3>Create a new Table</h3>
-        <br>
-        <form action="createTable.html">
-            <input type="text" name="table-name" placeholder="Table name">
-            <input type="number" name="nr-cols" placeholder="Nr. coloane">
-            <input class="submit" type="submit" value="Create table">
-        </form>
-    </div>
-</div>      
-
-<div class="card create-table">
-    <div>
-        <h3>Create a new Database</h3>
-        <br>
-        <form>
-            <input type="text" name="table-name" placeholder="Database name">
-            <input class="submit" type="submit" value="Create database">
-        </form>
-    </div>
-</div> 
-            </div>
-        </div>
-    </div>
-
-    <!-- added by teodor-->
-    <footer>
-        <div>
-            <button type="button" class="buttonContact" onclick="contactUs()">Contact us!</button>
-        </div>
-        <p>&copy; 2023 Web Project. All Rights Reserved.</p>
-    </footer>
-
-    <script src="javascript/index.js"></script>
-
+<script>
+    function contactUs() {
+		   window.open("aboutPage.html");
+	   }
+</script>
+<script src="js/home.js"></script>
+<!--<script src="js/darkMode.js"></script>-->
     <!-- added by teodor-->
 	<script src="javascript/jsDarkModeScript.js"></script>
 </body>
