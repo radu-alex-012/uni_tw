@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Documents/Facultate/uni_tw/db_mgmt_interface/.idea/db_mgmt_interface.iml" filepath="$USER_HOME$/Documents/Facultate/uni_tw/db_mgmt_interface/.idea/db_mgmt_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/uni_tw.iml" filepath="$PROJECT_DIR$/.idea/uni_tw.iml" />
     </modules>
   </component>
 </project>
