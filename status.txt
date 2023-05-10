@@ -70,4 +70,4 @@ pt obiecte, folosim shadow:
  8 mai:
  - research tehnologii baze de date
  - tehnologii: php, js
- - pentru data viitoare: diagrame C4 (10 mai ora 21)
+ - pentru data viitoare: diagrame C4 (12 mai ora 10)
