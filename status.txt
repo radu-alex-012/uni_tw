@@ -73,7 +73,8 @@ pt obiecte, folosim shadow:
  - pentru data viitoare: diagrame C4 (13 mai ora 19)
 
 13 mai concluzii:
-!- configurare environment de development (instalare SQLite, IDE-uri pt php)
+!- motor DB: SQLite (sintaxa similara PostgreSQL)
+!- configurare mediu de dezvoltare (instalare SQLite, IDE-uri pt php etc.)
 !- creare tabel pt asocierea unui utilizator cu schema sa
 !- creare tabel pt credentiale utilizator
 - la crearea unui utilizator -> crearea unei baza de date pt el (in SQLite e un fisier .db)
