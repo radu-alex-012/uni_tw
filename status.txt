@@ -70,4 +70,12 @@ pt obiecte, folosim shadow:
  8 mai:
  - research tehnologii baze de date
  - tehnologii: php, js
- - pentru data viitoare: diagrame C4 (12 mai ora 10)
+ - pentru data viitoare: diagrame C4 (13 mai ora 19)
+
+13 mai concluzii:
+!- configurare environment de development (instalare SQLite, IDE-uri pt php)
+!- creare tabel pt asocierea unui utilizator cu schema sa
+!- creare tabel pt credentiale utilizator
+- la crearea unui utilizator -> crearea unei baza de date pt el (in SQLite e un fisier .db)
+- dezvoltare C4 nivelul 3 pentru componenta interpretor SQL
+- data viitoare: 14 mai ora 19
