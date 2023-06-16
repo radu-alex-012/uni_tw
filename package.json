@@ -1,0 +1,16 @@
+{
+  "name": "teo_uni_tw",
+  "version": "1.0.0",
+  "description": "This project was created for the 'Web Technologies' course in 2023 by a team of 3 students. The project is a web application for an online relational database optimized for mobile platforms. It is an open source project.",
+  "main": "jsDarkModeScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "oracledb": "^6.0.1",
+    "sqlite3": "^5.1.6"
+  }
+}

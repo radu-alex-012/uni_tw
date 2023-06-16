@@ -1,61 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Set the viewport to control the page's dimensions and scaling on different devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login Page</title>
-	<!-- Link the external CSS file -->
-	<link rel="stylesheet" type="text/css" href="cssLoginPage.css">
-	<link rel="stylesheet" type="text/css" href="cssTheme.css">
+  <!-- Set the viewport to control the page's dimensions and scaling on different devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Page</title>
+  <!-- Link the external CSS file -->
+  <link rel="stylesheet" type="text/css" href="cssLoginPage.css">
+  <link rel="stylesheet" type="text/css" href="cssTheme.css">
 </head>
 <body>
-	<!-- button for changing the theme -->
-	<button id="toggle-theme">Toggle Theme</button>
-	<!-- Create a container to hold the login form -->
-	<div class="container">
-		<!-- Add a heading for the login page -->
-		<h1>Login Page</h1>
-		<!-- Create the login form with inputs for the username, password, and a submit button -->
-		<form>
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required>
+  <!-- button for changing the theme -->
+  <button id="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+  <!-- Create a container to hold the login form -->
+  <div class="container">
+    <!-- Add a heading for the login page -->
+    <h1>Login Page</h1>
+    <!-- Create the login form with inputs for the username, password, and a submit button -->
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
 
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-			<!-- Change the submit input to a button element -->
-			<!-- Grid to add the Login, 'forgot password' and 'New User' in a grid -->
-			<!-- First grid will be a row: entity1 entity2-->
-			<div class="grid-container">
-				<div>
-					<button type="button" id="login" class="button buttonLogin" onclick="loginClick()">Login</button>
-				</div>
-				<!-- Second grid is a column: entity1-->
-				<!--						  entity2-->
-				<div class="grid-buttons">
-					<div>
-						<button type="button" class="button buttonForgot" onclick="forgotClick()">Forgot password</button>
-					</div>
-					<div>
-						<button type="button" class="button buttonNew" onclick="newClick()">New Account</button>
-					</div>
-			 	</div> 
-			</div>
-		</form>
-	</div>
+      <!-- Change the submit input to a button element -->
+      <!-- Grid to add the Login, 'forgot password' and 'New User' in a grid -->
+      <!-- First grid will be a row: entity1 entity2-->
+      <div class="grid-container">
+        <div>
+          <button type="button" id="login" class="button buttonLogin" onclick="loginClick()">Login</button>
+        </div>
+        <!-- Second grid is a column: entity1-->
+        <!--						  entity2-->
+        <div class="grid-buttons">
+          <div>
+            <button type="button" class="button buttonForgot" onclick="forgotClick()">Forgot password</button>
+          </div>
+          <div>
+            <button type="button" class="button buttonNew" onclick="newClick()">New Account</button>
+          </div>
+        </div> 
+      </div>
+    </form>
+  </div>
 
-	<!-- Add a script tag to open a new window when the login button is pressed -->
-	
-	<script>
-		function loginClick() {
-			window.open("http://www.example.com");
-		}
-		function forgotClick() {
-			window.open("forgotPasswordPage.html");
-		}function newClick() {
-			window.open("newAccountPage.html");
-		}
-	</script>
-	<script src="jsDarkModeScript.js"></script>
+  <!-- Add a script tag to open a new window when the login button is pressed -->
+  <script>
+    function loginClick() {
+      submitForm();
+    }
+  
+    function forgotClick() {
+      window.open("forgotPasswordPage.html");
+    }
+  
+    function newClick() {
+      window.open("newAccountPage.html");
+    }
+  
+    function submitForm() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      const data = {
+        username: username,
+        password: password
+      };
+  
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/login');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            handleLoginResponse(response.success);
+          } else {
+            console.error('Login request failed:', xhr.status);
+          }
+        }
+      };
+      xhr.send(JSON.stringify(data));
+    }
+  
+    function handleLoginResponse(success) {
+      if (success) {
+        console.log('Login successful');
+		//save to use later in 'accountSettings' view
+		localStorage.setItem('username', username);
+        // Redirect to the homepage
+        window.location.href = '../homepage.html';
+      } else {
+        //console.log('Login failed');
+		// Display error alert
+        alert('Invalid username or password. Please try again.');
+      }
+    }
+  
+    // Add event listener for the Enter key press on the password input field
+    const passwordInput = document.getElementById('password');
+    passwordInput.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        submitForm();
+      }
+    });
+  
+    // Theme toggle functionality
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark-theme');
+    }
+  </script>
 </body>
 </html>
