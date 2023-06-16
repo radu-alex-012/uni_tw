@@ -46,70 +46,58 @@
 
   <!-- Add a script tag to open a new window when the login button is pressed -->
   <script>
-    function loginClick() {
-      submitForm();
-    }
+	function loginClick() {
+	  submitForm();
+	}
   
-    function forgotClick() {
-      window.open("forgotPasswordPage.html");
-    }
+	function forgotClick() {
+	  window.open("forgotPasswordPage.html");
+	}
   
-    function newClick() {
-      window.open("newAccountPage.html");
-    }
+	function newClick() {
+	  window.open("newAccountPage.html");
+	}
   
-    function submitForm() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+	function submitForm() {
+	  const username = document.getElementById('username').value;
+	  const password = document.getElementById('password').value;
   
-      const data = {
-        username: username,
-        password: password
-      };
+	  const data = {
+		username: username,
+		password: password
+	  };
   
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', '/login');
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-            handleLoginResponse(response.success);
-          } else {
-            console.error('Login request failed:', xhr.status);
-          }
-        }
-      };
-      xhr.send(JSON.stringify(data));
-    }
+	  fetch('/login', {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	  })
+		.then(response => {
+		  if (response.ok) {
+			// Redirect to the settings page on successful login
+			window.location.replace('/settings');
+		  } else {
+			console.error('Login request failed:', response.status);
+			alert('Invalid username or password. Please try again.');
+		  }
+		})
+		.catch(error => {
+		  console.error('Error:', error);
+		});
+	}
   
-    function handleLoginResponse(success) {
-      if (success) {
-        console.log('Login successful');
-		//save to use later in 'accountSettings' view
-		localStorage.setItem('username', username);
-        // Redirect to the homepage
-        window.location.href = '../homepage.html';
-      } else {
-        //console.log('Login failed');
-		// Display error alert
-        alert('Invalid username or password. Please try again.');
-      }
-    }
-  
-    // Add event listener for the Enter key press on the password input field
-    const passwordInput = document.getElementById('password');
-    passwordInput.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        submitForm();
-      }
-    });
-  
-    // Theme toggle functionality
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark-theme');
-    }
+	// Add event listener for the Enter key press on the password input field
+	const passwordInput = document.getElementById('password');
+	passwordInput.addEventListener('keydown', function (event) {
+	  if (event.key === 'Enter') {
+		event.preventDefault();
+		submitForm();
+	  }
+	});
   </script>
+  
+  
 </body>
 </html>
