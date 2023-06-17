@@ -69,6 +69,7 @@
                     <!--                    <button class="menu-button" id="toggle-theme"><span class="text">Toggle theme</span>-->
                 </div>
             </div>
+            <!--
             <div class="tabel">
                 <div class="table-description">
                     <h2>Studenti fizica</h2>
@@ -333,16 +334,17 @@
                 </div>
 
             </div>
+            -->
 
             <div class="card create-table">
                 <div>
                     <h3>Create a new Table</h3>
                     <br>
-                    <form>
-                        <input name="table-name" placeholder="Table name" type="text">
-                        <input min="1" name="no-of-cols" placeholder="Number of columns" type="number">
-                        <input class="submit" onclick="location.href='createTable.html';" type="button"
-                               value="Create table">
+                    <form id="createTableHomepage">
+                        <input id="tableName" name="table-name" placeholder="Table name" type="text">
+                        <input id="numOfCols" min="1" name="no-of-cols" placeholder="Number of columns" type="number">
+                        <!-- <input class="submit" onclick="location.href='/createTable'" type="button" value="Create table"> -->
+                        <input class="submit" type="submit" value="Create table">
                     </form>
                 </div>
             </div>
@@ -368,6 +370,51 @@
     
 </div>
 <script>
+    // aicia ii miezu
+    const formCreateTableHomepage = document.getElementById("createTableHomepage");
+
+    formCreateTableHomepage.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const tableNameValue = document.getElementById("tableName").value;
+        const numOfColsValue = document.getElementById("numOfCols").value;
+
+        const data = {
+            tableName: tableNameValue,
+            numberOfColumns: numOfColsValue
+        }
+
+        console.log("data " + data);
+
+        fetch('/submitTableDataFromHomepage', {
+            method: 'POST',
+            headers: {
+            // 'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json',
+            },
+            // body: `data=${encodeURIComponent(data)}`
+            body: JSON.stringify(data),
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            window.location.href = '/createTable';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        // Reset the form
+        formCreateTableHomepage.reset();
+    });
+
+
+
+
+
+
+
+
     function contactUs() {
 		//    window.open("aboutPage.html");
            window.location.href='/about';

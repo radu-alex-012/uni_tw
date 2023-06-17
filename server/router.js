@@ -1,8 +1,9 @@
 var url = require("url");
 var fs = require("fs");
 var path = require("path");
-const db = require("./databaseConnection.js");
 const { log } = require("console");
+
+let createTableData = null;
 
 function handleRequest(req, res) {
     let filePath;
@@ -28,18 +29,98 @@ function handleRequest(req, res) {
       case '/help':
         filePath = path.join(__dirname, '..', 'html', 'helpPage.html');
         break;
+      case '/viewTable':
+        filePath = path.join(__dirname, '..', 'html', 'viewTable.html');
+        break;
+      case '/createTable':
 
 
 
+        filePath = path.join(__dirname, '..', 'html', 'createTable.html');
+        break;
+
+
+
+
+
+
+      case '/ss':
+        // filePath = path.join(__dirname, '..', 'html', 'helpPage.html');
+        const asdf = require("./getTables.js");
+        // asdf();
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end("Database");
+        return;
+        break;
+
+
+
+      // homepage stuff
       case '/homepage':
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
+        // displayPageByFilePath(req, res, filePath);
         break;
+      case '/submitTableDataFromHomepage':
+        // filePath = path.join(__dirname, '..', 'html', 'homepage.html');
+        if (req.method === 'POST') {
+          let body = '';
+          
+          req.on('data', (chunk) => {
+            body += chunk;
+          });
+          
+          req.on('end', () => {
+            createTableData = JSON.parse(body);
+            console.log('createTableData:', createTableData);
+            res.statusCode = 200;
+          });
+
+          // filePath = path.join(__dirname, '..', 'html', 'createTable.html');
+        } 
+        filePath = path.join(__dirname, '..', 'html', 'homepage.html');
+        break;
+      case '/getTableDataFromHomepage':
+        if (req.method === 'GET') {
+          console.log("get get get");
+          res.statusCode = 200;
+          // res.setHeader('Content-Type', 'text/plain');
+          res.setHeader('Content-Type', 'application/json');
+          // console.log(name);
+          // res.end(createTableData);
+
+          const data = {
+            name: "fffffff",
+            email: "fdfdffffff"
+          };
+          res.end(JSON.stringify(createTableData));
+          return;
+        }
+        //  else {
+        //   res.statusCode = 404;
+        //   res.end('Page not found');
+        // }
+
+        res.setHeader('Content-Type', 'text/plain');
+        filePath = path.join(__dirname, '..', 'html', 'createTable.html');
+        break;
+
+
+
+        // ----------------------------------------
       default:
         filePath = path.join(__dirname, '..', req.url);
         break;
     }
-  
-    const fileExt = path.extname(filePath).toLowerCase();
+
+    displayPageByFilePath(req, res, filePath);
+  }
+
+module.exports = handleRequest;
+
+function displayPageByFilePath(req, res, filePath) {
+  // console.log("displayPageByFilePath");
+
+  const fileExt = path.extname(filePath).toLowerCase();
     let contentType = 'text/plain';
   
     switch (fileExt) {
@@ -88,46 +169,4 @@ function handleRequest(req, res) {
         res.end(data);
       }
     });
-  }
-
-function asdf(req, res) {
-    if (req.method === 'POST') {
-        let body = '';
-    
-        req.on('data', chunk => {
-          body += chunk.toString();
-        });
-    
-        req.on('end', () => {
-          const formData = new URLSearchParams(body);
-          const value = formData.get('value');
-          const mail = formData.get('mail');
-    
-          const responseData = `Form data received! Value = ` + value + ', mail = ' + mail;
-
-            console.log(responseData);
-            addUser(value, mail);
-
-            const response = 'Thank you!';
-            res.setHeader('Content-Type', 'text/plain');
-            res.statusCode = 200;
-            res.end(response);
-        });
-      } else {
-        res.statusCode = 404;
-        res.end('404 Not Found');
-      }
 }
-
-function addUser(name, mail) {
-    sql = "INSERT INTO users(name, mail) VALUES(?,?)";
-    db.run(
-        sql,
-        [name, mail],
-        (err) => {
-            if (err) return console.error(err.message);
-        }
-    );
-}
-
-module.exports = handleRequest;

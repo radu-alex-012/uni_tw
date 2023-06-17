@@ -85,3 +85,19 @@ pt obiecte, folosim shadow:
 - de studiat https://nodejs.dev/en/learn/
 - creare schelet server
 - data viitoare: 19 mai ora 19
+
+
+-----
+- Teo
+  - login: cookies (bug fix)
+  - account settings
+  - newAccount
+  - forgot password (bug fix)
+
+-Razvyy
+  - create Tabele
+  - create schemas (foldere + fisiere)
+  - view table + alter table + delete data + add data
+
+--civevaaaa (TODO)
+  - sql consola ~~ final... (bazat pe fisier)
