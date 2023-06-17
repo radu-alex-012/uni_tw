@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { checkLogin } = require('../loginFile/login');
+const { validatePassword } = require('./settings');
+const { deleteAccount } = require('./settings');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -50,9 +52,22 @@ const server = http.createServer((req, res) => {
         res.end(content);
       }
     });
-  } else if (req.url === '/cssTheme.css' && req.method === 'GET') {
+  } else if (req.url === '/cssAccountSettings.css' && req.method === 'GET') {
     // Serve the cssTheme.css file
-    const filePath = path.join(__dirname, '../loginFile/cssTheme.css');
+    const filePath = path.join(__dirname, '../cssAccountSettings.css');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        res.end(content);
+      }
+    });
+  }else if (req.url === '/cssTheme.css' && req.method === 'GET') {
+    // Serve the cssTheme.css file
+    const filePath = path.join(__dirname, '../cssTheme.css');
     fs.readFile(filePath, (err, content) => {
       if (err) {
         res.statusCode = 500;
@@ -77,7 +92,7 @@ const server = http.createServer((req, res) => {
       }
     });
   } else if (req.url === '/favicon.svg' && req.method === 'GET') {
-    // Serve the cssTheme.css file
+    // Serve the favicon.svg file
     const filePath = path.join(__dirname, 'img/icons/favicon.svg');
     fs.readFile(filePath, (err, content) => {
       if (err) {
@@ -89,7 +104,9 @@ const server = http.createServer((req, res) => {
         res.end(content);
       }
     });
-  } else if (req.url === '/login' && req.method === 'POST') {
+  }
+  /* the views from here */
+  else if (req.url === '/login' && req.method === 'POST') {
     // Handle the login form submission
     let body = '';
     req.on('data', (chunk) => {
@@ -108,7 +125,7 @@ const server = http.createServer((req, res) => {
         } else {
           if (success) {
             // Save the username in a cookie
-            res.setHeader('Set-Cookie', `username=${username}`);
+            res.setHeader('Set-Cookie', `username=${username}; Path=/; HttpOnly`);
             res.statusCode = 302;
             res.setHeader('Location', '/settings');
             res.end();
@@ -140,7 +157,49 @@ const server = http.createServer((req, res) => {
       res.setHeader('Location', '/login');
       res.end();
     }
-  } else if (req.url === '/homepage.html' && req.method === 'GET') {
+  } else if (req.url === '/settings' && req.method === 'POST') {
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      const { old_password, new_password, confirm_password } = JSON.parse(body);
+      const username = req.cookies.username;
+
+      // Call the validatePassword function and send the response
+      validatePassword(username, old_password, new_password, confirm_password, (err, success, message) => {
+        if (err) {
+          console.error(err);
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false }));
+        } else {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success, message }));
+        }
+      });
+    });
+  }else if (req.url === '/deleteAccount' && req.method === 'POST') {
+    // Handle the delete account request
+    const username = req.cookies.username;
+  console.log("start the proccess of deleting the account..");
+    // Call the deleteAccount function from settings.js and send the response
+    deleteAccount(username, (err) => {
+      if (err) {
+        console.error(err);
+        res.statusCode = 500;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ success: false }));
+      } else {
+        // Clear the username cookie
+        res.setHeader('Set-Cookie', `username=; Path=/; HttpOnly; Max-Age=0`);
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ success: true }));
+      }
+    });
+  }else if (req.url === '/homepage.html' && req.method === 'GET') {
     // Serve the homepage.html
     const filePath = path.join(__dirname, '../homepage.html');
     fs.readFile(filePath, (err, content) => {

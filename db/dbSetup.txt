@@ -1,0 +1,6 @@
+--create of the tables
+--the login validate table
+ CREATE TABLE user_login (username TEXT PRIMARY KEY,  password TEXT);
+
+ --populate:
+ INSERT INTO user_login (username, password) VALUES ('john', 'p');

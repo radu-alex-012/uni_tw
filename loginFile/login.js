@@ -3,9 +3,10 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/user.db', (err) => {
   if (err) {
+    console.log('login.js');
     console.error(err.message);
   }
-  console.log('Connected to the user database.');
+  console.log('Connected to the user database from inside login.js .');
 });
 
 function checkLogin(username, password, callback) {
