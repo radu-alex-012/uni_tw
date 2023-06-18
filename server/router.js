@@ -4,6 +4,13 @@ var path = require("path");
 const db = require("./databaseConnection.js");
 const { log } = require("console");
 
+//...
+const { checkLogin } = require('../loginFile/login');
+const { validatePassword } = require('./settings');
+const { deleteAccount } = require('./settings');
+const { registerUser } = require('./newAccount');
+const { isUsernameTaken } = require('./newAccount');
+
 let createTableData = null;
 let tableInfoG = {name:"", data: {}};
 
@@ -12,16 +19,182 @@ function handleRequest(req, res) {
     let filePath;
     switch (req.url) {
       case '/': //login
-        filePath = path.join(__dirname, '..', 'html', 'index.html');
+        filePath = path.join(__dirname, '..', 'html', '../loginFile/loginPage.html');
+        if(req.method === 'POST'){
+          flag = false;
+          // Handle the login form submission
+          let body = '';
+          req.on('data', (chunk) => {
+            body += chunk;
+          });
+          req.on('end', () => {
+            const { username, password } = JSON.parse(body);
+         
+            // Call the server-side login function and send the response
+            checkLogin(username, password, (err, success) => {
+              if (err) {
+                console.error(err);
+                res.statusCode = 500;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: false }));
+              } else {
+                if (success) {
+                  // Save the username in a cookie
+                  res.setHeader('Set-Cookie', `username=${username}; Path=/; HttpOnly`);
+                  res.statusCode = 302;
+                  res.setHeader('Location', '/homepage');
+                  res.end();
+                } else {
+                  res.statusCode = 200;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.end(JSON.stringify({ success }));
+                }
+              }
+            });
+          });
+                 }
+        break;
+      case '/login': //login
+    
+        filePath = path.join(__dirname, '..', 'html', '../loginFile/loginPage.html');
+        if(req.method === 'POST'){
+          flag = false;
+ // Handle the login form submission
+ let body = '';
+ req.on('data', (chunk) => {
+   body += chunk;
+ });
+ req.on('end', () => {
+   const { username, password } = JSON.parse(body);
+
+   // Call the server-side login function and send the response
+   checkLogin(username, password, (err, success) => {
+     if (err) {
+       console.error(err);
+       res.statusCode = 500;
+       res.setHeader('Content-Type', 'application/json');
+       res.end(JSON.stringify({ success: false }));
+     } else {
+       if (success) {
+         // Save the username in a cookie
+         res.setHeader('Set-Cookie', `username=${username}; Path=/; HttpOnly`);
+         res.statusCode = 302;
+         res.setHeader('Location', '/homepage');
+         res.end();
+       } else {
+         res.statusCode = 200;
+         res.setHeader('Content-Type', 'application/json');
+         res.end(JSON.stringify({ success }));
+       }
+     }
+   });
+ });
+        }
+        /*else if(req.method === 'GET'){
+          fs.readFile(filePath, (err, content) => {
+            if (err) {
+              res.statusCode = 500;
+              res.end('Internal Server Error');
+            } else {
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'text/html');
+              res.end(content);
+            }
+          });
+        }
+        */
         break;
       case '/forgotPassword':
         filePath = path.join(__dirname, '..', 'html', 'forgotPasswordPage.html');
         break;
       case '/newAccount':
-        filePath = path.join(__dirname, '..', 'html', 'newAccountPage.html');
+        filePath = path.join(__dirname, '..', 'html', '../loginFile/newAccountPage.html');
+        if(req.method == "POST"){
+          flag = false;
+          let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      const { username, password } = JSON.parse(body);
+
+      // Check if the username is already taken
+      isUsernameTaken(username, (err, taken) => {
+        if (err) {
+          console.error(err);
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false, message: 'Server error' }));
+        } else if (taken) {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false, message: 'Username already taken' }));
+        } else {
+          // Register the new user
+          registerUser(username, password, (err, userId) => {
+            if (err) {
+              console.error(err);
+              res.statusCode = 500;
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: false, message: 'Server error' }));
+            } else {
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: true, message: 'Registration successful' }));
+            }
+          });
+        }
+      });
+    });
+        }
         break;
-      case '/account':
-        filePath = path.join(__dirname, '..', 'html', 'accountSettings.html');
+      case '/settings':
+        filePath = path.join(__dirname, '..', 'html', '../loginFile/accountSettings.html');
+        if(req.method == 'POST'){
+          flag = false;
+          const username = req.cookies.username;
+    if (username) {
+      // Serve the accountSettings.html
+      const filePath = path.join(__dirname, '../loginFile/accountSettings.html');
+      fs.readFile(filePath, (err, content) => {
+        if (err) {
+          res.statusCode = 500;
+          res.end('Internal Server Error');
+        } else {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/html');
+          res.end(content);
+        }
+      });
+    } else {
+      res.statusCode = 302;
+      res.setHeader('Location', '/login');
+      res.end();
+    }
+        }
+        break;
+      case '/deleteAccount':
+        if(req.method == 'POST'){
+          flag = false;
+           // Handle the delete account request
+    const username = req.cookies.username;
+    console.log("start the proccess of deleting the account..");
+      // Call the deleteAccount function from settings.js and send the response
+      deleteAccount(username, (err) => {
+        if (err) {
+          console.error(err);
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false }));
+        } else {
+          // Clear the username cookie
+          res.setHeader('Set-Cookie', `username=; Path=/; HttpOnly; Max-Age=0`);
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: true }));
+        }
+      });
+        }
         break;
       case '/queryTool':
         filePath = path.join(__dirname, '..', 'html', 'sql.html');
@@ -38,12 +211,6 @@ function handleRequest(req, res) {
       case '/createTable':
         filePath = path.join(__dirname, '..', 'html', 'createTable.html');
         break;
-
-
-
-
-
-
       case '/ss':
         // filePath = path.join(__dirname, '..', 'html', 'helpPage.html');
         const asdf = require("./getTables.js");
@@ -52,9 +219,6 @@ function handleRequest(req, res) {
         res.end("Database");
         return;
         break;
-
-
-
       // homepage stuff
       case '/homepage':
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
@@ -74,15 +238,6 @@ function handleRequest(req, res) {
         flag = false;
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         break;
-
-
-
-
-
-
-
-
-
       case '/submitTableDataFromHomepage':
         // filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         if (req.method === 'POST') {
@@ -102,7 +257,6 @@ function handleRequest(req, res) {
         } 
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         break;
-
 case '/getTableDataFromHomepage':
         if (req.method === 'GET') {
           // console.log("get get get");
@@ -154,7 +308,6 @@ case '/getTableDataFromHomepage':
           }
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         break;
-
         case '/viewTABLE':
         // filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         flag=false;
@@ -191,7 +344,6 @@ case '/getTableDataFromHomepage':
         }
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         break;
-
         case '/getTableInfo':
           if (req.method === 'GET') {
             res.statusCode = 200;
@@ -207,32 +359,6 @@ case '/getTableDataFromHomepage':
           filePath = path.join(__dirname, '..', 'html', 'createTable.html');
           break;
             break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         case '/dataCreateTable':
           if (req.method === 'POST') {
@@ -260,7 +386,6 @@ case '/getTableDataFromHomepage':
           flag = false;
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         break;
-
         // ----------------------------------------
       default:
         filePath = path.join(__dirname, '..', req.url);
@@ -380,9 +505,6 @@ function generateCreateTableQuery(tableDetails) {
   return createTableQuery;
 }
 
-
-
-
 // -----------
 function getTableInfo(db, tableName) {
   return new Promise((resolve, reject) => {
@@ -485,9 +607,6 @@ function viewTableFunction(tableName, callback) {
     callback(null, jsonString);
   });
 }
-
-
-
 
 function saveTabData(data, name) {
   tableInfoG.name = name;

@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>New account</title>
 	<!-- Link the external CSS file -->
-    <link rel="stylesheet" type="text/css" href="cssNewAccountPage.css">
-	<link rel="stylesheet" type="text/css" href="cssTheme.css">
+    <link rel="stylesheet" type="text/css" href="/cssNewAccountPage.css">
+	<link rel="stylesheet" type="text/css" href="/cssTheme.css">
 </head>
 <body>
 	<!-- button for changing the theme -->
@@ -16,32 +16,23 @@
 		<!-- Add a heading for the login page -->
 		<h1>Create new user</h1>
 		<!-- Create the login form with inputs for the username, password, and a submit button -->
-		<form>
-			<div class="grid-container">
-				<div>
-					<label for="first-name">First Name:</label>
-					<input type="text" id="first-name" name="first-name" required>
-				</div>
-				<div>
-					<label for="last-name">Last Name:</label>
-					<input type="text" id="last-name" name="last-name" required>
-				</div>
-			</div>
+		<form id="new-account-form">
 			<div>
-				<!-- Email introduction  -->
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required>
+				<!-- Username input -->
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" required>
 				
-				<!-- Password introduction  -->
+				<!-- Password input -->
 				<label for="password">Password:</label>
 				<input type="password" id="password" name="password" required>
 
-				<!-- Confirm passowrd introduction -->
+				<!-- Confirm password input -->
 				<label for="confirm-password">Confirm Password:</label>
 				<input type="password" id="confirm-password" name="confirm-password" required>
+				<p id="password-error" style="color: red;"></p>
 
 				<!-- Change the submit input to a button element -->
-				<button type="submit" class="button" onclick="submitClick()" >Register</button>
+				<button type="button" class="button" onclick="handleSubmit()">Register</button>
 			</div>
 		</form>
 		<footer>
@@ -52,15 +43,68 @@
         </footer>
 	</div>
 	<script>
-		// Funciton to open a link when the buttons are pressed
-	   function submitClick() {
-		   window.open("loginPage.html");
-	   }
-	   function contactUs() {
-		   window.open("aboutPage.html");
-	   }
-   </script>
-   <!-- dark theme script -->
-	<script src="jsDarkModeScript.js"></script>
+		// Function to open a link when the buttons are pressed
+		function contactUs() {
+			window.location.href("/about");
+		}
+
+		// Function to send AJAX request and register a new user
+		function register(username, password, confirmPassword) {
+			// Check if password and confirm password match
+			if (password !== confirmPassword) {
+				document.getElementById('password-error').textContent = "Passwords do not match.";
+				return;
+			}
+
+			// Create an object with the form data
+			const formData = {
+				username: username,
+				password: password
+			};
+
+			// Create a new XMLHttpRequest object
+			const xhr = new XMLHttpRequest();
+			xhr.open('POST', '/newAccount');
+			xhr.setRequestHeader('Content-Type', 'application/json');
+
+			// Define the onload and onerror callbacks
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					const response = JSON.parse(xhr.responseText);
+					if (response.success) {
+						const confirm3 = confirm('Account created successfully. Do you want to go to the login page?');
+						if (confirm3) {
+							window.location.href = "/login";
+						}
+					} else {
+						console.log('Error occurred while creating the account.');
+					}
+				} else {
+					console.log('Error occurred while creating the account.');
+				}
+			};
+
+			xhr.onerror = function() {
+				console.log('Error occurred while creating the account.');
+			};
+
+			// Convert the form data to JSON and send the request
+			xhr.send(JSON.stringify(formData));
+		}
+
+		// Function to handle form submission
+		function handleSubmit() {
+			// Get form input values
+			const username = document.getElementById('username').value;
+			const password = document.getElementById('password').value;
+			const confirmPassword = document.getElementById('confirm-password').value;
+
+			// Clear any previous error message
+			document.getElementById('password-error').textContent = "";
+
+			// Call the register function
+			register(username, password, confirmPassword);
+		}
+	</script>
 </body>
 </html>

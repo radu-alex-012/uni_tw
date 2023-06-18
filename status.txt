@@ -66,38 +66,3 @@ pt obiecte, folosim shadow:
     border-radius: 4px;
     margin-right: 20px;
   }
-  
- 8 mai:
- - research tehnologii baze de date
- - tehnologii: php, js
- - pentru data viitoare: diagrame C4 (13 mai ora 19)
-
-13 mai concluzii:
-!- motor DB: SQLite (sintaxa similara PostgreSQL)
-!- configurare mediu de dezvoltare (instalare SQLite, IDE-uri pt php etc.)
-!- creare tabel pt asocierea unui utilizator cu schema sa
-!- creare tabel pt credentiale utilizator
-- la crearea unui utilizator -> crearea unei baza de date pt el (in SQLite e un fisier .db)
-- dezvoltare C4 nivelul 3 pentru componenta interpretor SQL
-- data viitoare: 14 mai ora 19
-
-14 mai concluzii:
-- de studiat https://nodejs.dev/en/learn/
-- creare schelet server
-- data viitoare: 19 mai ora 19
-
-
------
-- Teo
-  - login: cookies (bug fix)
-  - account settings
-  - newAccount
-  - forgot password (bug fix)
-
--Razvyy
-  - create Tabele
-  - create schemas (foldere + fisiere)
-  - view table + alter table + delete data + add data
-
---civevaaaa (TODO)
-  - sql consola ~~ final... (bazat pe fisier)
