@@ -16,7 +16,7 @@
 		<!-- Add a heading for the login page -->
 		<h1>Create new user</h1>
 		<!-- Create the login form with inputs for the username, password, and a submit button -->
-		<form>
+		<form id="new-account-form">
 			<div>
 				<!-- Username input -->
 				<label for="username">Username:</label>
@@ -29,9 +29,10 @@
 				<!-- Confirm password input -->
 				<label for="confirm-password">Confirm Password:</label>
 				<input type="password" id="confirm-password" name="confirm-password" required>
+				<p id="password-error" style="color: red;"></p>
 
 				<!-- Change the submit input to a button element -->
-				<button type="submit" class="button" onclick="handleSubmit()">Register</button>
+				<button type="button" class="button" onclick="handleSubmit()">Register</button>
 			</div>
 		</form>
 		<footer>
@@ -46,13 +47,12 @@
 		function contactUs() {
 			window.open("aboutPage.html");
 		}
-	</script>
-	<script>
+
 		// Function to send AJAX request and register a new user
 		function register(username, password, confirmPassword) {
 			// Check if password and confirm password match
 			if (password !== confirmPassword) {
-				console.log("Mismatch between password and confirmed password");
+				document.getElementById('password-error').textContent = "Passwords do not match.";
 				return;
 			}
 
@@ -62,36 +62,45 @@
 				password: password
 			};
 
-			fetch('/newAccount', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(formData)
-			})
-				.then(response => response.json())
-				.then(data => {
-					if (data.success) {
-						alert('Registration successful');
-						// Redirect to login page or any other desired location
+			// Create a new XMLHttpRequest object
+			const xhr = new XMLHttpRequest();
+			xhr.open('POST', '/newAccount');
+			xhr.setRequestHeader('Content-Type', 'application/json');
+
+			// Define the onload and onerror callbacks
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					const response = JSON.parse(xhr.responseText);
+					if (response.success) {
+						const confirm3 = confirm('Account created successfully. Do you want to go to the login page?');
+						if (confirm3) {
+							window.location.href = "/login";
+						}
 					} else {
-						alert(data.message);
+						console.log('Error occurred while creating the account.');
 					}
-				})
-				.catch(error => {
-					console.error('Error:', error);
-					alert('An error occurred during registration');
-				});
+				} else {
+					console.log('Error occurred while creating the account.');
+				}
+			};
+
+			xhr.onerror = function() {
+				console.log('Error occurred while creating the account.');
+			};
+
+			// Convert the form data to JSON and send the request
+			xhr.send(JSON.stringify(formData));
 		}
 
 		// Function to handle form submission
-		function handleSubmit(event) {
-			event.preventDefault();
-
+		function handleSubmit() {
 			// Get form input values
 			const username = document.getElementById('username').value;
 			const password = document.getElementById('password').value;
 			const confirmPassword = document.getElementById('confirm-password').value;
+
+			// Clear any previous error message
+			document.getElementById('password-error').textContent = "";
 
 			// Call the register function
 			register(username, password, confirmPassword);

@@ -248,7 +248,7 @@ const server = http.createServer((req, res) => {
     });
     req.on('end', () => {
       const { username, password } = JSON.parse(body);
-  
+
       // Check if the username is already taken
       isUsernameTaken(username, (err, taken) => {
         if (err) {

@@ -64,4 +64,5 @@ function deleteAccount(username, callback) {
   });
 }
 
+
 module.exports = { validatePassword, deleteAccount };
