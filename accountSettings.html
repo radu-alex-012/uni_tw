@@ -21,9 +21,9 @@
     <div class="content">
       <div id="account" class="view active">
         <h2>Account Settings</h2>
-        <form>
+        <form id="password-form">
           <label for="old_password">Old password:</label>
-          <input type="text" id="old_password" name="old_password"><br>
+          <input type="password" id="old_password" name="old_password"><br>
 
           <label for="new_password">New password:</label>
           <input type="password" id="new_password" name="new_password"><br>
@@ -35,108 +35,83 @@
 
           <input type="submit" value="Save Changes">
         </form>
+        <p id="message" class="message"></p>
       </div>
       <div id="notification" class="view">
         <h2>Notification Settings</h2>
         <form>
-          <label for="newsletter_frequency">Newsletter Frequency:</label>
-          <select id="newsletter_frequency" name="newsletter_frequency">
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="never">Never</option>
-          </select><br>
-
-          <label for="promotions_frequency">Promotions Frequency:</label>
-          <select id="promotions_frequency" name="promotions_frequency">
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="never">Never</option>
-          </select><br>
-
-          <input type="submit" value="Save Changes">
+          <!-- Notification settings form here -->
         </form>
       </div>
       <div id="accessibility" class="view">
         <h2>Accessibility Settings</h2>
-
-        <div>
-          <label for="language">Select language</label>
-          <select id="language" name="language">
-            <option value="Romana">Română</option>
-            <option value="English">English</option>
-          </select><br>
-        </div>
-
-        <label for="Delete">Are you sure you want to delete your account?</label>
-        <button onclick="clickDelete()">Delete Account</button>
+        <!-- Accessibility settings form here -->
       </div>
     </div>
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="jsDarkModeScript.js"></script>
   <script>
-    function clickDelete() {
-      window.open("loginPage.html");
-    }
-  </script>
-  <script>
-    // Retrieve the username from the cookie
-    function getCookie(cname) {
-      const name = cname + "=";
-      const decodedCookie = decodeURIComponent(document.cookie);
-      const cookies = decodedCookie.split(';');
-      for (let i = 0; i < cookies.length; i++) {
-        let cookie = cookies[i];
-        while (cookie.charAt(0) === ' ') {
-          cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) === 0) {
-          return cookie.substring(name.length, cookie.length);
-        }
-      }
-      return "";
-    }
+    $(document).ready(function () {
+      const form = document.getElementById('password-form');
+      const message = document.getElementById('message');
 
-    // Get the username from the cookie
-    const username = getCookie('username');
-
-    // Use the username + greeting message
-    const greeting = document.getElementById('greeting');
-    greeting.textContent = `Welcome, ${username}!`;
-  </script>
-  <script>
-    // Get all the views and store in a variable
-    const views = document.querySelectorAll('.view');
-
-    // Get all the view links and store in a variable
-    const viewLinks = document.querySelectorAll('.views a');
-
-    // Show the first view by default
-    views[0].classList.add('active');
-
-    // Add click event listener to each view link
-    viewLinks.forEach(link => {
-      link.addEventListener('click', e => {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Remove active class from all views
-        views.forEach(view => view.classList.remove('active'));
+        const oldPassword = form.elements.old_password.value;
+        const newPassword = form.elements.new_password.value;
+        const confirmPassword = form.elements.confirm_password.value;
 
-        // Get the ID of the clicked link
-        const viewId = e.target.getAttribute('href');
-
-        // Show the corresponding view
-        document.querySelector(viewId).classList.add('active');
-
-        // Remove active class from all view links
-        viewLinks.forEach(link => link.classList.remove('active'));
-
-        // Add active class to the clicked link
-        e.target.classList.add('active');
+        // Make an AJAX request to validate the password
+        $.ajax({
+          url: '/settings',
+          type: 'POST',
+          dataType: 'json',
+          data: JSON.stringify({ old_password: oldPassword, new_password: newPassword, confirm_password: confirmPassword }),
+          contentType: 'application/json',
+          success: function (response) {
+            if (response.success) {
+              // Password change was successful, show success message and update database
+              message.textContent = response.message;
+              updatePasswordInDatabase(newPassword);
+            } else {
+              // Show error message
+              message.textContent = response.message;
+            }
+          },
+          error: function () {
+            // Show error message
+            message.textContent = 'An error occurred while processing the request';
+          }
+        });
       });
+
+      function updatePasswordInDatabase(newPassword) {
+        // Make an AJAX request to update the password in the database
+        $.ajax({
+          url: '/updatePassword',
+          type: 'POST',
+          dataType: 'json',
+          data: JSON.stringify({ password: newPassword }),
+          contentType: 'application/json',
+          success: function (response) {
+            if (response.success) {
+              // Password successfully updated in the database
+              console.log('Password successfully updated in the database');
+            } else {
+              // Show error message
+              console.log('An error occurred while updating the password in the database');
+            }
+          },
+          error: function () {
+            // Show error message
+            console.log('An error occurred while updating the password in the database');
+          }
+        });
+      }
     });
   </script>
-  <script src="jsDarkModeScript.js"></script>
 </body>
 </html>

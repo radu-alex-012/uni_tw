@@ -64,22 +64,4 @@ function deleteAccount(username, callback) {
   });
 }
 
-// Click event handler for deleting the account
-function clickDelete() {
-  const confirmed = confirm('Are you sure you want to delete your account?');
-  if (confirmed) {
-    const confirm2 = confirm('sure sure?');
-    const username = 'username'; // Replace with the actual username
-    deleteAccount(username, (err) => {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log('Account deleted successfully');
-        // Redirect to the login page
-        window.location.href = '/login';
-      }
-    });
-  }
-}
-
-module.exports = { validatePassword, deleteAccount, clickDelete };
+module.exports = { validatePassword, deleteAccount };

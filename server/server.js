@@ -4,6 +4,9 @@ const path = require('path');
 const { checkLogin } = require('../loginFile/login');
 const { validatePassword } = require('./settings');
 const { deleteAccount } = require('./settings');
+const { registerUser } = require('./newAccount');
+const { isUsernameTaken } = require('./newAccount');
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -68,6 +71,19 @@ const server = http.createServer((req, res) => {
   }else if (req.url === '/cssTheme.css' && req.method === 'GET') {
     // Serve the cssTheme.css file
     const filePath = path.join(__dirname, '../cssTheme.css');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        res.end(content);
+      }
+    });
+  } else if (req.url === '/cssNewAccountPage.css' && req.method === 'GET') {
+    // Serve the cssTheme.css file
+    const filePath = path.join(__dirname, '../loginFile/cssNewAccountPage.css');
     fs.readFile(filePath, (err, content) => {
       if (err) {
         res.statusCode = 500;
@@ -212,7 +228,56 @@ const server = http.createServer((req, res) => {
         res.end(content);
       }
     });
-  } else {
+  }else if (req.url === '/newAccount' && req.method === 'GET') {
+    // Serve the homepage.html
+    const filePath = path.join(__dirname, '../loginFile/newAccountPage.html');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/html');
+        res.end(content);
+      }
+    });
+  }else if (req.url === '/newAccount' && req.method === 'POST') {
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      const { username, password } = JSON.parse(body);
+  
+      // Check if the username is already taken
+      isUsernameTaken(username, (err, taken) => {
+        if (err) {
+          console.error(err);
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false, message: 'Server error' }));
+        } else if (taken) {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false, message: 'Username already taken' }));
+        } else {
+          // Register the new user
+          registerUser(username, password, (err, userId) => {
+            if (err) {
+              console.error(err);
+              res.statusCode = 500;
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: false, message: 'Server error' }));
+            } else {
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: true, message: 'Registration successful' }));
+            }
+          });
+        }
+      });
+    });
+  }else {
     // Handle other requests
     res.statusCode = 404;
     res.end('Not Found');
