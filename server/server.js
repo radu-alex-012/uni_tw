@@ -94,7 +94,46 @@ const server = http.createServer((req, res) => {
         res.end(content);
       }
     });
-  } else if (req.url === '/home.css' && req.method === 'GET') {
+  }else if (req.url === '/darkTheme.css' && req.method === 'GET') {
+    // Serve the cssTheme.css file
+    const filePath = path.join(__dirname, '../css/darkTheme.css');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        res.end(content);
+      }
+    });
+  }  else if (req.url === '/css/colors.css' && req.method === 'GET') {
+    // Serve the cssTheme.css file
+    const filePath = path.join(__dirname, '../css/colors.css');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        res.end(content);
+      }
+    });
+  } else if (req.url === '/colors.css' && req.method === 'GET') {
+    // Serve the cssTheme.css file
+    const filePath = path.join(__dirname, '../css/colors.css');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        res.end(content);
+      }
+    });
+  } else if (req.url === '/css/home.css' && req.method === 'GET') {
     // Serve the cssTheme.css file
     const filePath = path.join(__dirname, '../css/home.css');
     fs.readFile(filePath, (err, content) => {
@@ -107,9 +146,76 @@ const server = http.createServer((req, res) => {
         res.end(content);
       }
     });
-  } else if (req.url === '/favicon.svg' && req.method === 'GET') {
+  }else if (req.url === '/css/style.css' && req.method === 'GET') {
+    // Serve the cssTheme.css file
+    const filePath = path.join(__dirname, '../styleSheets/style.css');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/css');
+        res.end(content);
+      }
+    });
+  }else if (req.url === '/img/icons/favicon.svg' && req.method === 'GET') {
     // Serve the favicon.svg file
-    const filePath = path.join(__dirname, 'img/icons/favicon.svg');
+    const filePath = path.join(__dirname, '../img/icons/favicon.svg');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/svg');
+        res.end(content);
+      }
+    });
+  }
+  /* images */
+  else if (req.url === '/img/icons/account.svg' && req.method === 'GET') {
+    // Serve the favicon.svg file
+    const filePath = path.join(__dirname, '../img/icons/account.svg');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/svg');
+        res.end(content);
+      }
+    });
+  } else if (req.url === '/img/icons/home.svg' && req.method === 'GET') {
+    // Serve the favicon.svg file
+    const filePath = path.join(__dirname, '../img/icons/home.svg');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/svg');
+        res.end(content);
+      }
+    });
+  } else if (req.url === '/img/icons/theme-toggle.svg' && req.method === 'GET') {
+    // Serve the favicon.svg file
+    const filePath = path.join(__dirname, '../img/icons/theme-toggle.svg');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/svg');
+        res.end(content);
+      }
+    });
+  }else if (req.url === '/img/icons/logout.svg' && req.method === 'GET') {
+    // Serve the favicon.svg file
+    const filePath = path.join(__dirname, '../img/icons/logout.svg');
     fs.readFile(filePath, (err, content) => {
       if (err) {
         res.statusCode = 500;
@@ -215,7 +321,7 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({ success: true }));
       }
     });
-  }else if (req.url === '/homepage.html' && req.method === 'GET') {
+  }else if (req.url === '/homepage' && req.method === 'GET') {
     // Serve the homepage.html
     const filePath = path.join(__dirname, '../homepage.html');
     fs.readFile(filePath, (err, content) => {
