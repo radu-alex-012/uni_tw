@@ -60,9 +60,9 @@
                     <input id="db-import" style="display: none" type="file"/>
                     <button class="menu-button" id="db-import-button"><span
                             class="text">Import</span></button>
-                    <a download="exported_db" href="../img/export.svg">
-                        <button class="menu-button"><span
-                                class="text">Export</span></button>
+
+                    <!-- <a download="exported_db" href="../img/export.svg"> -->
+                        <button class="menu-button" onclick="downloadFile()"><span class="text">Export</span></button>
                     </a>
                     <button class="menu-button" onclick="location.href = 'views.html';"><span class="text">Views</span>
                     </button>
@@ -105,7 +105,6 @@
     </div>
     
 </div>
-
 
 <script src="../javascript/homepage.js"></script>
 <script src="../javascript/home.js"></script>

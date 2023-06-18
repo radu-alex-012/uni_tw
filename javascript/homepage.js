@@ -48,13 +48,14 @@ function contactUs() {
        window.location.href='/about';
    }
 
-
+let jsonData;
 var listaTabele = document.getElementById("listaTabele");
 
     fetch('/getTablesStructure')
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        jsonData = data;
 
         for (var i = 1; i < data.tables.length; i++) {// i -> nume tabele
             var tabel = document.createElement("div");
@@ -200,3 +201,21 @@ var listaTabele = document.getElementById("listaTabele");
         });
     }
 
+
+
+    // download json -> export
+    function downloadFile() {
+        // console.log(jsonData);
+ 
+          var data = JSON.stringify(jsonData, null, 2);
+    
+          var blob = new Blob([data], { type: 'application/json' });
+          var url = window.URL.createObjectURL(blob);
+          var link = document.createElement('a');
+          link.href = url;
+          link.download = 'exportedDatabase.json';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+      }
