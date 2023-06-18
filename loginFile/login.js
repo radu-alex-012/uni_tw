@@ -1,7 +1,7 @@
 // ./loginFile/login.js
 
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/user.db', (err) => {
+const dbUser = new sqlite3.Database('./db/user.db', (err) => {
   if (err) {
     console.log('login.js');
     console.error(err.message);
@@ -11,7 +11,7 @@ const db = new sqlite3.Database('./db/user.db', (err) => {
 
 function checkLogin(username, password, callback) {
     const sql = `SELECT * FROM user_login WHERE username = ? AND password = ?`;
-    db.get(sql, [username, password], (err, row) => {
+    dbUser.get(sql, [username, password], (err, row) => {
       if (err) {
         callback(err, false);
       } else {

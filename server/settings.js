@@ -1,6 +1,13 @@
-//const sqlite3 = require('sqlite3').verbose();
-const db = require('../server/databaseConnection');
+const sqlite3 = require('sqlite3').verbose();
 
+// Create a new database connection
+const db = new sqlite3.Database('./db/user.db', sqlite3.OPEN_READWRITE, (err) => {
+  if (err) {
+    console.error(err.message);
+  } else {
+    console.log('Connected to the user database from inside settings.js.');
+  }
+});
 
 // Validate the password
 function validatePassword(username, oldPassword, newPassword, confirmPassword, callback) {
@@ -57,5 +64,22 @@ function deleteAccount(username, callback) {
   });
 }
 
+// Click event handler for deleting the account
+function clickDelete() {
+  const confirmed = confirm('Are you sure you want to delete your account?');
+  if (confirmed) {
+    const confirm2 = confirm('sure sure?');
+    const username = 'username'; // Replace with the actual username
+    deleteAccount(username, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('Account deleted successfully');
+        // Redirect to the login page
+        window.location.href = '/login';
+      }
+    });
+  }
+}
 
-module.exports = { validatePassword, deleteAccount };
+module.exports = { validatePassword, deleteAccount, clickDelete };

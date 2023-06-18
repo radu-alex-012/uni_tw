@@ -45,7 +45,7 @@ formCreateTableHomepage.addEventListener('submit', function(event) {
 
 function contactUs() {
     //    window.open("aboutPage.html");
-       window.location.href='/about';
+            window.location.href='/about';
    }
 
 

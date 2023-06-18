@@ -1,10 +1,18 @@
-//const sqlite3 = require('sqlite3').verbose();
-const dbUser = require('../server/databaseConnection');
+const sqlite3 = require('sqlite3').verbose();
 
+// Create a new database connection
+const dbUser = new sqlite3.Database('./db/user.db', sqlite3.OPEN_READWRITE, (err) => {
+  if (err) {
+    console.error(err.message);
+    console.log('newAccount');
+  } else {
+    console.log('Connected to the user database from inside newAccount.js.');
+  }
+});
 
 // Function to check if a username already exists in the database
 function isUsernameTaken(username, callback) {
-  db.get('SELECT username FROM user_login WHERE username = ?', username, (err, row) => {
+  dbUser.get('SELECT username FROM user_login WHERE username = ?', username, (err, row) => {
     if (err) {
       console.error(err);
       callback(err, null);
@@ -25,7 +33,7 @@ function registerUser(username, password, callback) {
       const error = new Error('Username is already taken');
       callback(error, null);
     } else {
-      db.run('INSERT INTO user_login (username, password) VALUES (?, ?)', [username, password], function (err) {
+      dbUser.run('INSERT INTO user_login (username, password) VALUES (?, ?)', [username, password], function (err) {
         if (err) {
           console.error(err);
           callback(err, null);

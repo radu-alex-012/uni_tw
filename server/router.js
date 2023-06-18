@@ -15,6 +15,20 @@ let createTableData = null;
 let tableInfoG = {name:"", data: {}};
 
 function handleRequest(req, res) {
+  const cookies = {};
+  if (req.headers.cookie) {
+    req.headers.cookie.split(';').forEach(cookie => {
+      const parts = cookie.split('=');
+      const name = parts[0].trim();
+      const value = parts[1].trim();
+      cookies[name] = value;
+    });
+  }
+
+  // Assign the parsed cookies to req.cookies
+  req.cookies = cookies;
+
+  
     let flag = true;
     let filePath;
     switch (req.url) {
@@ -90,19 +104,6 @@ function handleRequest(req, res) {
    });
  });
         }
-        /*else if(req.method === 'GET'){
-          fs.readFile(filePath, (err, content) => {
-            if (err) {
-              res.statusCode = 500;
-              res.end('Internal Server Error');
-            } else {
-              res.statusCode = 200;
-              res.setHeader('Content-Type', 'text/html');
-              res.end(content);
-            }
-          });
-        }
-        */
         break;
       case '/forgotPassword':
         filePath = path.join(__dirname, '..', 'html', 'forgotPasswordPage.html');
@@ -150,29 +151,69 @@ function handleRequest(req, res) {
         break;
       case '/settings':
         filePath = path.join(__dirname, '..', 'html', '../loginFile/accountSettings.html');
-        if(req.method == 'POST'){
+        if(req.method == 'GET' && !req.cookies.username){
           flag = false;
-          const username = req.cookies.username;
-    if (username) {
-      // Serve the accountSettings.html
-      const filePath = path.join(__dirname, '../loginFile/accountSettings.html');
-      fs.readFile(filePath, (err, content) => {
-        if (err) {
-          res.statusCode = 500;
-          res.end('Internal Server Error');
-        } else {
-          res.statusCode = 200;
-          res.setHeader('Content-Type', 'text/html');
-          res.end(content);
+          res.statusCode = 302;
+          res.setHeader('Location', '/login');
+          res.end();
+          return;
         }
-      });
-    } else {
-      res.statusCode = 302;
-      res.setHeader('Location', '/login');
-      res.end();
-    }
+        // Access the parsed cookies
+        console.log('Cookies:', req.cookies);
+        if(req.method == 'POST'){
+          flag = false;let body = '';
+          req.on('data', (chunk) => {
+            body += chunk;
+          });
+          req.on('end', () => {
+            const { old_password, new_password, confirm_password } = JSON.parse(body);
+            const username = req.cookies.username;
+      
+            // Call the validatePassword function and send the response
+            validatePassword(username, old_password, new_password, confirm_password, (err, success, message) => {
+              if (err) {
+                console.error(err);
+                res.statusCode = 500;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: false }));
+              } else {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success, message }));
+              }
+            });
+          });
         }
         break;
+      case '/updatePassword':
+        console.log('Cookies:', req.cookies);
+        if(req.method == 'POST' ){
+          flag = false;
+          const username = req.cookies.username;
+          let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      const { old_password, new_password, confirm_password } = JSON.parse(body);
+      const username = req.cookies.username;
+
+      // Call the validatePassword function and send the response
+      validatePassword(username, old_password, new_password, confirm_password, (err, success, message) => {
+        if (err) {
+          console.error(err);
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: false }));
+        } else {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success, message }));
+        }
+      });
+    });
+        }
+        break; 
       case '/deleteAccount':
         if(req.method == 'POST'){
           flag = false;
@@ -222,6 +263,13 @@ function handleRequest(req, res) {
       // homepage stuff
       case '/homepage':
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
+        if(req.method == 'GET' && !req.cookies.username){
+          flag = false;
+          res.statusCode = 302;
+          res.setHeader('Location', '/login');
+          res.end();
+          return;
+        }
         // displayPageByFilePath(req, res, filePath);
         break;
       case '/getTablesStructure':
@@ -361,6 +409,7 @@ case '/getTableDataFromHomepage':
             break;
 
         case '/dataCreateTable':
+
           if (req.method === 'POST') {
             let requestData = '';
         
@@ -386,6 +435,9 @@ case '/getTableDataFromHomepage':
           flag = false;
         filePath = path.join(__dirname, '..', 'html', 'homepage.html');
         break;
+        case '/cssNewAccountPage.css':
+          filePath =  path.join(__dirname, '..', 'loginFile', 'cssNewAccountPage.css');
+          break;
         // ----------------------------------------
       default:
         filePath = path.join(__dirname, '..', req.url);
