@@ -10,9 +10,9 @@
     <link href="../javaa//home.css" rel="stylesheet">
     <link href="../javaa/createTable.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styleSheets/style.css">
+    <link rel="stylesheet" href="../javaa/style.css">
     <!-- added by teodor-->
-	<link rel="stylesheet" type="text/css" href="styleSheets/cssTheme.css">
+	<link rel="stylesheet" type="text/css" href="../javaa/cssTheme.css">
     
     <style>
         .homepage{
@@ -36,192 +36,26 @@
         </div>
     </div>
 
-<div class="homepage">
-    <div class="main-container">
-        <div class="card create-table-card">
-            <div class="table-name">
-                <!-- <h3>Table name: <i>Studenti informatica</i></h3> -->
-                <h3>Table name: <i>mor</i></h3>
-            </div>
-
-
-
-
-
-            <!-- <form>
-                <input name="table-name" placeholder="Column name" type="text">
-
-                <select name="type">
-                    <option>VARCHAR</option>
-                    <option>DATE</option>
-                    <option>INT</option>
-                    <option>TEXT</option>
-                    <option>NUMBER</option>
-                </select>
-
-                <input min="0" placeholder="Type length" type="number">
-
-                <input placeholder="Default value" type="text">
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    NOT NULL
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    PRIMARY KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    FOREIGN KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    AUTO INDEX
-                </label>
-            </form> -->
-
-            <!-- <form>
-                <input name="table-name" placeholder="Column name" type="text">
-
-                <select name="type">
-                    <option>VARCHAR</option>
-                    <option>DATE</option>
-                    <option>INT</option>
-                    <option>TEXT</option>
-                    <option>NUMBER</option>
-                </select>
-
-                <input min="0" placeholder="Type length" type="number">
-
-                <input placeholder="Default value" type="text">
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    NOT NULL
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    PRIMARY KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    FOREIGN KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    AUTO INDEX
-                </label>
-            </form>
-
-            <form>
-                <input name="table-name" placeholder="Column name" type="text">
-
-                <select name="type">
-                    <option>VARCHAR</option>
-                    <option>DATE</option>
-                    <option>INT</option>
-                    <option>TEXT</option>
-                    <option>NUMBER</option>
-                </select>
-
-                <input min="0" placeholder="Type length" type="number">
-
-                <input placeholder="Default value" type="text">
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    NOT NULL
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    PRIMARY KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    FOREIGN KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    AUTO INDEX
-                </label>
-            </form>
-
-            <form>
-                <input name="table-name" placeholder="Column name" type="text">
-
-                <select name="type">
-                    <option>VARCHAR</option>
-                    <option>DATE</option>
-                    <option>INT</option>
-                    <option>TEXT</option>
-                    <option>NUMBER</option>
-                </select>
-
-                <input min="0" placeholder="Type length" type="number">
-
-                <input placeholder="Default value" type="text">
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    NOT NULL
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    PRIMARY KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    FOREIGN KEY
-                </label>
-
-                <label>
-                    <input class="row-check" type="checkbox" value="">
-                    AUTO INDEX
-                </label>
-
-                <div class="preDiv">
-                    <input class="submit btn" onclick="location.href='home.html'" type="button" value="Create table">
+    <div class="homepage">
+        <div class="main-container">
+            <div class="card create-table-card">
+                <div class="table-name">
+                    <!-- <h3>Table name: <i>Studenti informatica</i></h3> -->
+                    <h3 id ="tableNameH3"></h3>
                 </div>
-            </form> -->
+
+                <form id="createTableForm">
+                    <div id="allFields"></div>
+                    <div class="preDiv">
+                        <input class="submit btn" onclick="createTable()" type="button" value="Create table">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    let createTableData = null;
-
-    fetch('/getTableDataFromHomepage')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        // document.getElementById('name').textContent = name;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-
-    // console.log("create table " + createTableData);
-
-</script>
-
-
-
-
-<!-- <script src="js/home.js"></script> -->
-        <!-- added by teodor-->
-        <script src="javascript/jsDarkModeScript.js"></script>
+    <script src="../javascript/createTable.js"></script>
+    <!-- added by teodor-->
+    <script src="../javascript/jsDarkModeScript.js"></script>
 </body>
 </html>
