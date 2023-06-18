@@ -439,6 +439,18 @@ case '/getTableDataFromHomepage':
           filePath =  path.join(__dirname, '..', 'loginFile', 'cssNewAccountPage.css');
           break;
         // ----------------------------------------
+        case '/getAllData':
+        if (req.method === 'GET') {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+
+          getAllDAta(db, res);
+          return;
+        }
+
+        res.setHeader('Content-Type', 'text/plain');
+        filePath = path.join(__dirname, '..', 'html', 'createTable.html');
+        break;
       default:
         filePath = path.join(__dirname, '..', req.url);
         break;
@@ -669,4 +681,52 @@ function saveTabData(data, name) {
 
   // console.log("tableInfoG" + JSON.stringify(tableInfoG));
   console.log("tableInfoG" + tableInfoG);
+}
+
+function getAllDAta(db, res) {
+  const query = `SELECT name FROM sqlite_master WHERE type='table';`;
+
+// Execute the query
+db.all(query, (err, tables) => {
+if (err) {
+  console.error(err);
+  return;
+}
+
+const tableData = {};
+
+// Iterate through each table
+tables.forEach((table) => {
+  const tableName = table.name;
+
+  // Query to retrieve columns for the table
+  const columnsQuery = `PRAGMA table_info(${tableName});`;
+
+  // Execute the query to retrieve columns
+  db.all(columnsQuery, (err, columns) => {
+  if (err) {
+      console.error(err);
+      return;
+  }
+
+  const rowsQuery = `SELECT * FROM ${tableName};`;
+
+  db.all(rowsQuery, (err, rows) => {
+      if (err) {
+      console.error(err);
+      return;
+      }
+      tableData[tableName] = {
+      columns: columns,
+      rows: rows
+      };
+      if (Object.keys(tableData).length === tables.length) {
+      // Display the JSON variable
+      // console.log(JSON.stringify(tableData, null, 2));
+      res.end(JSON.stringify(tableData, null, 2));
+    }
+  });
+});
+});
+});
 }
