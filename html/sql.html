@@ -26,7 +26,7 @@
 
         <div class="navbar-buttons">
             <a href="/homepage"><img src="../img/icons/home.svg" alt="home"/></a>
-            <a href="/account"><img src="../img/icons/account.svg" alt="account"/></a>
+            <a href="/settings"><img src="../img/icons/account.svg" alt="account"/></a>
             <!-- added by teodor-->
             <!-- <button id="toggle-theme">Toggle Theme</button> -->
             <button id="toggle-theme"><img src="../img/icons/theme-toggle.svg" alt="toggle-theme"/></button>
@@ -34,26 +34,50 @@
         </div>
     </div>
 
-<div class="homepage">
-    <div id="page-content">
-        <div class="sql-prompt-area">
-            <p><label for="sql-prompt">SQL command prompt:</label></p>
-            <textarea autofocus cols="80" id="sql-prompt" name="sql-prompt" placeholder="Enter SQL commands here."
-                      rows="24"></textarea>
-            <button class="sql-run-button" type="button"><img class="sql-run-svg"
-                                                              src="img/icons/play.svg">
-            </button>
-        </div>
-        <p><label for="sql-output">Output:</label></p>
-        <div class="sql-output-area">
-<textarea cols="80" id="sql-output" name="sql-output" placeholder="Command output will be shown here." readonly
-          rows="24">
-</textarea>
+    <div class="homepage">
+        <div id="page-content">
+            <div class="sql-prompt-area">
+                <p><label for="sql-prompt">SQL command prompt:</label></p>
+                <textarea autofocus cols="80" id="sql-prompt" name="sql-prompt" placeholder="Enter SQL commands here."
+                          rows="24"></textarea>
+                <button class="sql-run-button" type="button" onclick="runSQLCommand()"><img class="sql-run-svg"
+                                                                                          src="img/icons/play.svg"></button>
+            </div>
+            <p><label for="sql-output">Output:</label></p>
+            <div class="sql-output-area">
+                <textarea cols="80" id="sql-output" name="sql-output" placeholder="Command output will be shown here." readonly
+                          rows="24"></textarea>
+            </div>
         </div>
     </div>
-</div>
-<script src="../javascript/sql.js"></script>
-    <!-- added by teodor-->
+
+   
+    <!-- added by teodor
+     <script src="../javascript/sql.js"></script>
+    -->
 	<script src="../javascript/jsDarkModeScript.js"></script>
+    
+    <script>
+        function runSQLCommand() {
+            var sqlInput = document.getElementById("sql-prompt").value;
+
+            // Send the SQL input to sqlQuery.js for validation and execution
+            fetch("/executeSQL", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ sql: sqlInput })
+            })
+                .then(response => response.text())
+                .then(data => {
+                    // Display the SQL output in the output textarea
+                    document.getElementById("sql-output").value = data;
+                })
+                .catch(error => {
+                    console.error("An error occurred:", error);
+                });
+        }
+    </script>
 </body>
 </html>

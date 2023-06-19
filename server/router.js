@@ -3,6 +3,8 @@ var fs = require("fs");
 var path = require("path");
 const db = require("./databaseConnection.js");
 const { log } = require("console");
+const { executeSQLQuery } = require('./sqlQuery');
+
 
 //...
 const { checkLogin } = require('../loginFile/login');
@@ -239,7 +241,39 @@ function handleRequest(req, res) {
         break;
       case '/queryTool':
         filePath = path.join(__dirname, '..', 'html', 'sql.html');
+        if(req.method == 'GET' && !req.cookies.username){
+          flag = false;
+          res.statusCode = 302;
+          res.setHeader('Location', '/login');
+          res.end();
+          return;
+        }
         break;
+       case '/executeSQL':
+          if (req.method === 'POST') { 
+            flag = false;
+            let requestBody = '';
+          req.on('data', (chunk) => {
+            requestBody += chunk.toString();
+          });
+      
+          req.on('end', () => {
+            const requestData = JSON.parse(requestBody);
+            const sql = requestData.sql;
+      
+            // Execute the SQL code
+            executeSQLQuery(sql)
+              .then((result) => {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: true, result }));
+              })
+              .catch((error) => {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: false, error }));
+              });
+          });
+          }
+          break;
       case '/about':
         filePath = path.join(__dirname, '..', 'html', 'aboutPage.html');
         break;
@@ -248,9 +282,23 @@ function handleRequest(req, res) {
         break;
       case '/viewTable':
         filePath = path.join(__dirname, '..', 'html', 'viewTable.html');
+        if(req.method == 'GET' && !req.cookies.username){
+          flag = false;
+          res.statusCode = 302;
+          res.setHeader('Location', '/login');
+          res.end();
+          return;
+        }
         break;
       case '/createTable':
         filePath = path.join(__dirname, '..', 'html', 'createTable.html');
+        if(req.method == 'GET' && !req.cookies.username){
+          flag = false;
+          res.statusCode = 302;
+          res.setHeader('Location', '/login');
+          res.end();
+          return;
+        }
         break;
       case '/ss':
         // filePath = path.join(__dirname, '..', 'html', 'helpPage.html');
@@ -394,6 +442,13 @@ case '/getTableDataFromHomepage':
         break;
         case '/getTableInfo':
           if (req.method === 'GET') {
+            if(!req.cookies.username){
+              flag = false;
+              res.statusCode = 302;
+              res.setHeader('Location', '/login');
+              res.end();
+              return;
+            }else{
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
   
@@ -401,6 +456,7 @@ case '/getTableDataFromHomepage':
             res.end(tableInfoG);
             tableInfoG = {name:"", data: {}};
             return;
+            }
           }
   
           res.setHeader('Content-Type', 'text/plain');
