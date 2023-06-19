@@ -45,7 +45,7 @@ formCreateTableHomepage.addEventListener('submit', function(event) {
 
 function contactUs() {
     //    window.open("aboutPage.html");
-            window.location.href='/about';
+       window.location.href='/about';
    }
 
 let jsonData;
@@ -201,13 +201,31 @@ var listaTabele = document.getElementById("listaTabele");
         });
     }
 
+    let allData;
+    // get all data
+    fetch('getAllData', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+        //   console.log(data);
+            allData = data;
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
 
 
     // download json -> export
     function downloadFile() {
-        // console.log(jsonData);
+        // console.log(allData);
  
-          var data = JSON.stringify(jsonData, null, 2);
+          var data = JSON.stringify(allData, null, 2);
     
           var blob = new Blob([data], { type: 'application/json' });
           var url = window.URL.createObjectURL(blob);
@@ -219,3 +237,5 @@ var listaTabele = document.getElementById("listaTabele");
           document.body.removeChild(link);
           window.URL.revokeObjectURL(url);
       }
+
+      
