@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aboutPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/aboutPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountSettings.html" beforeDir="false" afterPath="$PROJECT_DIR$/accountSettings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cssAboutPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssAboutPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cssAccountSettings.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssAccountSettings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cssForgotPasswordPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssForgotPasswordPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cssLoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssLoginPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cssNewAccountPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssNewAccountPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cssTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forgotPasswordPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/forgotPasswordPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/helpPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newAccountPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/newAccountPage.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ROTrKrML0VkpjeXF1csra9lTne" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;radu&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.0.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.0.0&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Documents\Facultate\uni_tw\css" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="" />
+      <created>1687120328991</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687120328991</updated>
+      <workItem from="1687120330093" duration="75000" />
+      <workItem from="1687485340958" duration="787000" />
+      <workItem from="1687535084352" duration="626000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
