@@ -1,0 +1,212 @@
+/*.grid-container {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-around;*/
+/*    grid-gap: 5px;*/
+/*}*/
+
+/*.grid-buttons {*/
+/*    display: grid;*/
+/*    align-items: center;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-around;*/
+/*    grid-gap: 5px;*/
+/*}*/
+
+/*.button {*/
+/*    color: #4c8ef8;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.login-button {*/
+/*    background-color: #4CAF50;*/
+/*    color: #fff;*/
+/*    width: 100px;*/
+/*    height: 50px;*/
+/*}*/
+
+/*.forgot-pass-button {*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*}*/
+
+/*.new-button {*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*}*/
+
+/*.login-button:hover {*/
+/*    background-color: #3e8e41;*/
+/*}*/
+
+/*.forgot-pass-button:hover, .new-button:hover {*/
+/*    color: #0743a2;*/
+/*}*/
+
+/*input[type="text"],*/
+/*input[type="password"] {*/
+/*    width: 90%;*/
+/*    padding: 10px;*/
+/*    margin-bottom: 20px;*/
+/*    border-radius: 5px;*/
+/*    border: none;*/
+/*    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*input[type="submit"] {*/
+/*    background-color: #4CAF50;*/
+/*    color: #fff;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*@media screen and (max-width: 600px) {*/
+/*    .container {*/
+/*        width: auto;*/
+/*        position: relative;*/
+/*        top: auto;*/
+/*        left: auto;*/
+/*        transform: none;*/
+/*        margin: auto;*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        justify-content: center;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-height: 600px)*/
+/*and (orientation: landscape) {*/
+/*    .container {*/
+/*        position: relative;*/
+/*        top: auto;*/
+/*        left: auto;*/
+/*        transform: none;*/
+/*        margin: auto;*/
+/*        display: block;*/
+/*        flex-direction: column;*/
+/*        justify-content: flex-start;*/
+/*    }*/
+
+/*    .grid-container {*/
+/*        position: relative;*/
+/*        top: auto;*/
+/*        left: auto;*/
+/*        transform: none;*/
+/*        margin: auto;*/
+/*        display: block;*/
+/*        flex-direction: row;*/
+/*        justify-content: flex-start;*/
+/*    }*/
+/*}*/
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Container styles */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4c8ef8;
+}
+
+/* Button styles */
+.button {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button {
+    background-color: #4c8ef8;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #3672d6;
+}
+
+.forgot-pass-button,
+.new-button {
+    color: #4c8ef8;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.forgot-pass-button:hover,
+.new-button:hover {
+    color: #0743a2;
+}
+
+/* Login status styles */
+#login-status {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .container {
+        width: auto;
+        margin: 20px;
+        border-radius: 5px;
+    }
+}

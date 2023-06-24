@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>DoW: login</title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/dark.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<button id="toggle-theme">Toggle Theme</button>
+<div class="container">
+    <h1>Login</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input id="username" name="username" required type="text">
+
+        <label for="password">Password:</label>
+        <input id="password" name="password" required type="password">
+
+        <button class="login-button" onclick="loginClick()" type="button">Log in</button>
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button class="forgot-pass-button" onclick="forgotClick()" type="button">Forgot password?</button>
+            <button class="new-button" onclick="newClick()" type="button">Register</button>
+        </div>
+    </form>
+    <p id="login-status"></p>
+</div>
+
+<script src="../js/index.js"></script>
+</body>
+</html>

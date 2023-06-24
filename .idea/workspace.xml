@@ -5,19 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aboutPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/aboutPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountSettings.html" beforeDir="false" afterPath="$PROJECT_DIR$/accountSettings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssAboutPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssAboutPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssAccountSettings.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssAccountSettings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssForgotPasswordPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssForgotPasswordPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssLoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssLoginPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssNewAccountPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssNewAccountPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cssTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgotPasswordPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/forgotPasswordPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/helpPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newAccountPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/newAccountPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aboutPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountSettings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alterTable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/createTable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cssAboutPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cssAccountSettings.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cssForgotPasswordPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cssLoginPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cssNewAccountPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cssTheme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/darkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/darkTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/viewTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/viewTable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forgotPasswordPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/export.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/account.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/collaborate.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/expand.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/favicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/logout.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/shrink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icons/theme-toggle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertValues.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/jsDarkModeScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/darkMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/darkMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsDarkModeScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/aboutPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/accountSettings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/cssAboutPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/cssAccountSettings.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/cssForgotPasswordPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/cssLoginPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/cssNewAccountPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/cssTheme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/forgotPasswordPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/jsDarkModeScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/loginPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/newAccountPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFile/status.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newAccountPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scholarly.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/status.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styleSheets/cssTheme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styleSheets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styleSheets/viewTable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewTable.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,22 +78,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;radu&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.0.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.0.0&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "radu",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
+    "last_opened_file_path": "C:/Users/Alex/Documents/Facultate/uni_tw",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Documents\Facultate\uni_tw\css" />
@@ -67,6 +113,9 @@
       <workItem from="1687120330093" duration="75000" />
       <workItem from="1687485340958" duration="787000" />
       <workItem from="1687535084352" duration="626000" />
+      <workItem from="1687544238182" duration="3858000" />
+      <workItem from="1687552867403" duration="598000" />
+      <workItem from="1687561015532" duration="7561000" />
     </task>
     <servers />
   </component>

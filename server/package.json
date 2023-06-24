@@ -8,5 +8,9 @@
     "start": "nodemon server.js"
   },
   "author": "Radu Alexandru",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5"
+  }
 }

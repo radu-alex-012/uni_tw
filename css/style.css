@@ -26,13 +26,16 @@ body {
 
 .homepage {
     margin: 0;
+    margin-left: 300px;
     padding-top: 44px;
+    /* display: none; */
 }
 
 .main-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: center;
     flex-flow: wrap;
     width: 100%;
 }
@@ -49,11 +52,109 @@ input {
 .navbar {
     background-color: var(--red-clr);
     margin: 0;
-    width: 100vw;
+    width: 100%;
     height: 44px;
     box-shadow: 0px 0px 8px black;
     position: fixed;
     z-index: 10;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.navbar-buttons {
+    fill: var(--row-clr);
+    margin: 10px;
+    margin-right: 20px;
+    float: right;
+}
+
+.navbar-buttons img {
+    width: 25px;
+    height: 25px;
+    fill: var(--row-clr);
+}
+
+.menu-button {
+    appearance: none;
+    background-color: var(--beige-clr);
+    border-width: 0;
+    box-sizing: border-box;
+    color: var(--text-clr);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1em;
+    margin: 0;
+    opacity: 1;
+    outline: 0;
+    padding: 1.5em 2.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: geometricprecision;
+    text-transform: uppercase;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.menu-button:before {
+    animation: opacityFallbackOut .5s step-end forwards;
+    backface-visibility: hidden;
+    background-color: var(--background-clr);
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateZ(0);
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+.menu-button:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.menu-button:after {
+    background-color: var(--background-clr);
+}
+
+.menu-button span {
+    z-index: 1;
+    position: relative;
+}
+
+/* dropdown -> showDatabaseList */
+.dropdown {
+    display: none;
+    width: 220px;
+    background-color: var(--red-clr);
+    color: var(--background-clr);
+    padding: 5px;
+    height: 44px;
+    font-size: 22px;
+}
+
+.dropdown img {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.dropdown:before {
+    background-color: var(--dark-red-clr);
+}
+
+.dropdown:after {
+    background-color: var(--dark-red-clr);
 }
 
 /* car -> element */
@@ -63,6 +164,78 @@ input {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 5px 5px gray;
+}
+
+/* left -> panel */
+#database-panel {
+    box-shadow: 2px 0px 8px var(--gray-clr);
+    width: 300px;
+    background-color: var(--beige-clr);
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    margin-top: 44px;
+}
+
+.database-message {
+    color: var(--gray-text-clr);
+    padding: 40px;
+    padding-bottom: 10px;
+    font-size: 28px;
+    box-shadow: 0px 15px 10px -15px var(--gray-clr);
+    text-align: center;
+    font-weight: bold;
+}
+
+.database-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#database-ul {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#database-ul li {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: var(--gray-text-clr);
+    cursor: pointer;
+}
+
+#database-ul li:hover {
+    color: var(--light-red-clr);
+}
+
+.database-finder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.database-finder input {
+    margin: 5px;
+}
+
+.select-database {
+    margin: 0;
+    position: absolute;
+    top: calc(50% - 44px);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+#toggle {
+    display: flex;
 }
 
 /* table */
@@ -178,7 +351,7 @@ input {
 .table-commands form label {
     display: flex;
     flex-direction: row;
-    width: 150px;
+    width: 130px;
     gap: 15px;
     color: var(--gray-text-clr);
     margin-top: auto;
@@ -231,27 +404,6 @@ input {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-/* test - tabel */
-@media screen and (min-width: 1000px) {
-    .row-data {
-        display: flex;
-        flex-direction: column;
-        flex-flow: wrap;
-    }
-
-    .col {
-        width: auto;
-    }
-
-    .expand-button {
-        display: none;
-    }
-
-    .row-title {
-        display: none;
-    }
 }
 
 /* form/checkbox */
@@ -311,3 +463,103 @@ input[type="checkbox"]:checked::before {
 .submit {
     background-color: white;
 }
+
+/* responsive  */
+/* left panel */
+@media screen and (max-width: 1500px) {
+    #database-panel {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .dropdown {
+        display: block;
+    }
+
+    .homepage {
+        margin-left: 0;
+    }
+
+    #toggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #toggle {
+        margin: 0;
+    }
+
+    .button-alignement {
+        /* width: 100%; */
+        /* width: 200px; */
+    }
+
+    #database-panel {
+        width: 100%;
+        position: relative;
+    }
+}
+
+/* test - tabel */
+@media screen and (min-width: 1000px) {
+    .row-data {
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+    }
+
+    .col {
+        width: auto;
+    }
+
+    .expand-button {
+        display: none;
+    }
+
+    .row-title {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .dropdown {
+        width: 150px;
+    }
+}
+
+#toggle-theme {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-buttons {
+    cursor: pointer;
+}
+
+.table-commands form div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.btn-input {
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px;
+    width: 120px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: center;
+}
+
+.btn-input a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
