@@ -5,67 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aboutPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountSettings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alterTable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/createTable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssAboutPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssAccountSettings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssForgotPasswordPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssLoginPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssNewAccountPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssTheme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/darkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/darkTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/viewTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/viewTable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgotPasswordPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/export.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/account.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/collaborate.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/expand.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/home.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/logout.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/play.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/shrink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icons/theme-toggle.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insertValues.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/jsDarkModeScript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/darkMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/darkMode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsDarkModeScript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/aboutPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/accountSettings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/cssAboutPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/cssAccountSettings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/cssForgotPasswordPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/cssLoginPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/cssNewAccountPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/cssTheme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/forgotPasswordPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/jsDarkModeScript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/loginPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/newAccountPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginFile/status.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newAccountPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scholarly.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/newAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/status.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styleSheets/cssTheme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styleSheets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styleSheets/viewTable.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewTable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,29 +38,39 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ROTrKrML0VkpjeXF1csra9lTne" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "radu",
-    "javascript.nodejs.core.library.configured.version": "18.16.0",
-    "javascript.nodejs.core.library.typings.version": "18.16.0",
-    "last_opened_file_path": "C:/Users/Alex/Documents/Facultate/uni_tw",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;radu&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.16.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.16.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alex/Documents/Facultate/uni_tw&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Documents\Facultate\uni_tw\css" />
@@ -116,6 +90,14 @@
       <workItem from="1687544238182" duration="3858000" />
       <workItem from="1687552867403" duration="598000" />
       <workItem from="1687561015532" duration="7561000" />
+      <workItem from="1687586605076" duration="1739000" />
+      <workItem from="1687615239754" duration="5139000" />
+      <workItem from="1687621802091" duration="18205000" />
+      <workItem from="1687676268783" duration="437000" />
+      <workItem from="1687676719326" duration="4083000" />
+      <workItem from="1687683069898" duration="5536000" />
+      <workItem from="1687688695818" duration="1917000" />
+      <workItem from="1687706056924" duration="9873000" />
     </task>
     <servers />
   </component>

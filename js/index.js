@@ -1,33 +1,36 @@
-function loginClick() {
-    const username = document.getElementById('username').value;
+document.getElementById('login-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const loginData = {
-        username: username, password: password,
+    const formData = {
+        email: email, password: password
     };
-
+    const jsonData = JSON.stringify(formData);
     fetch('http://localhost:3000/login', {
-        method: 'POST', headers: {
-            'Content-Type': 'application/json',
-        }, mode: 'no-cors', body: JSON.stringify(loginData),
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData,
     })
         .then((response) => response.json())
         .then((data) => {
-            if (data.message === 'Success!') {
-                document.getElementById('login-status').textContent = 'Logged in!';
-                window.location.href = 'home.html';
+            if (data.auth === 'success') {
+                document.getElementById('login-status').innerHTML = 'Logged in!';
             } else {
-                document.getElementById('login-status').textContent = 'Invalid username or password.';
+                document.getElementById('login-status').innerHTML = 'Invalid username or password.';
             }
         })
         .catch((error) => {
-            console.error('Error:', error);
+            console.error(error);
         });
-}
+});
+
 
 function forgotClick() {
-    window.location.href = "forgotPassword.html";
+    window.location.href = 'http://localhost:3000/forgotPassword';
 }
 
 function newClick() {
-    window.location.href = "newAccount.html";
+    window.location.href = 'http://localhost:3000/register';
 }

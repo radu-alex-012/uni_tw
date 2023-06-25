@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "cors": "^2.8.5"
+    "mysql2": "^3.4.1"
   }
 }
