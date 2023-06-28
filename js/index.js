@@ -13,10 +13,10 @@ document.getElementById('login-form').addEventListener('submit', function (event
         },
         body: jsonData,
     })
-        .then((response) => response.json())
+        .then((response) => response.text())
         .then((data) => {
-            if (data.auth === 'success') {
-                document.getElementById('login-status').innerHTML = 'Logged in!';
+            if (data === 'Success!') {
+                window.location.href = 'http://localhost:3000/home';
             } else {
                 document.getElementById('login-status').innerHTML = 'Invalid username or password.';
             }

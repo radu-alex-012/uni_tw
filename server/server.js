@@ -51,13 +51,14 @@ async function authenticate(email, password) {
 
 function isAuthenticated(req) {
     const cookie = req.headers.cookie;
-    let sessionId;
-
-    if (cookie && cookie.includes('session')) {
-        sessionId = cookie.split('=')[1];
-        return sessions[sessionId] !== undefined;
+    if (cookie) {
+        const cookies = cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const [name, value] = cookies[i].trim().split('=');
+            if (name === 'session')
+                return sessions[value] !== undefined;
+        }
     }
-
     return false;
 }
 
@@ -130,36 +131,39 @@ const server = http.createServer((req, res) => {
         }
     } else if (req.method === 'POST') {
         if (pathname === '/login') {
-            if (isAuthenticated(req)) {
-                res.writeHead(200, {Location: '/home'});
-                res.end();
-            } else {
-                let body = '';
-                req.on('data', chunk => {
-                    body += chunk.toString();
-                });
-                req.on('end', async () => {
-                    const formData = JSON.parse(body);
-                    const email = formData['email'];
-                    const password = formData['password'];
+            let body = '';
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+            req.on('end', async () => {
+                const formData = JSON.parse(body);
+                const email = formData['email'];
+                const password = formData['password'];
 
-                    if (await authenticate(email, password)) {
-                        const sessionId = generateSessionId();
-                        sessions[email] = sessionId;
-                        res.setHeader('Location', '/home');
-                        res.setHeader('Set-Cookie', `session=${sessionId}; HttpOnly; Path=/`);
-                        res.writeHead(302);
-                        res.end();
-
-                    } else {
-                        res.writeHead(401, {'Content-Type': 'application/json'})
-                        res.end(JSON.stringify({
-                            auth: 'fail'
-                        }));
-                    }
-                });
-            }
-            console.log('Sessions:\n', sessions);
+                if (await authenticate(email, password)) {
+                    const sessionId = generateSessionId();
+                    sessions[sessionId] = email;
+                    res.setHeader('Location', '/home');
+                    res.setHeader('Set-Cookie', `session=${sessionId}; HttpOnly; Path=/`);
+                    res.writeHead(200, {'Content-Type': 'text/plain'});
+                    res.end('Success!');
+                } else {
+                    res.writeHead(401);
+                    res.end('Fail!');
+                }
+            });
+        } else {
+            res.writeHead(401, {'Content-Type': 'text/plain'});
+            res.end('Forbidden');
+        }
+    } else if (req.method === 'DELETE') {
+        if (pathname === '/logout') {
+            const sessionId = req.headers.cookie.split('=')[1];
+            delete sessions[sessionId];
+            res.setHeader('Location', '/');
+            res.setHeader('Set-Cookie', `session=; HttpOnly; Path=/; Expires=${new Date(0).toUTCString()}`);
+            res.writeHead(200, {'Content-Type': 'text/plain'});
+            res.end('Logged out!');
         } else {
             res.writeHead(401, {'Content-Type': 'text/plain'});
             res.end('Forbidden');

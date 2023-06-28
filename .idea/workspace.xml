@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/darkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/darkTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/alterTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/alterTable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/createTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/createTable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/newAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/insertValues.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/insertValues.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/sql.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/sql.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/viewTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/viewTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/router.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +97,8 @@
       <workItem from="1687676719326" duration="4083000" />
       <workItem from="1687683069898" duration="5536000" />
       <workItem from="1687688695818" duration="1917000" />
-      <workItem from="1687706056924" duration="9873000" />
+      <workItem from="1687706056924" duration="10108000" />
+      <workItem from="1687904079864" duration="7749000" />
     </task>
     <servers />
   </component>

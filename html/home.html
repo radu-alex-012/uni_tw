@@ -5,31 +5,25 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>DoW: database 'DummyDatabase1'</title>
-    <link href="img/icons/favicon.svg" rel="shortcut icon" type="image/png">
-    <link href="css/home.css" rel="stylesheet">
-    <link href="css/darkTheme.css" rel="stylesheet">
-
-    <link href="styleSheets/style.css" rel="stylesheet">
-
-    <!-- added by teodor-->
-    <link href="styleSheets/cssTheme.css" rel="stylesheet" type="text/css">
+    <title>DoW: home</title>
+    <link href="../res/icons/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="../css/home.css" rel="stylesheet" type="text/css">
+    <link href="../css/darkTheme.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="navbar">
-    <div class="button-alignement">
+    <div class="button-alignment">
         <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img
-                alt="database img" src="img/icons/favicon.svg" style="width: 25px; height: 25px;"/> Databases</span>
+                alt="database img" src="../res/icons/favicon.svg" style="width: 25px; height: 25px;"/> Databases</span>
         </button>
     </div>
 
     <div class="navbar-buttons">
-        <a href="home.html"><img alt="home" src="img/icons/home.svg"/></a>
-        <a href="accountSettings.html"><img alt="account" src="img/icons/account.svg"/></a>
-        <!-- added by teodor-->
-        <!-- <button id="toggle-theme">Toggle Theme</button> -->
-        <button id="toggle-theme"><img alt="toggle-theme" src="img/icons/theme-toggle.svg"/></button>
-        <a href="index.html"><img alt="logout" src="img/icons/logout.svg"/></a>
+        <a href="home.html"><img alt="Homepage" src="../res/icons/home.svg"/></a>
+        <a href="accountSettings.html"><img alt="account" src="../res/icons/account.svg"/></a>
+        <button id="toggle-theme"><img alt="toggle-theme" src="../res/icons/dark.svg"/></button>
+        <a href="index.html"><img alt="logout" src="../res/icons/logout.svg"/></a>
     </div>
 </div>
 
@@ -364,19 +358,16 @@
             <div>
                 <button class="button buttonContact" onclick="contactUs()" type="button">Contact us!</button>
             </div>
-            <p>&copy; 2023 Web Project. All Rights Reserved.</p>
         </footer>
     </div>
 
 </div>
+
 <script>
     function contactUs() {
         window.open("aboutPage.html");
     }
 </script>
-<script src="js/home.js"></script>
-<!--<script src="js/darkMode.js"></script>-->
-<!-- added by teodor-->
-<script src="javascript/jsDarkModeScript.js"></script>
+<script src="../js/home.js"></script>
 </body>
 </html>
