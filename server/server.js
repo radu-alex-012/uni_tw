@@ -91,7 +91,7 @@ const server = http.createServer((req, res) => {
                 }
             });
         } else if (pathname === '/forgotPassword') {
-            const forgotPassPath = path.join(__dirname, '..', 'html', 'forgotPassword.html');
+            const forgotPassPath = path.join(__dirname, '..', 'html', 'resetPassword.html');
             fs.readFile(forgotPassPath, 'utf8', (err, content) => {
                 if (err) {
                     res.writeHead(500, {'Content-Type': 'text/plain'});

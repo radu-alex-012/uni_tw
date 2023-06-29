@@ -71,3 +71,7 @@ function toggleRowData(e) {
 document.getElementById('db-import-button').addEventListener('click', () => {
     document.getElementById('db-import').click()
 });
+
+function contactUs() {
+    window.open("aboutPage.html");
+}

@@ -1,6 +1,6 @@
 :root {
     --background-clr: #f1f1f1;
-    --beige-clr: #dee2e6;
+    --light-gray-clr: #dee2e6;
     --gray-clr: #ced4da;
     --aa-clr: #adb5bd;
     --light-red-clr: #E98074;
@@ -12,6 +12,8 @@
     --row-clr: white;
     --form-control-color: #E85A4F;
     --btn-clr: #e8e8e8;
-    --font: black;
-    --hue: green;
+    --nav-height: 45px;
+    --font-size: 16px;
+    --border-radius-size: 15px;
+    --default-box-shadow: 1px 5px 5px gray;
 }

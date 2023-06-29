@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <title>DoW: account settings</title>
+    <meta content="" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Account Settings</title>
-    <link href="cssAccountSettings.css" rel="stylesheet">
-    <link href="cssTheme.css" rel="stylesheet">
+
+    <meta content="" property="og:title">
+    <meta content="" property="og:type">
+    <meta content="" property="og:url">
+    <meta content="" property="og:image">
+
+    <link href="../res/icons/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="../css/account.css" rel="stylesheet" type="text/css">
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-<!--
-<button id="toggle-theme">Toggle Theme</button>
-   -->
-<button id="toggle-theme">Toggle Theme</button>
+<nav>
+    <a href="/home" title="Homepage"><img alt="Homepage" class="navbar-button" src="../res/icons/home.svg"/></a>
+    <a href="/account" title="Account settings"><img alt="Account settings" class="navbar-button"
+                                                     src="../res/icons/account.svg"/></a>
+    <img alt="Toggle dark mode" class="navbar-button" src="../res/icons/dark.svg"/>
+    <a href="/logout" title="Log out"><img alt="Log out" class="navbar-button" src="../res/icons/logout.svg"/></a>
+</nav>
 
 <div class="container">
     <div class="sidebar">
         <ul class="views">
-            <li><a href="#account">Account</a></li>
-            <li><a href="#notification">Notification</a></li>
-            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#account">Security</a></li>
+            <li><a href="#notification">Notifications</a></li>
+            <li><a href="#other">Others</a></li>
         </ul>
     </div>
     <div class="content">
         <div class="view active" id="account">
-            <h2>Account Settings</h2>
+            <h2>Account settings</h2>
             <form>
                 <label for="username">Username:</label>
                 <input id="username" name="username" type="text" value="johndoe"><br>
@@ -38,7 +48,7 @@
             </form>
         </div>
         <div class="view" id="notification">
-            <h2>Notification Settings</h2>
+            <h2>Notification settings</h2>
             <form>
                 <label for="newsletter_frequency">Newsletter Frequency:</label>
                 <select id="newsletter_frequency" name="newsletter_frequency">
@@ -59,19 +69,12 @@
                 <input type="submit" value="Save Changes">
             </form>
         </div>
-        <div class="view" id="accessibility">
-            <h2>Accessibility Settings</h2>
-
-            <div>
-                <label for="language">Select language</label>
-                <select id="language" name="language">
-                    <option value="Romana">Română</option>
-                    <option value="English">English</option>
-                </select><br>
-            </div>
-
-            <label for="Delete">Are you sure you want to delete your account?</label>
-            <button onclick="clickDelete()">Delete Account</button>
+        <div class="view" id="other">
+            <h2>Other settings</h2>
+            <br>
+            <h3>Account deletion</h3>
+            <label for="delete">Are you sure you want to delete your account?</label>
+            <button id="delete" onclick="clickDelete()">Delete account</button>
         </div>
     </div>
 </div>
@@ -113,5 +116,6 @@
     });
 </script>
 <script src="jsDarkModeScript.js"></script>
+
 </body>
 </html>

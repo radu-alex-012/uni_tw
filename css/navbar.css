@@ -1,0 +1,41 @@
+nav {
+    background-color: var(--red-clr);
+    margin: 0;
+    height: var(--nav-height);
+    padding-left: 15px;
+    box-shadow: 1px 5px 5px gray;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 10;
+}
+
+nav a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-button {
+    width: 30px;
+    height: 30px;
+    filter: invert(73%) sepia(5%) saturate(463%) hue-rotate(169deg) brightness(97%) contrast(96%);
+    transition: transform .25s ease;
+}
+
+.navbar-button:hover {
+    transform: scale(1.2);
+    filter: invert(100%) sepia(4%) saturate(7485%) hue-rotate(207deg) brightness(111%) contrast(103%);
+}
+
+.navbar-buttons button {
+    width: 25px;
+    height: 25px;
+    align-self: center;
+    fill: var(--row-clr);
+}

@@ -1,4 +1,5 @@
-@import "colors.css";
+@import "variables.css";
+@import "navbar.css";
 
 body {
     margin: 0;
@@ -6,40 +7,30 @@ body {
     background-color: var(--background-clr);
 }
 
-.homepage {
-    padding-top: 44px;
-}
-
-.navbar {
-    background-color: var(--red-clr);
-    margin: 0;
-    width: 100%;
-    height: 44px;
-    box-shadow: 0 0 8px black;
-    position: fixed;
-    z-index: 10;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+label {
+    font-size: 18px;
 }
 
 #page-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2em;
-    gap: .25em;
+    padding: 15px;
+    gap: 5px;
 }
 
 .sql-prompt-area, .sql-output-area {
     display: flex;
     flex-direction: column;
-    gap: .25em;
+    gap: 5px;
     justify-content: center;
 }
 
 #sql-prompt, #sql-output {
+    padding: 15px;
+    border-radius: 15px;
+    font-family: Consolas, serif;
+    font-size: 16px;
     resize: none;
     overflow: auto;
 }
@@ -53,10 +44,11 @@ body {
 }
 
 .sql-run-button {
+    padding: 15px;
     align-self: center;
     cursor: pointer;
     background-color: #27282E;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px solid #adb5bd;
     display: flex;
 }
@@ -71,6 +63,6 @@ body {
 }
 
 .sql-run-svg {
-    width: 2em;
+    width: 30px;
     filter: invert(68%) sepia(19%) saturate(1179%) hue-rotate(73deg) brightness(98%) contrast(98%);
 }

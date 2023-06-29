@@ -7,7 +7,8 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(64) NOT NULL,
     username VARCHAR(50) NOT NULL,
-    session_id VARCHAR(64) DEFAULT NULL
+    newsletter ENUM('D','W','M') DEFAULT 'D',
+    promotions ENUM('D','W','M') DEFAULT 'D'
 );
 
 CREATE TABLE user_tables (

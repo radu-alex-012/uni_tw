@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <title>DoW: about</title>
+    <meta content="About page" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Contact</title>
+
+    <meta content="" property="og:title">
+    <meta content="" property="og:type">
+    <meta content="" property="og:url">
+    <meta content="" property="og:image">
+
+    <link href="../res/icons/favicon.svg" rel="icon" type="image/svg+xml">
     <link href="../css/about.css" rel="stylesheet" type="text/css">
-    <link href="../css/dark.css" rel="stylesheet" type="text/css">
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<button id="dark-toggle" onclick="function reverseColor() {
 
-}
-reverseColor()">
-    <img alt="Dark mode" src="../res/icons/dark.svg">
-</button>
+<nav>
+    <a href="/home" title="Homepage"><img alt="Homepage" class="navbar-button" src="../res/icons/home.svg"/></a>
+    <a href="/account" title="Account settings"><img alt="Account settings" class="navbar-button"
+                                                     src="../res/icons/account.svg"/></a>
+    <img alt="Toggle dark mode" class="navbar-button" src="../res/icons/dark.svg"/>
+    <a href="/logout" title="Log out"><img alt="Log out" class="navbar-button" src="../res/icons/logout.svg"/></a>
+</nav>
+
 <div class="container">
     <header>
+        <div class="logo-container">
+            <img alt="DoW icon" class="logo" src="../res/icons/favicon.svg">
+        </div>
         <h1>DoW - Database on Web</h1>
         <h2>Online relational database management platform optimised for mobile devices</h2>
     </header>
     <main>
         <section>
-            <h2>About the project</h2>
+            <h3>About the project</h3>
             <p>This project was created for the <i>Web Technologies</i> course in 2023 by a team of 3 students. The
                 project
                 is a web
@@ -30,7 +45,7 @@ reverseColor()">
         </section>
 
         <section>
-            <h2>Authors</h2>
+            <h3>Authors</h3>
             <ul>
                 <li><strong>Ciobanu Răzvan</strong><br>
                 </li>
@@ -42,7 +57,7 @@ reverseColor()">
         </section>
 
         <section>
-            <h2>Source code</h2>
+            <h3>Source code</h3>
             <a href="https://github.com/radu-alex-012/uni_tw">GitHub repository</a>
         </section>
     </main>

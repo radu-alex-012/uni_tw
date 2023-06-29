@@ -1,6 +1,6 @@
 :root { /* cred ca se poate face un fisier nou css care contina partea de culori */
     --background-clr: #f1f1f1;
-    --beige-clr: #dee2e6;
+    --light-gray-clr: #dee2e6;
     --gray-clr: #ced4da;
     --aa-clr: #adb5bd;
     --light-red-clr: #E98074;
@@ -76,9 +76,9 @@ input {
     fill: var(--row-clr);
 }
 
-.menu-button {
+.command-button {
     appearance: none;
-    background-color: var(--beige-clr);
+    background-color: var(--light-gray-clr);
     border-width: 0;
     box-sizing: border-box;
     color: var(--text-clr);
@@ -104,7 +104,7 @@ input {
     white-space: nowrap;
 }
 
-.menu-button:before {
+.command-button:before {
     animation: opacityFallbackOut .5s step-end forwards;
     backface-visibility: hidden;
     background-color: var(--background-clr);
@@ -119,16 +119,16 @@ input {
     width: 100%;
 }
 
-.menu-button:hover:before {
+.command-button:hover:before {
     animation: opacityFallbackIn 0s step-start forwards;
     clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
 }
 
-.menu-button:after {
+.command-button:after {
     background-color: var(--background-clr);
 }
 
-.menu-button span {
+.command-button span {
     z-index: 1;
     position: relative;
 }
@@ -159,7 +159,7 @@ input {
 
 /* car -> element */
 .card {
-    background-color: var(--beige-clr);
+    background-color: var(--light-gray-clr);
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -170,7 +170,7 @@ input {
 #database-panel {
     box-shadow: 2px 0px 8px var(--gray-clr);
     width: 300px;
-    background-color: var(--beige-clr);
+    background-color: var(--light-gray-clr);
     height: 100%;
     position: fixed;
     z-index: 5;
@@ -492,8 +492,8 @@ input[type="checkbox"]:checked::before {
     }
 
     .button-alignment {
-        /* width: 100%; */
-        /* width: 200px; */
+         width: 100%;
+         width: 200px;
     }
 
     #database-panel {

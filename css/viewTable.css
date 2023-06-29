@@ -1,6 +1,6 @@
 :root { /* cred ca se poate face un fisier nou css care contina partea de culori */
     --background-clr: #f1f1f1;
-    --beige-clr: #dee2e6;
+    --light-gray-clr: #dee2e6;
     --gray-clr: #ced4da;
     --aa-clr: #adb5bd;
     --light-red-clr: #E98074;
@@ -58,7 +58,7 @@ input {
 
 /* car -> element */
 .card {
-    background-color: var(--beige-clr);
+    background-color: var(--light-gray-clr);
     margin: 20px;
     padding: 20px;
     border-radius: 10px;

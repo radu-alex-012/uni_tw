@@ -1,59 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+    <meta charset="utf-8">
     <title>DoW: SQL prompt</title>
-    <link href="img/icons/favicon.svg" rel="shortcut icon" type="image/png">
-    <link href="css/sql.css" rel="stylesheet">
-    <link href="styleSheets/style.css" rel="stylesheet">
-    <!-- added by teodor-->
-    <link href="styleSheets/cssTheme.css" rel="stylesheet" type="text/css">
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <style>
-        .homepage {
-            margin-left: auto;
-        }
-    </style>
+    <meta content="" property="og:title">
+    <meta content="" property="og:type">
+    <meta content="" property="og:url">
+    <meta content="" property="og:image">
+
+    <link href="../res/icons/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="../css/sql.css" rel="stylesheet" type="text/css">
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="navbar">
-    <div class="button-alignment">
-        <!-- <button class="menu-button dropdown" onclick="databasePanelToggle()"><span class="text"><img src="img/icons/favicon.svg" style="width: 25px; height: 25px;" alt="database img"/> Databases</span></button> -->
-    </div>
+<nav>
+    <a href="/home" title="Homepage"><img alt="Homepage" class="navbar-button" src="../res/icons/home.svg"/></a>
+    <a href="/account" title="Account settings"><img alt="Account settings" class="navbar-button"
+                                                     src="../res/icons/account.svg"/></a>
+    <img alt="Toggle dark mode" class="navbar-button" src="../res/icons/dark.svg"/>
+    <a href="/logout" title="Log out"><img alt="Log out" class="navbar-button" src="../res/icons/logout.svg"/></a>
+</nav>
 
-    <div class="navbar-buttons">
-        <a><img alt="home" src="img/icons/home.svg"/></a>
-        <a><img alt="account" src="img/icons/account.svg"/></a>
-        <!-- added by teodor-->
-        <!-- <button id="toggle-theme">Toggle Theme</button> -->
-        <button id="toggle-theme"><img alt="toggle-theme" src="img/icons/theme-toggle.svg"/></button>
-        <a><img alt="logout" src="img/icons/logout.svg"/></a>
+<div id="page-content">
+    <div class="sql-prompt-area">
+        <p><label for="sql-prompt">SQL command prompt:</label></p>
+        <textarea autofocus cols="80" id="sql-prompt" name="sql-prompt" placeholder="Enter SQL commands here."
+                  rows="24"></textarea>
+        <button class="sql-run-button" type="button"><img class="sql-run-svg"
+                                                          src="../res/icons/play.svg" alt="Run SQL commands">
+        </button>
     </div>
-</div>
-
-<div class="homepage">
-    <div id="page-content">
-        <div class="sql-prompt-area">
-            <p><label for="sql-prompt">SQL command prompt:</label></p>
-            <textarea autofocus cols="80" id="sql-prompt" name="sql-prompt" placeholder="Enter SQL commands here."
-                      rows="24"></textarea>
-            <button class="sql-run-button" type="button"><img class="sql-run-svg"
-                                                              src="img/icons/play.svg">
-            </button>
-        </div>
-        <p><label for="sql-output">Output:</label></p>
-        <div class="sql-output-area">
+    <p><label for="sql-output">Output:</label></p>
+    <div class="sql-output-area">
 <textarea cols="80" id="sql-output" name="sql-output" placeholder="Command output will be shown here." readonly
           rows="24">
 </textarea>
-        </div>
     </div>
 </div>
-<script src="js/sql.js"></script>
-<!-- added by teodor-->
-<script src="javascript/jsDarkModeScript.js"></script>
+<script src="../js/sql.js"></script>
 </body>
 </html>

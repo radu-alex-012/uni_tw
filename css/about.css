@@ -1,3 +1,6 @@
+@import "variables.css";
+@import "navbar.css";
+
 body {
     background-color: #f1f1f1;
     font-family: Arial, sans-serif;
@@ -6,8 +9,8 @@ body {
 .container {
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: var(--default-box-shadow);
     width: 80%;
     max-width: 600px;
     margin: 0 auto;
@@ -27,6 +30,18 @@ h1 {
     text-align: center;
     margin-bottom: 15%;
     color: #826b7a;
+}
+
+.logo-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.logo {
+    padding: 15px;
+    width: 90px;
+    height: 90px;
 }
 
 @media screen and (max-width: 600px) {
