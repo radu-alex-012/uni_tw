@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .checkbox-container {
+            height: 0;
+            width: 0;
+            padding-left: 4px;
+            padding-bottom: 20px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-label {
+            position: relative;
+            cursor: pointer;
+            padding-left: 5px;
+        }
+
+        .checkbox-label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #bbb;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: all .25s ease;
+        }
+
+        .checkbox-label:hover:before {
+            border-color: #888;
+        }
+
+        .checkbox-label:after {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 4px;
+            width: 5px;
+            height: 10px;
+            border-right: 3px solid white;
+            border-bottom: 3px solid white;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: all .25s ease;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + .checkbox-label:before {
+            background-color: black;
+            border-color: black;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + .checkbox-label:after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<th class="fixed-header">
+    <div class="checkbox-container">
+        <input id="checkbox1" type="checkbox">
+        <label class="checkbox-label" for="checkbox1"></label>
+    </div>
+</th>
+
+<td class="fixed-column">
+    <div class="checkbox-container">
+        <input id="checkbox2" type="checkbox">
+        <label class="checkbox-label" for="checkbox2"></label>
+    </div>
+</td>
+<script>
+    fetch('http://localhost:3000/data')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector('.table-viewer tbody');
+            tableBody.innerHTML = '';
+            let n = 1;
+            data.forEach(rowData => {
+                const row = document.createElement('tr');
+
+                const checkboxCell = document.createElement('td');
+                checkboxCell.className='fixed-column';
+                const checkboxContainer = document.createElement('div');
+                checkboxContainer.className = 'checkbox-container';
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = 'checkbox' + n;
+                const checkboxLabel = document.createElement('label');
+                checkboxLabel.className = 'checkbox-label';
+                checkboxLabel.htmlFor = 'checkbox' + n;
+                checkboxContainer.appendChild(checkbox);
+                checkboxContainer.appendChild(checkboxLabel);
+                checkboxCell.appendChild(checkboxContainer);
+                row.appendChild(checkboxCell);
+
+                Object.values(rowData).forEach(value => {
+                    const cell = document.createElement('td');
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+
+                tableBody.appendChild(row);
+                n++;
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    function populateWithData() {
+        fetch('http://localhost:3000/data')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('.table-viewer tbody');
+                tableBody.innerHTML = '';
+                let n = 1;
+                data.forEach(rowData => {
+                    const row = document.createElement('tr');
+                    Object.values(rowData).forEach(value => {
+                        const cell = document.createElement('td');
+                        cell.textContent = value;
+                        row.appendChild(cell);
+                    });
+
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the request
+                console.error('Error:', error);
+            });
+    }
+</script>
+</body>
+</html>

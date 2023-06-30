@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>DoW: alter table</title>
+    <link href="../css/alter.css" rel="stylesheet" type="text/css">
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="../res/icons/favicon.svg" rel="icon" type="image/svg+xml">
+</head>
+<body>
+<script>
+    const selectedDatabase = '{{selectedDatabase}}';
+    const tableName = '{{tableName}}';
+</script>
+<nav>
+    <img alt="Databases dropdown" class="navbar-button" src="../res/icons/expand.svg">
+    <a href="/home" title="Homepage"><img alt="Homepage" class="navbar-button" src="../res/icons/home.svg"/></a>
+    <a href="/account" title="Account settings"><img alt="Account settings" class="navbar-button"
+                                                     src="../res/icons/account.svg"/></a>
+    <!--    <img alt="Toggle dark mode" class="navbar-button" src="../res/icons/dark.svg"/>-->
+    <a href="/logout" title="Log out"><img alt="Log out" class="navbar-button" src="../res/icons/logout.svg"/></a>
+</nav>
+
+<div class="card" id="table-card">
+    <form id="alter-form">
+        <div class="table-name-title">
+            <label for="table-name">Change table name: </label>
+            <input id="table-name" type="text">
+        </div>
+        <div class="table-viewer-container">
+            <table class="table-viewer">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Length</th>
+                    <th>Default value</th>
+                    <th>Nullable</th>
+                    <th>Primary key</th>
+                    <th>Foreign key</th>
+                    <th>Auto increment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <label for="field1"></label>
+                        <input class="table-cell" id="field1" placeholder="id" type="text"></td>
+                    <td><label for="field2"></label>
+                        <select class="table-cell" id="field2" name="column1">
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select></td>
+                    <td><label for="field8"></label>
+                        <input class="table-cell" id="field8" placeholder="" type="number" min="0" max="655323"></td>
+                    <td><label for="field3"></label>
+                        <input class="table-cell" id="field3" placeholder="" type="text"></td>
+                    <td><label for="field4"></label>
+                        <select class="table-cell" id="field4" name="column1">
+                            <option value="option1">No</option>
+                            <option selected value="option2">Yes</option>
+                        </select></td>
+                    <td><label for="field5"></label>
+                        <select class="table-cell" id="field5" name="column1">
+                            <option value="option1">No</option>
+                            <option selected value="option2">Yes</option>
+                        </select></td>
+                    <td><label for="field6"></label>
+                        <select class="table-cell" id="field6" name="column1">
+                            <option value="option1">No</option>
+                            <option selected value="option2">Yes</option>
+                        </select></td>
+                    <td><label for="field7"></label>
+                        <select class="table-cell" id="field7" name="column1">
+                            <option value="option1">No</option>
+                            <option selected value="option2">Yes</option>
+                        </select></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+            <div class="commands" id="about-commands">
+                <button class="command-button" id="about-button" type="submit">
+                    <span>Alter table</span>
+                </button>
+            </div>
+    </form>
+</div>
+
+
+<script src="../js/alter.js"></script>
+</body>
+</html>

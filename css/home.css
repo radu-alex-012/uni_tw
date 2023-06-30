@@ -33,7 +33,7 @@ body {
     padding-bottom: 15px;
 }
 
-.main-container {
+#main-container {
     overflow: auto;
     flex-grow: 3;
     max-width: 75%;
@@ -88,12 +88,24 @@ body {
     filter: invert(100%) sepia(4%) saturate(7485%) hue-rotate(207deg) brightness(111%) contrast(103%);
 }
 
-.database-list {
+#database-list {
     display: flex;
     flex-direction: column;
     padding: 15px;
     gap: 15px;
     font-size: 20px;
+}
+
+#database-list label:hover {
+    cursor: pointer;
+}
+
+#database-list input[type="radio"]:checked + .database-name {
+    background-color: grey;
+}
+
+#database-list input[type="radio"] {
+    display: none;
 }
 
 .database-name {
@@ -106,7 +118,6 @@ body {
 
 .database-name:hover {
     background-color: grey;
-    cursor: pointer;
 }
 
 .card {
@@ -178,11 +189,29 @@ body {
     background-color: gold;
 }
 
+.table-viewer-container {
+    overflow: auto;
+}
+
+thead th {
+    top: 0;
+    z-index: 2;
+}
+
+.fixed-column {
+    left: 0;
+    z-index: 1;
+}
+
+.fixed-header,
+.fixed-column {
+    min-width: 30px;
+    width: 30px;
+}
+
 table {
-    border-collapse: collapse;
     width: 100%;
     border-radius: 15px;
-    overflow: auto;
 }
 
 th {
@@ -208,9 +237,18 @@ tbody > tr:hover {
     background-color: gray;
 }
 
+.table-name-title {
+    font-size: 30px;
+    font-style: italic;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
 .checkbox-container {
-    display: inline-block;
-    vertical-align: middle;
+    height: 0;
+    width: 0;
+    padding-left: 4px;
+    padding-bottom: 20px;
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -220,8 +258,7 @@ tbody > tr:hover {
 .checkbox-label {
     position: relative;
     cursor: pointer;
-    padding-left: 10px;
-    margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 .checkbox-label:before {
@@ -264,8 +301,25 @@ tbody > tr:hover {
     opacity: 1;
 }
 
-@media screen and (max-width: 480px) {
-    .checkbox-label {
-        padding-left: 25px;
+@media screen and (max-width: 1000px) {
+    .sidebar {
+        display: none;
     }
+
+    #main-container {
+        max-width: 100%;
+    }
+}
+
+.sidebar-minimized {
+    width: 80px;
+}
+
+.sidebar-minimized .logo {
+    display: none;
+}
+
+.sidebar-minimized #database-list,
+.sidebar-minimized .search-container {
+    display: none;
 }

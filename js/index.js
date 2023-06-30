@@ -1,3 +1,21 @@
+function hasSessionCookie() {
+    const cookies = document.cookie;
+    const cookiePairs = cookies.split(';');
+
+    for (const pair of cookiePairs) {
+        const [key, value] = pair.trim().split('=');
+        if (key === 'sessionCookie' && (value === 'Session' || value === '')) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+if (!hasSessionCookie() && window.location.href !== 'http://localhost:3000/') {
+    window.location.href = 'http://localhost:3000/';
+}
+
 document.getElementById('login-form').addEventListener('submit', function (event) {
     event.preventDefault();
     const email = document.getElementById('email').value;

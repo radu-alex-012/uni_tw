@@ -6,29 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/accountSettings.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/variables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/createTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/createTable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/darkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/darkTheme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/sql.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sql.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/viewTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/viewTable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/accountSettings.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/forgotPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/resetPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/alterTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/alter.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/insertValues.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/insertData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/sql.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/sql.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/viewTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/viewData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/db_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/db_init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icons/logout.svg" beforeDir="false" afterPath="$PROJECT_DIR$/res/icons/logout.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db-connection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +54,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "radu",
-    "javascript.nodejs.core.library.configured.version": "18.16.0",
-    "javascript.nodejs.core.library.typings.version": "18.16.0",
+    "javascript.nodejs.core.library.configured.version": "20.0.0",
+    "javascript.nodejs.core.library.typings.version": "20.0.0",
     "last_opened_file_path": "C:/Users/Alex/Documents/Facultate/uni_tw/css",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -86,6 +71,9 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
 }]]></component>
@@ -123,6 +111,7 @@
       <workItem from="1687917307917" duration="48000" />
       <workItem from="1687917370212" duration="4411000" />
       <workItem from="1687951181487" duration="40954000" />
+      <workItem from="1688084436213" duration="48610000" />
     </task>
     <servers />
   </component>

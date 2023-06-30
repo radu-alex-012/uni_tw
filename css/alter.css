@@ -1,0 +1,83 @@
+@import "variables.css";
+@import "navbar.css";
+
+.card {
+    background-color: var(--light-gray-clr);
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 5px 5px gray;
+    padding: 15px;
+}
+
+#column-selectors-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-selector {
+    display: flex;
+}
+
+.table-viewer-container {
+    overflow: auto;
+}
+
+thead th {
+    top: 0;
+    z-index: 2;
+}
+
+.fixed-column {
+    left: 0;
+    z-index: 1;
+}
+
+.fixed-header,
+.fixed-column {
+    min-width: 30px;
+    width: 30px;
+}
+
+table {
+    width: 100%;
+    border-radius: 15px;
+}
+
+th {
+    font-size: 20px;
+    text-align: left;
+    padding: 15px;
+}
+
+table,
+td {
+    padding: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--background-clr);
+}
+
+tbody > tr {
+    transition: background-color .25s ease;
+}
+
+tbody > tr:hover {
+    background-color: gray;
+}
+
+.table-name-title {
+    font-size: 30px;
+    font-style: italic;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.table-cell {
+    width: 100%;
+}
+
+input {
+    box-sizing: border-box;
+}
+

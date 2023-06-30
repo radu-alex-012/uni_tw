@@ -21,7 +21,7 @@
     <a href="/home" title="Homepage"><img alt="Homepage" class="navbar-button" src="../res/icons/home.svg"/></a>
     <a href="/account" title="Account settings"><img alt="Account settings" class="navbar-button"
                                                      src="../res/icons/account.svg"/></a>
-    <img alt="Toggle dark mode" class="navbar-button" src="../res/icons/dark.svg"/>
+<!--    <img alt="Toggle dark mode" class="navbar-button" src="../res/icons/dark.svg"/>-->
     <a href="/logout" title="Log out"><img alt="Log out" class="navbar-button" src="../res/icons/logout.svg"/></a>
 </nav>
 
@@ -29,28 +29,24 @@
     <div class="sidebar">
         <div class="card" id="sidebar-content">
             <img alt="DoW icon" class="logo" src="../res/icons/favicon.svg">
-            <h2>Welcome, <span class="username">Alex</span>! Your databases:</h2>
+            <h2>Welcome, <span id="username"></span>! Your databases:</h2>
             <form class="search-container">
                 <input id="search-box" placeholder="Search" type="text">
                 <button type="submit"><img alt="Search databases" class="search-bar-icon" src="../res/icons/search.svg">
                 </button>
             </form>
-            <div class="database-list">
-                <div class="database-name">Database1</div>
-                <div class="database-name">Database2</div>
-                <div class="database-name">Database3</div>
+            <div id="database-list">
             </div>
         </div>
     </div>
 
-    <div class="main-container">
+    <div id="main-container">
         <div class="card">
             <div class="commands">
                 <button class="command-button" onclick="location.href = '/sql';"><span>SQL</span>
                 </button>
                 <button class="command-button" onclick="location.href = '/query';"><span>QUERY</span>
                 </button>
-                <button class="command-button" onclick="location.href = '/search';"><span>SEARCH</span></button>
                 <input hidden id="db-import" type="file"/>
                 <label class="command-button" for="db-import" id="db-import-button"
                        onclick="uploadFile()"><span>IMPORT</span></label>
@@ -59,101 +55,28 @@
             </div>
         </div>
 
-        <div class="card">
-            <table class="table-viewer">
-                <thead>
-                <tr>
-                    <th>
-                        <div class="checkbox-container">
-                            <input id="checkbox1" type="checkbox">
-                            <label class="checkbox-label" for="checkbox1"></label>
-                        </div>
-                    </th>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                    <!-- Add more column headers as needed -->
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <div class="checkbox-container">
-                            <input id="checkbox2" type="checkbox">
-                            <label class="checkbox-label" for="checkbox2"></label>
-                        </div>
-                    </td>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                    <!-- Add more rows and data cells as needed -->
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox-container">
-                            <input id="checkbox3" type="checkbox">
-                            <label class="checkbox-label" for="checkbox3"></label>
-                        </div>
-                    </td>
-                    <td>Data 4</td>
-                    <td>Data 5</td>
-                    <td>Data 6</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox-container">
-                            <input id="checkbox2" type="checkbox">
-                            <label class="checkbox-label" for="checkbox2"></label>
-                        </div>
-                    </td>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                    <!-- Add more rows and data cells as needed -->
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox-container">
-                            <input id="checkbox2" type="checkbox">
-                            <label class="checkbox-label" for="checkbox2"></label>
-                        </div>
-                    </td>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                    <!-- Add more rows and data cells as needed -->
-                </tr>
-                <!-- Add more rows and data cells as needed -->
-                </tbody>
-            </table>
-            <div class="commands">
-                <button class="command-button" onclick="location.href = '/sql';"><span>Drop table</span>
-                </button>
-                <button class="command-button" onclick="location.href = '/query';"><span>Alter table</span>
-                </button>
-                <button class="command-button" onclick="location.href = '/insertData';"><span>Insert data</span></button>
-                <button class="command-button" onclick="location.href = '/viewData';"><span>View data</span></button>
-                <button class="command-button" onclick="location.href = '/updateData';"><span>Update data</span></button>
-                <button class="command-button" onclick="location.href = '/deleteData';"><span>Delete data</span></button>
-            </div>
+        <div id="table-list">
         </div>
 
         <div class="card">
             <div class="commands">
                 <button class="command-button" onclick="location.href = '/createTable';"><span>CREATE A NEW TABLE</span>
                 </button>
-                <button class="command-button" onclick="location.href = '/createDatabase';"><span>CREATE A NEW DATABASE</span>
+                <button class="command-button" onclick="location.href = '/createDatabase';">
+                    <span>CREATE A NEW DATABASE</span>
                 </button>
             </div>
         </div>
 
         <div class="card">
             <div class="commands" id="about-commands">
-                <button class="command-button" id="about-button" onclick="location.href = '/about';"><span>CONTACT US!</span>
+                <button class="command-button" id="about-button" onclick="location.href = '/about';">
+                    <span>CONTACT US!</span>
                 </button>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script src="../js/home.js"></script>
