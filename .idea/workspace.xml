@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/viewTable.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/alter.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/alter.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/checkboxes.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/html/createTable.html" beforeDir="false" />
@@ -128,11 +129,22 @@
       <workItem from="1687917307917" duration="48000" />
       <workItem from="1687917370212" duration="4411000" />
       <workItem from="1687951181487" duration="40954000" />
-      <workItem from="1688084436213" duration="70166000" />
+      <workItem from="1688084436213" duration="71153000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
