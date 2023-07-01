@@ -1,0 +1,52 @@
+.commands {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.command-button {
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    appearance: none;
+    background-color: var(--light-gray-clr);
+    border-width: 0;
+    color: var(--text-clr);
+    cursor: pointer;
+    font-size: 15px;
+    padding: 1.5em 2.2em;
+    position: relative;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.command-button:before {
+    border-radius: 15px;
+    animation: opacityFallbackOut .25s step-end forwards;
+    backface-visibility: hidden;
+    background-color: var(--background-clr);
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: clip-path .25s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+.command-button:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.command-button:after {
+    background-color: var(--background-clr);
+}
+
+.command-button span {
+    z-index: 1;
+    position: relative;
+}

@@ -1,5 +1,6 @@
 @import "variables.css";
 @import "navbar.css";
+@import "commands.css";
 
 .card {
     background-color: var(--light-gray-clr);
@@ -66,7 +67,7 @@ tbody > tr:hover {
     background-color: gray;
 }
 
-.table-name-title {
+#table-name {
     font-size: 30px;
     font-style: italic;
     padding-top: 15px;
@@ -80,4 +81,3 @@ tbody > tr:hover {
 input {
     box-sizing: border-box;
 }
-

@@ -108,7 +108,7 @@ const server = http.createServer(async (req, res) => {
                 }
             });
         } else if (pathname === '/forgotPassword') {
-            const forgotPassPath = path.join(__dirname, '..', 'html', 'resetPassword.html');
+            const forgotPassPath = path.join(__dirname, '..', 'html', 'forgotPassword.html');
             fs.readFile(forgotPassPath, 'utf8', (err, content) => {
                 if (err) {
                     res.writeHead(500, {'Content-Type': 'text/plain'});
@@ -130,20 +130,77 @@ const server = http.createServer(async (req, res) => {
                         res.end(content);
                     }
                 });
+            } else if (pathname === '/account') {
+                const accountPath = path.join(__dirname, '..', 'html', 'account.html');
+                fs.readFile(accountPath, 'utf8', (err, content) => {
+                    if (err) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal Server Error');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'text/html'});
+                        res.end(content);
+                    }
+                });
             } else if (pathname === '/alter') {
                 const selectedDatabase = queryParams.schema;
                 const tableName = queryParams.table;
                 const alterFilePath = path.join(__dirname, '..', 'html', 'alter.html');
                 fs.readFile(alterFilePath, 'utf8', (err, content) => {
                     if (err) {
-                        res.writeHead(500, { 'Content-Type': 'text/plain' });
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
                         res.end('Internal Server Error');
                     } else {
                         const modifiedContent = content
                             .replace('{{selectedDatabase}}', selectedDatabase)
                             .replace('{{tableName}}', tableName);
-                        res.writeHead(200, { 'Content-Type': 'text/html' });
+                        res.writeHead(200, {'Content-Type': 'text/html'});
                         res.end(modifiedContent);
+                    }
+                });
+            } else if (pathname === '/alterData') {
+                let body = '';
+                req.on('data', (chunk) => {
+                    body += chunk;
+                });
+                req.on('end', async () => {
+                    try {
+                        const databaseName = queryParams.schema;
+                        const tableName = queryParams.table;
+                        const userMgmt = createDatabaseConnection(databaseName);
+                        const [columnInfo, columnFields] = await userMgmt.query('SELECT column_name as column_name, column_type as column_type, column_default as column_default, is_nullable as is_nullable, column_key as column_key, extra as extra FROM information_schema.columns WHERE table_schema = ? AND table_name = ?', [databaseName, tableName]);
+
+                        const columns = columnInfo.map(row => {
+                            const {column_type} = row;
+                            let type = '';
+                            let length = '';
+
+                            // Splitting the column_type string to extract type and length
+                            const typeParts = column_type.split('(');
+                            type = typeParts[0].trim();
+
+                            if (typeParts.length > 1) {
+                                const lengthPart = typeParts[1].split(')')[0];
+                                length = parseInt(lengthPart);
+                            }
+
+                            return {
+                                name: row.column_name,
+                                type,
+                                length,
+                                defaultValue: row.column_default,
+                                nullable: row.is_nullable === 'YES',
+                                primaryKey: row.column_key === 'PRI',
+                                foreignKey: row.column_key === 'MUL',
+                                autoIncrement: row.extra.toLowerCase().includes('auto_increment')
+                            };
+                        });
+                        console.log(columns);
+                        res.statusCode = 200;
+                        res.end(JSON.stringify(columns));
+                    } catch (err) {
+                        console.error(err);
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal Server Error');
                     }
                 });
             } else if (pathname === '/data') {
@@ -232,7 +289,29 @@ const server = http.createServer(async (req, res) => {
         }
     } else if (req.method === 'POST') {
         if (isAuthenticated(req)) {
-            if (pathname === '/dropTable') {
+            if (pathname === '/execute-sql') {
+                let body = '';
+                req.on('data', chunk => {
+                    body += chunk.toString();
+                });
+                req.on('end', async () => {
+                    const data = JSON.parse(body);
+                    const database = data.schema;
+                    const db = createDatabaseConnection(database);
+                    const statements = data.sql;
+                    try {
+                        for (const statement of statements) {
+                            const results = await db.query(statement);
+                            console.log('Query results:', results);
+                        }
+                        res.writeHead(200, {'Content-Type': 'text/plain'});
+                        res.end('Ok!');
+                    } catch (error) {
+                        console.error('Failed to execute the SQL statement:', error);
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal Server Error');
+                    }
+                });
             } else {
                 res.writeHead(401, {'Content-Type': 'text/plain'});
                 res.end('Forbidden');

@@ -6,14 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="acb40570-2fe8-4b58-8e10-ec97f2cdca98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/alter.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/alter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/createTable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/darkTheme.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/alterTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/alter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/newAccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/viewTable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/alter.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/alter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/checkboxes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/createTable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/deleteData.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/db_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/db_init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/insertData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/resetPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/forgotPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/updateData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/viewData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/views.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/alter.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/alter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/darkMode.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -35,6 +49,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2ROTrKrML0VkpjeXF1csra9lTne" />
   <component name="ProjectLevelVcsManager">
@@ -111,7 +128,7 @@
       <workItem from="1687917307917" duration="48000" />
       <workItem from="1687917370212" duration="4411000" />
       <workItem from="1687951181487" duration="40954000" />
-      <workItem from="1688084436213" duration="48610000" />
+      <workItem from="1688084436213" duration="70166000" />
     </task>
     <servers />
   </component>
